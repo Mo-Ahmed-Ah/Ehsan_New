@@ -1,0 +1,9 @@
+C:\Users\Blu-Ray\source\repos\Ehsan\Ehsan\x64\Debug\Ehsan.vcxproj.AssemblyReference.cache
+C:\Users\Blu-Ray\source\repos\Ehsan\Ehsan\x64\Debug\Ehsan.MainForm.resources
+C:\Users\Blu-Ray\source\repos\Ehsan\Ehsan\x64\Debug\Ehsan.vcxproj.GenerateResource.cache
+C:\Users\Blu-Ray\Desktop\Ehsan\Ehsan\x64\Debug\Ehsan.vcxproj.AssemblyReference.cache
+C:\Users\Blu-Ray\Desktop\Ehsan\Ehsan\x64\Debug\Ehsan.MainForm.resources
+C:\Users\Blu-Ray\Desktop\Ehsan\Ehsan\x64\Debug\Ehsan.vcxproj.GenerateResource.cache
+C:\Users\ahmoh\OneDrive\Desktop\Ehsan (2)\Ehsan\Ehsan\x64\Debug\Ehsan.vcxproj.AssemblyReference.cache
+C:\Users\ahmoh\OneDrive\Desktop\Ehsan (2)\Ehsan\Ehsan\x64\Debug\Ehsan.MainForm.resources
+C:\Users\ahmoh\OneDrive\Desktop\Ehsan (2)\Ehsan\Ehsan\x64\Debug\Ehsan.vcxproj.GenerateResource.cache
