@@ -7,3 +7,6 @@ C:\Users\Blu-Ray\Desktop\Ehsan\Ehsan\x64\Debug\Ehsan.vcxproj.GenerateResource.ca
 C:\Users\ahmoh\OneDrive\Desktop\Ehsan (2)\Ehsan\Ehsan\x64\Debug\Ehsan.vcxproj.AssemblyReference.cache
 C:\Users\ahmoh\OneDrive\Desktop\Ehsan (2)\Ehsan\Ehsan\x64\Debug\Ehsan.MainForm.resources
 C:\Users\ahmoh\OneDrive\Desktop\Ehsan (2)\Ehsan\Ehsan\x64\Debug\Ehsan.vcxproj.GenerateResource.cache
+E:\my projects\Ehsan_New\Ehsan\x64\Debug\Ehsan.vcxproj.AssemblyReference.cache
+E:\my projects\Ehsan_New\Ehsan\x64\Debug\Ehsan.MainForm.resources
+E:\my projects\Ehsan_New\Ehsan\x64\Debug\Ehsan.vcxproj.GenerateResource.cache

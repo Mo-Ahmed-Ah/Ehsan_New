@@ -1,6 +1,6 @@
 ﻿#pragma once
-#pragma once
 #include "Cases.h"
+#include "SeasonalFinancialAid.h"
 
 using namespace System;
 using namespace System::Data;
@@ -208,4 +208,84 @@ public:
 
         return result != nullptr && Convert::ToBoolean(result);
     }
+
+    //SeasonalFinancialAid
+
+    static void AddAid(SqlConnection^ connection, SeasonalFinancialAid^ aid)
+    {
+        String^ query = "INSERT INTO SeasonalFinancialAid (CaseID, SeasonType, Amount, RegistrationDate, ReceivedDate, Notes, CaseName) "
+            "VALUES (@CaseID, @SeasonType, @Amount, @RegistrationDate, @ReceivedDate, @Notes, @CaseName)";
+        SqlCommand^ command = gcnew SqlCommand(query, connection);
+
+        command->Parameters->AddWithValue("@CaseID", aid->CaseID);
+        command->Parameters->AddWithValue("@SeasonType", aid->SeasonType);
+        command->Parameters->AddWithValue("@Amount", aid->Amount);
+        command->Parameters->AddWithValue("@RegistrationDate", aid->RegistrationDate);
+
+        if (aid->ReceivedDate.HasValue)
+            command->Parameters->AddWithValue("@ReceivedDate", aid->ReceivedDate.Value);
+        else
+            command->Parameters->AddWithValue("@ReceivedDate", DBNull::Value);
+
+        command->Parameters->AddWithValue("@Notes", String::IsNullOrEmpty(aid->Notes) ? (Object^)DBNull::Value : aid->Notes);
+        command->Parameters->AddWithValue("@CaseName", aid->CaseName);
+
+        command->ExecuteNonQuery();
+    }
+
+    static List<SeasonalFinancialAid^>^ GetAllAids(SqlConnection^ connection)
+    {
+        List<SeasonalFinancialAid^>^ aidList = gcnew List<SeasonalFinancialAid^>();
+        String^ query = "SELECT * FROM SeasonalFinancialAid";
+        SqlCommand^ command = gcnew SqlCommand(query, connection);
+        SqlDataReader^ reader = command->ExecuteReader();
+
+        while (reader->Read())
+        {
+            int ID = reader->GetInt32(0);
+            int CaseID = reader->GetInt32(1);
+            String^ SeasonType = reader->GetString(2);
+            Decimal Amount = reader->GetDecimal(3);
+            DateTime RegistrationDate = reader->GetDateTime(4);
+
+            Nullable<DateTime> ReceivedDate = reader->IsDBNull(5) ? Nullable<DateTime>() : reader->GetDateTime(5);
+            String^ Notes = reader->IsDBNull(6) ? nullptr : reader->GetString(6);
+            String^ CaseName = reader->GetString(7);
+
+            SeasonalFinancialAid^ aid = gcnew SeasonalFinancialAid(ID, CaseID, SeasonType, Amount, ReceivedDate, Notes, CaseName);
+            aidList->Add(aid);
+        }
+
+        reader->Close();
+        return aidList;
+    }
+
+    static SeasonalFinancialAid^ FindAidByID(SqlConnection^ connection, int id)
+    {
+        String^ query = "SELECT * FROM SeasonalFinancialAid WHERE ID = @ID";
+        SqlCommand^ command = gcnew SqlCommand(query, connection);
+        command->Parameters->AddWithValue("@ID", id);
+
+        SqlDataReader^ reader = command->ExecuteReader();
+        SeasonalFinancialAid^ aid = nullptr;
+
+        if (reader->Read())
+        {
+            int ID = reader->GetInt32(0);
+            int CaseID = reader->GetInt32(1);
+            String^ SeasonType = reader->GetString(2);
+            Decimal Amount = reader->GetDecimal(3);
+            DateTime RegistrationDate = reader->GetDateTime(4);
+            Nullable<DateTime> ReceivedDate = reader->IsDBNull(5) ? Nullable<DateTime>() : reader->GetDateTime(5);
+            String^ Notes = reader->IsDBNull(6) ? nullptr : reader->GetString(6);
+            String^ CaseName = reader->GetString(7);
+
+            aid = gcnew SeasonalFinancialAid(ID, CaseID, SeasonType, Amount, ReceivedDate, Notes, CaseName);
+        }
+
+        reader->Close();
+        return aid;
+    }
+
+
 };

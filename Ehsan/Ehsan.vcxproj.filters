@@ -54,6 +54,9 @@
     <ClInclude Include="Connection.h">
       <Filter>Header Files\Connection</Filter>
     </ClInclude>
+    <ClInclude Include="SeasonalFinancialAid.h">
+      <Filter>Header Files\Model</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -84,6 +87,9 @@
       <Filter>Header Files</Filter>
     </ClCompile>
     <ClCompile Include="Cases.cpp">
+      <Filter>Header Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="SeasonalFinancialAid.cpp">
       <Filter>Header Files\Model</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,6 +1,6 @@
 ﻿#pragma once
-
 #include "Cases.h"
+
 using namespace System;
 using namespace System::ComponentModel;
 using namespace System::Collections;
@@ -71,14 +71,15 @@ namespace Ehsan {
         {
             // إعداد النموذج الأساسي
             this->Text = L"إضافة حالة جديدة - نظام إحسان";
-            this->ClientSize = Drawing::Size(850, 650);
+            this->ClientSize = Drawing::Size(900, 700); // زيادة حجم النافذة قليلاً
             this->StartPosition = FormStartPosition::CenterScreen;
             this->Font = gcnew Drawing::Font("Tahoma", 10);
             this->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
             this->RightToLeftLayout = true;
             this->MinimizeBox = false;
             this->MaximizeBox = false;
-            this->FormBorderStyle = FormBorderStyle::FixedDialog;
+            this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedDialog;
+            this->BackColor = Color::White;
 
             // إعداد أدوات المساعدة
             toolTip = gcnew ToolTip();
@@ -88,18 +89,19 @@ namespace Ehsan {
             // شريط العنوان
             lblTitle = gcnew Label();
             lblTitle->Text = L"إضافة حالة جديدة";
-            lblTitle->Font = gcnew Drawing::Font("Tahoma", 14, FontStyle::Bold);
+            lblTitle->Font = gcnew Drawing::Font("Tahoma", 16, FontStyle::Bold);
             lblTitle->TextAlign = ContentAlignment::MiddleCenter;
             lblTitle->Dock = DockStyle::Top;
-            lblTitle->Height = 50;
+            lblTitle->Height = 60;
             lblTitle->BackColor = Color::FromArgb(0, 102, 153);
             lblTitle->ForeColor = Color::White;
+            lblTitle->Padding = System::Windows::Forms::Padding(0, 10, 0, 10);
             this->Controls->Add(lblTitle);
 
             // تبويبات النموذج
             tabMain = gcnew TabControl();
             tabMain->Dock = DockStyle::Fill;
-            tabMain->Padding = Point(15, 10);
+            tabMain->Padding = Point(20, 15);
             tabMain->Alignment = TabAlignment::Right;
             tabMain->SizeMode = TabSizeMode::Fixed;
             tabMain->ItemSize = Drawing::Size(25, 120);
@@ -109,18 +111,20 @@ namespace Ehsan {
             // تبويب المعلومات الشخصية
             tabPersonalInfo = gcnew TabPage();
             tabPersonalInfo->Text = L"معلومات شخصية";
-            tabPersonalInfo->BackColor = Color::WhiteSmoke;
-            tabPersonalInfo->Padding = System::Windows::Forms::Padding(10);
+            tabPersonalInfo->BackColor = Color::White;
+            tabPersonalInfo->Padding = System::Windows::Forms::Padding(15);
 
             // تبويب معلومات العنوان
             tabAddressInfo = gcnew TabPage();
             tabAddressInfo->Text = L"معلومات العنوان";
-            tabAddressInfo->BackColor = Color::WhiteSmoke;
+            tabAddressInfo->BackColor = Color::White;
+            tabAddressInfo->Padding = System::Windows::Forms::Padding(15);
 
             // تبويب معلومات الأسرة
             tabFamilyInfo = gcnew TabPage();
             tabFamilyInfo->Text = L"معلومات الأسرة";
-            tabFamilyInfo->BackColor = Color::WhiteSmoke;
+            tabFamilyInfo->BackColor = Color::White;
+            tabFamilyInfo->Padding = System::Windows::Forms::Padding(15);
 
             tabMain->Controls->Add(tabPersonalInfo);
             tabMain->Controls->Add(tabAddressInfo);
@@ -144,25 +148,42 @@ namespace Ehsan {
             tableLayout->Dock = DockStyle::Fill;
             tableLayout->ColumnCount = 2;
             tableLayout->RowCount = 6;
-            tableLayout->Padding = System::Windows::Forms::Padding(10);
+            tableLayout->Padding = System::Windows::Forms::Padding(15);
             tableLayout->BackColor = Color::White;
+            tableLayout->ColumnStyles->Add(gcnew ColumnStyle(SizeType::Percent, 30));
+            tableLayout->ColumnStyles->Add(gcnew ColumnStyle(SizeType::Percent, 70));
 
-            // إضافة عناصر التحكم
+            // زيادة الهوامش بين الصفوف
+            for (int i = 0; i < tableLayout->RowCount; i++)
+            {
+                tableLayout->RowStyles->Add(gcnew RowStyle(SizeType::AutoSize));
+            }
+
+            // إضافة عناصر التحكم مع تحسينات التنسيق
             AddLabelAndControl(tableLayout, 0, L"الاسم الأول:", txtFName = gcnew TextBox());
+            txtFName->Margin = System::Windows::Forms::Padding(0, 5, 0, 15);
+
             AddLabelAndControl(tableLayout, 1, L"الاسم الأخير:", txtLName = gcnew TextBox());
+            txtLName->Margin = System::Windows::Forms::Padding(0, 5, 0, 15);
+
             AddLabelAndControl(tableLayout, 2, L"اللقب:", txtNickName = gcnew TextBox());
+            txtNickName->Margin = System::Windows::Forms::Padding(0, 5, 0, 15);
+
             AddLabelAndControl(tableLayout, 3, L"الرقم القومي:", txtNationalID = gcnew MaskedTextBox());
             txtNationalID->Mask = "00000000000000";
+            txtNationalID->Margin = System::Windows::Forms::Padding(0, 5, 0, 15);
 
             AddLabelAndControl(tableLayout, 4, L"الجنس:", cmbGender = gcnew ComboBox());
             cmbGender->Items->AddRange(gcnew array<Object^> { L"ذكر", L"أنثى" });
             cmbGender->DropDownStyle = ComboBoxStyle::DropDownList;
+            cmbGender->Margin = System::Windows::Forms::Padding(0, 5, 0, 15);
 
             AddLabelAndControl(tableLayout, 5, L"تاريخ الميلاد:", dtBirth = gcnew DateTimePicker());
             dtBirth->Format = DateTimePickerFormat::Custom;
             dtBirth->CustomFormat = "dd/MM/yyyy";
             dtBirth->MaxDate = DateTime::Today.AddYears(-10);
             dtBirth->MinDate = DateTime::Today.AddYears(-100);
+            dtBirth->Margin = System::Windows::Forms::Padding(0, 5, 0, 15);
 
             tabPersonalInfo->Controls->Add(tableLayout);
         }
@@ -173,21 +194,35 @@ namespace Ehsan {
             tableLayout->Dock = DockStyle::Fill;
             tableLayout->ColumnCount = 2;
             tableLayout->RowCount = 5;
-            tableLayout->Padding = System::Windows::Forms::Padding(10);
+            tableLayout->Padding = System::Windows::Forms::Padding(15);
             tableLayout->BackColor = Color::White;
+            tableLayout->ColumnStyles->Add(gcnew ColumnStyle(SizeType::Percent, 30));
+            tableLayout->ColumnStyles->Add(gcnew ColumnStyle(SizeType::Percent, 70));
+
+            for (int i = 0; i < tableLayout->RowCount; i++)
+            {
+                tableLayout->RowStyles->Add(gcnew RowStyle(SizeType::AutoSize));
+            }
 
             AddLabelAndControl(tableLayout, 0, L"المحافظة:", cmbGovernorate = gcnew ComboBox());
             cmbGovernorate->DropDownStyle = ComboBoxStyle::DropDownList;
             cmbGovernorate->SelectedIndexChanged += gcnew EventHandler(this, &AddCaseForm::Governorate_SelectedIndexChanged);
+            cmbGovernorate->Margin = System::Windows::Forms::Padding(0, 5, 0, 15);
 
             AddLabelAndControl(tableLayout, 1, L"المدينة:", cmbCity = gcnew ComboBox());
             cmbCity->DropDownStyle = ComboBoxStyle::DropDownList;
+            cmbCity->Margin = System::Windows::Forms::Padding(0, 5, 0, 15);
 
             AddLabelAndControl(tableLayout, 2, L"المنطقة:", txtArea = gcnew TextBox());
+            txtArea->Margin = System::Windows::Forms::Padding(0, 5, 0, 15);
+
             AddLabelAndControl(tableLayout, 3, L"الشارع:", txtStreet = gcnew TextBox());
+            txtStreet->Margin = System::Windows::Forms::Padding(0, 5, 0, 15);
+
             AddLabelAndControl(tableLayout, 4, L"تفاصيل العنوان:", txtAddressDetails = gcnew TextBox());
             txtAddressDetails->Multiline = true;
-            txtAddressDetails->Height = 60;
+            txtAddressDetails->Height = 80;
+            txtAddressDetails->Margin = System::Windows::Forms::Padding(0, 5, 0, 15);
 
             tabAddressInfo->Controls->Add(tableLayout);
         }
@@ -198,26 +233,38 @@ namespace Ehsan {
             tableLayout->Dock = DockStyle::Fill;
             tableLayout->ColumnCount = 2;
             tableLayout->RowCount = 5;
-            tableLayout->Padding = System::Windows::Forms::Padding(10);
+            tableLayout->Padding = System::Windows::Forms::Padding(15);
             tableLayout->BackColor = Color::White;
+            tableLayout->ColumnStyles->Add(gcnew ColumnStyle(SizeType::Percent, 30));
+            tableLayout->ColumnStyles->Add(gcnew ColumnStyle(SizeType::Percent, 70));
+
+            for (int i = 0; i < tableLayout->RowCount; i++)
+            {
+                tableLayout->RowStyles->Add(gcnew RowStyle(SizeType::AutoSize));
+            }
 
             AddLabelAndControl(tableLayout, 0, L"الحالة الاجتماعية:", cmbMaritalStatus = gcnew ComboBox());
             cmbMaritalStatus->Items->AddRange(gcnew array<Object^> { L"أعزب", L"متزوج", L"مطلق", L"أرمل" });
             cmbMaritalStatus->DropDownStyle = ComboBoxStyle::DropDownList;
+            cmbMaritalStatus->Margin = System::Windows::Forms::Padding(0, 5, 0, 15);
 
             AddLabelAndControl(tableLayout, 1, L"حالة الأب:", cmbFatherStatus = gcnew ComboBox());
             cmbFatherStatus->Items->AddRange(gcnew array<Object^> { L"على قيد الحياة", L"متوفى" });
             cmbFatherStatus->DropDownStyle = ComboBoxStyle::DropDownList;
+            cmbFatherStatus->Margin = System::Windows::Forms::Padding(0, 5, 0, 15);
 
             AddLabelAndControl(tableLayout, 2, L"حالة الأم:", cmbMotherStatus = gcnew ComboBox());
             cmbMotherStatus->Items->AddRange(gcnew array<Object^> { L"على قيد الحياة", L"متوفية" });
             cmbMotherStatus->DropDownStyle = ComboBoxStyle::DropDownList;
+            cmbMotherStatus->Margin = System::Windows::Forms::Padding(0, 5, 0, 15);
 
             AddLabelAndControl(tableLayout, 3, L"عدد الأبناء الذكور:", numMaleChildren = gcnew NumericUpDown());
             numMaleChildren->Maximum = 20;
+            numMaleChildren->Margin = System::Windows::Forms::Padding(0, 5, 0, 15);
 
             AddLabelAndControl(tableLayout, 4, L"عدد البنات الإناث:", numFemaleChildren = gcnew NumericUpDown());
             numFemaleChildren->Maximum = 20;
+            numFemaleChildren->Margin = System::Windows::Forms::Padding(0, 5, 0, 15);
 
             tabFamilyInfo->Controls->Add(tableLayout);
         }
@@ -226,38 +273,70 @@ namespace Ehsan {
         {
             Panel^ panelButtons = gcnew Panel();
             panelButtons->Dock = DockStyle::Bottom;
-            panelButtons->Height = 60;
-            panelButtons->BackColor = Color::FromArgb(240, 240, 240);
-            panelButtons->Padding = System::Windows::Forms::Padding(10);
+            panelButtons->Height = 80;
+            panelButtons->BackColor = Color::FromArgb(248, 249, 250);
+            panelButtons->Padding = System::Windows::Forms::Padding(20, 15, 20, 15);
 
+            // زر الحفظ
             btnSave = gcnew Button();
-            btnSave->Text = L"حفظ البيانات";
-            btnSave->Image = Image::FromFile("save_icon.png");
+            btnSave->Text = L"حفظ البيانات (Enter)";
+            btnSave->Image = ResizeImage(SystemIcons::Information->ToBitmap(), 24, 24);
             btnSave->ImageAlign = ContentAlignment::MiddleLeft;
             btnSave->TextImageRelation = TextImageRelation::ImageBeforeText;
-            btnSave->Size = Drawing::Size(150, 40);
-            btnSave->Location = Point(520, 10);
-            btnSave->BackColor = Color::FromArgb(0, 153, 51);
+            btnSave->Size = Drawing::Size(180, 45);
+            btnSave->Location = Point(550, 15);
+            btnSave->BackColor = Color::FromArgb(13, 110, 253);
             btnSave->ForeColor = Color::White;
             btnSave->Font = gcnew Drawing::Font("Tahoma", 10, FontStyle::Bold);
+            btnSave->FlatStyle = FlatStyle::Flat;
+            btnSave->FlatAppearance->BorderSize = 0;
+            btnSave->FlatAppearance->MouseOverBackColor = Color::FromArgb(11, 94, 215);
+            btnSave->FlatAppearance->MouseDownBackColor = Color::FromArgb(10, 88, 202);
+            btnSave->Cursor = Cursors::Hand;
             btnSave->Click += gcnew EventHandler(this, &AddCaseForm::btnSave_Click);
 
+            // زر الإلغاء
             btnCancel = gcnew Button();
-            btnCancel->Text = L"إلغاء";
-            btnCancel->Size = Drawing::Size(150, 40);
-            btnCancel->Location = Point(350, 10);
-            btnCancel->BackColor = Color::FromArgb(204, 0, 0);
+            btnCancel->Text = L"إلغاء (Esc)";
+            btnCancel->Image = ResizeImage(SystemIcons::Error->ToBitmap(), 24, 24);
+            btnCancel->ImageAlign = ContentAlignment::MiddleLeft;
+            btnCancel->TextImageRelation = TextImageRelation::ImageBeforeText;
+            btnCancel->Size = Drawing::Size(180, 45);
+            btnCancel->Location = Point(330, 15);
+            btnCancel->BackColor = Color::FromArgb(108, 117, 125);
             btnCancel->ForeColor = Color::White;
+            btnCancel->FlatStyle = FlatStyle::Flat;
+            btnCancel->FlatAppearance->BorderSize = 0;
+            btnCancel->FlatAppearance->MouseOverBackColor = Color::FromArgb(92, 99, 106);
+            btnCancel->FlatAppearance->MouseDownBackColor = Color::FromArgb(84, 91, 98);
+            btnCancel->Cursor = Cursors::Hand;
             btnCancel->Click += gcnew EventHandler(this, &AddCaseForm::btnCancel_Click);
 
+            // خيار الحالة النشطة
             chkIsActive = gcnew CheckBox();
             chkIsActive->Text = L"الحالة نشطة";
             chkIsActive->Checked = true;
-            chkIsActive->Location = Point(30, 20);
+            chkIsActive->Location = Point(40, 30);
             chkIsActive->Font = gcnew Drawing::Font("Tahoma", 10, FontStyle::Bold);
+            chkIsActive->ForeColor = Color::FromArgb(33, 37, 41);
 
             panelButtons->Controls->AddRange(gcnew array<Control^> { btnSave, btnCancel, chkIsActive });
             this->Controls->Add(panelButtons);
+
+            // إعداد اختصارات لوحة المفاتيح
+            this->AcceptButton = btnSave;
+            this->CancelButton = btnCancel;
+        }
+
+        // دالة مساعدة لتغيير حجم الصور
+        Bitmap^ ResizeImage(Bitmap^ image, int width, int height)
+        {
+            Bitmap^ result = gcnew Bitmap(width, height);
+            Graphics^ g = Graphics::FromImage(result);
+            g->InterpolationMode = System::Drawing::Drawing2D::InterpolationMode::HighQualityBicubic;
+            g->DrawImage(image, 0, 0, width, height);
+            //g->Dispose();
+            return result;
         }
 
         void AddLabelAndControl(TableLayoutPanel^ table, int row, String^ labelText, Control^ control)
@@ -266,10 +345,11 @@ namespace Ehsan {
             label->Text = labelText;
             label->TextAlign = ContentAlignment::MiddleLeft;
             label->Font = gcnew Drawing::Font("Tahoma", 10, FontStyle::Bold);
+            label->ForeColor = Color::FromArgb(33, 37, 41);
 
             control->Font = gcnew Drawing::Font("Tahoma", 10);
             control->Anchor = AnchorStyles::Left | AnchorStyles::Right;
-            control->Margin = System::Windows::Forms::Padding(0, 5, 0, 10);
+            control->Height = 35;
 
             table->Controls->Add(label, 0, row);
             table->Controls->Add(control, 1, row);
@@ -277,9 +357,6 @@ namespace Ehsan {
 
         void SetupFormStyles()
         {
-            // إعداد ألوان النموذج
-            this->BackColor = Color::White;
-
             // إعداد نصائح الأدوات
             toolTip->SetToolTip(txtNationalID, "يجب إدخال 14 رقمًا فقط");
             toolTip->SetToolTip(txtFName, "الاسم الأول للحالة بدون ألقاب");
@@ -343,8 +420,8 @@ namespace Ehsan {
             }
             else
             {
-                textBrush = gcnew SolidBrush(Color::Black);
-                g->FillRectangle(gcnew SolidBrush(Color::FromArgb(240, 240, 240)), e->Bounds);
+                textBrush = gcnew SolidBrush(Color::FromArgb(73, 80, 87));
+                g->FillRectangle(gcnew SolidBrush(Color::FromArgb(248, 249, 250)), e->Bounds);
             }
 
             StringFormat^ strFormat = gcnew StringFormat();
@@ -352,7 +429,7 @@ namespace Ehsan {
             strFormat->LineAlignment = StringAlignment::Center;
 
             String^ tabName = tabMain->TabPages[e->Index]->Text;
-            Font^ tabFont = gcnew Font("Tahoma", 10, FontStyle::Regular);
+            System::Drawing::Font^ tabFont = gcnew System::Drawing::Font("Tahoma", 10, FontStyle::Regular);
 
             g->DrawString(tabName, tabFont, textBrush, tabTextArea, strFormat);
         }
@@ -360,16 +437,13 @@ namespace Ehsan {
         bool ValidateForm()
         {
             bool isValid = true;
+            errorProvider->Clear();
 
             // التحقق من الاسم الأول
             if (String::IsNullOrWhiteSpace(txtFName->Text))
             {
                 errorProvider->SetError(txtFName, "يجب إدخال الاسم الأول");
                 isValid = false;
-            }
-            else
-            {
-                errorProvider->SetError(txtFName, "");
             }
 
             // التحقق من الاسم الأخير
@@ -378,10 +452,6 @@ namespace Ehsan {
                 errorProvider->SetError(txtLName, "يجب إدخال الاسم الأخير");
                 isValid = false;
             }
-            else
-            {
-                errorProvider->SetError(txtLName, "");
-            }
 
             // التحقق من الرقم القومي
             if (txtNationalID->Text->Replace(" ", "")->Length != 14)
@@ -389,20 +459,12 @@ namespace Ehsan {
                 errorProvider->SetError(txtNationalID, "يجب إدخال 14 رقمًا");
                 isValid = false;
             }
-            else
-            {
-                errorProvider->SetError(txtNationalID, "");
-            }
 
             // التحقق من المحافظة
             if (cmbGovernorate->SelectedIndex == -1)
             {
                 errorProvider->SetError(cmbGovernorate, "يجب اختيار المحافظة");
                 isValid = false;
-            }
-            else
-            {
-                errorProvider->SetError(cmbGovernorate, "");
             }
 
             return isValid;
@@ -424,8 +486,11 @@ namespace Ehsan {
                     newCase->NationalID = txtNationalID->Text;
                     newCase->Gender = cmbGender->SelectedIndex == 0;
                     newCase->BirthDate = dtBirth->Value;
+                    //newCase->Governorate = cmbGovernorate->SelectedItem->ToString();
+                    //newCase->City = cmbCity->SelectedItem != nullptr ? cmbCity->SelectedItem->ToString() : "";
                     newCase->Area = txtArea->Text;
                     newCase->Street = txtStreet->Text;
+                    //newCase->AddressDetails = txtAddressDetails->Text;
                     newCase->MaritalStatus = cmbMaritalStatus->SelectedItem->ToString();
                     newCase->FatherStatus = cmbFatherStatus->SelectedIndex == 0;
                     newCase->MotherStatus = cmbMotherStatus->SelectedIndex == 0;
@@ -457,7 +522,7 @@ namespace Ehsan {
         void btnCancel_Click(Object^ sender, EventArgs^ e)
         {
             if (MessageBox::Show("هل تريد إلغاء عملية الإضافة؟", "تأكيد الإلغاء",
-                MessageBoxButtons::YesNo, MessageBoxIcon::Question) == DialogResult::Yes)
+                MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
             {
                 this->Close();
             }

@@ -144,6 +144,7 @@
     <ClInclude Include="SearchCaseForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="SeasonalFinancialAid.h" />
     <ClInclude Include="TodayViewForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -158,6 +159,7 @@
     <ClCompile Include="ManageCasesForm.cpp" />
     <ClCompile Include="ReportsForm.cpp" />
     <ClCompile Include="SearchCaseForm.cpp" />
+    <ClCompile Include="SeasonalFinancialAid.cpp" />
     <ClCompile Include="TodayViewForm.cpp" />
   </ItemGroup>
   <ItemGroup>
