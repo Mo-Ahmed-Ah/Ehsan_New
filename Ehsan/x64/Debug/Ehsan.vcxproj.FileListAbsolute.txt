@@ -10,3 +10,6 @@ C:\Users\ahmoh\OneDrive\Desktop\Ehsan (2)\Ehsan\Ehsan\x64\Debug\Ehsan.vcxproj.Ge
 E:\my projects\Ehsan_New\Ehsan\x64\Debug\Ehsan.vcxproj.AssemblyReference.cache
 E:\my projects\Ehsan_New\Ehsan\x64\Debug\Ehsan.MainForm.resources
 E:\my projects\Ehsan_New\Ehsan\x64\Debug\Ehsan.vcxproj.GenerateResource.cache
+F:\my Projects\Ehsan_New\Ehsan\x64\Debug\Ehsan.vcxproj.AssemblyReference.cache
+F:\my Projects\Ehsan_New\Ehsan\x64\Debug\Ehsan.MainForm.resources
+F:\my Projects\Ehsan_New\Ehsan\x64\Debug\Ehsan.vcxproj.GenerateResource.cache

@@ -155,6 +155,7 @@
     <ClCompile Include="Cases.cpp" />
     <ClCompile Include="EditAssistanceForm.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainForm.cpp" />
     <ClCompile Include="ManageAssistancesForm.cpp" />
     <ClCompile Include="ManageCasesForm.cpp" />
     <ClCompile Include="ReportsForm.cpp" />
