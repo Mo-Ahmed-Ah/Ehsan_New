@@ -3,12 +3,17 @@
   "WorkspaceRootPath": "F:\\my Projects\\Ehsan_New\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|F:\\my Projects\\Ehsan_New\\Ehsan\\AddCaseForm1.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
       "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\AddCaseForm1.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|F:\\my Projects\\Ehsan_New\\Ehsan\\AddCaseForm1.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\AddCaseForm1.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+=======
+      "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|F:\\my Projects\\Ehsan_New\\Ehsan\\MainForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
+      "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\MainForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
+>>>>>>> 2c120b620220c3155f71502a727398f3cf317cfe
     },
     {
       "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|F:\\my Projects\\Ehsan_New\\Ehsan\\MainForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -26,6 +31,7 @@
           "Children": [
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 1,
               "Title": "AddCaseForm1.h",
               "DocumentMoniker": "F:\\my Projects\\Ehsan_New\\Ehsan\\AddCaseForm1.h",
@@ -47,19 +53,39 @@
               "RelativeToolTip": "Ehsan\\AddCaseForm1.h [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-05-12T14:41:13.146Z",
+=======
+              "DocumentIndex": 0,
+              "Title": "MainForm.h [Design]",
+              "DocumentMoniker": "F:\\my Projects\\Ehsan_New\\Ehsan\\MainForm.h",
+              "RelativeDocumentMoniker": "Ehsan\\MainForm.h",
+              "ToolTip": "F:\\my Projects\\Ehsan_New\\Ehsan\\MainForm.h [Design]",
+              "RelativeToolTip": "Ehsan\\MainForm.h [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-12T11:45:39.156Z",
+>>>>>>> 2c120b620220c3155f71502a727398f3cf317cfe
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 2,
+=======
+              "DocumentIndex": 1,
+>>>>>>> 2c120b620220c3155f71502a727398f3cf317cfe
               "Title": "MainForm.h",
               "DocumentMoniker": "F:\\my Projects\\Ehsan_New\\Ehsan\\MainForm.h",
               "RelativeDocumentMoniker": "Ehsan\\MainForm.h",
               "ToolTip": "F:\\my Projects\\Ehsan_New\\Ehsan\\MainForm.h",
               "RelativeToolTip": "Ehsan\\MainForm.h",
+<<<<<<< HEAD
               "ViewState": "AgIAAHsAAAAAAAAAAAAAAA4AAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-05-11T17:38:44.019Z",
+=======
+              "ViewState": "AgIAAEMAAAAAAAAAAAAhwNQAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-12T11:44:29.435Z",
+>>>>>>> 2c120b620220c3155f71502a727398f3cf317cfe
               "EditorCaption": ""
             }
           ]

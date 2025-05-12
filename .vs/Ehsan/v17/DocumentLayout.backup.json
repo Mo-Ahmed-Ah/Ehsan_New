@@ -1,9 +1,28 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "WorkspaceRootPath": "E:\\my projects\\Ehsan_New\\",
   "Documents": [
     {
       "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|E:\\my projects\\Ehsan_New\\Ehsan\\Connection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+=======
+  "WorkspaceRootPath": "F:\\my Projects\\Ehsan_New\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|F:\\my Projects\\Ehsan_New\\Ehsan\\MainForm.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\MainForm.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|F:\\my Projects\\Ehsan_New\\Ehsan\\MainForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\MainForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|F:\\my Projects\\Ehsan_New\\Ehsan\\MainForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
+      "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\MainForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|F:\\my Projects\\Ehsan_New\\Ehsan\\Connection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+>>>>>>> 2c120b620220c3155f71502a727398f3cf317cfe
       "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\Connection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -14,6 +33,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
           "SelectedChildIndex": 0,
           "Children": [
             {
@@ -25,6 +45,57 @@
               "ToolTip": "E:\\my projects\\Ehsan_New\\Ehsan\\Connection.h",
               "RelativeToolTip": "Ehsan\\Connection.h",
               "ViewState": "AgIAANUAAAAAAAAAAAAAACEBAAAAAAAAAAAAAA==",
+=======
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainForm.h",
+              "DocumentMoniker": "F:\\my Projects\\Ehsan_New\\Ehsan\\MainForm.h",
+              "RelativeDocumentMoniker": "Ehsan\\MainForm.h",
+              "ToolTip": "F:\\my Projects\\Ehsan_New\\Ehsan\\MainForm.h",
+              "RelativeToolTip": "Ehsan\\MainForm.h",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-12T11:44:29.435Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainForm.cpp",
+              "DocumentMoniker": "F:\\my Projects\\Ehsan_New\\Ehsan\\MainForm.cpp",
+              "RelativeDocumentMoniker": "Ehsan\\MainForm.cpp",
+              "ToolTip": "F:\\my Projects\\Ehsan_New\\Ehsan\\MainForm.cpp",
+              "RelativeToolTip": "Ehsan\\MainForm.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-12T11:43:31.353Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainForm.h [Design]",
+              "DocumentMoniker": "F:\\my Projects\\Ehsan_New\\Ehsan\\MainForm.h",
+              "RelativeDocumentMoniker": "Ehsan\\MainForm.h",
+              "ToolTip": "F:\\my Projects\\Ehsan_New\\Ehsan\\MainForm.h [Design]",
+              "RelativeToolTip": "Ehsan\\MainForm.h [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-12T11:38:52.36Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Connection.h",
+              "DocumentMoniker": "F:\\my Projects\\Ehsan_New\\Ehsan\\Connection.h",
+              "RelativeDocumentMoniker": "Ehsan\\Connection.h",
+              "ToolTip": "F:\\my Projects\\Ehsan_New\\Ehsan\\Connection.h",
+              "RelativeToolTip": "Ehsan\\Connection.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAASAAAAAAAAAA==",
+>>>>>>> 2c120b620220c3155f71502a727398f3cf317cfe
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-05-10T09:35:42.37Z",
               "EditorCaption": ""
