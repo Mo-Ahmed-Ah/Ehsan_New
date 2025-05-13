@@ -164,6 +164,9 @@
     <ClCompile Include="TodayViewForm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddCaseForm.resx">
+      <DependentUpon>AddCaseForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.h</DependentUpon>
     </EmbeddedResource>

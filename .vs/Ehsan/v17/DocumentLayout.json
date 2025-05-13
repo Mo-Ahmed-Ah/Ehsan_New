@@ -3,21 +3,24 @@
   "WorkspaceRootPath": "F:\\my Projects\\Ehsan_New\\",
   "Documents": [
     {
-<<<<<<< HEAD
-      "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|F:\\my Projects\\Ehsan_New\\Ehsan\\AddCaseForm1.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
-      "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\AddCaseForm1.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
+      "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|F:\\my Projects\\Ehsan_New\\Ehsan\\AddCaseForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\AddCaseForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|F:\\my Projects\\Ehsan_New\\Ehsan\\AddCaseForm1.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\AddCaseForm1.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-=======
+      "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|F:\\my Projects\\Ehsan_New\\Ehsan\\AddCaseForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
+      "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\AddCaseForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|F:\\my Projects\\Ehsan_New\\Ehsan\\MainForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
       "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\MainForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
->>>>>>> 2c120b620220c3155f71502a727398f3cf317cfe
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|F:\\my Projects\\Ehsan_New\\Ehsan\\MainForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\MainForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|F:\\my Projects\\Ehsan_New\\Ehsan\\Connection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\Connection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|F:\\my Projects\\Ehsan_New\\Ehsan\\Cases.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\Cases.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,65 +30,69 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 1,
-              "Title": "AddCaseForm1.h",
-              "DocumentMoniker": "F:\\my Projects\\Ehsan_New\\Ehsan\\AddCaseForm1.h",
-              "RelativeDocumentMoniker": "Ehsan\\AddCaseForm1.h",
-              "ToolTip": "F:\\my Projects\\Ehsan_New\\Ehsan\\AddCaseForm1.h",
-              "RelativeToolTip": "Ehsan\\AddCaseForm1.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "Cases.h",
+              "DocumentMoniker": "F:\\my Projects\\Ehsan_New\\Ehsan\\Cases.h",
+              "RelativeDocumentMoniker": "Ehsan\\Cases.h",
+              "ToolTip": "F:\\my Projects\\Ehsan_New\\Ehsan\\Cases.h",
+              "RelativeToolTip": "Ehsan\\Cases.h",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABcAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-12T14:45:07.139Z",
+              "WhenOpened": "2025-05-13T09:17:57.814Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AddCaseForm1.h [Design]",
-              "DocumentMoniker": "F:\\my Projects\\Ehsan_New\\Ehsan\\AddCaseForm1.h",
-              "RelativeDocumentMoniker": "Ehsan\\AddCaseForm1.h",
-              "ToolTip": "F:\\my Projects\\Ehsan_New\\Ehsan\\AddCaseForm1.h [Design]",
-              "RelativeToolTip": "Ehsan\\AddCaseForm1.h [Design]",
+              "DocumentIndex": 3,
+              "Title": "Connection.h",
+              "DocumentMoniker": "F:\\my Projects\\Ehsan_New\\Ehsan\\Connection.h",
+              "RelativeDocumentMoniker": "Ehsan\\Connection.h",
+              "ToolTip": "F:\\my Projects\\Ehsan_New\\Ehsan\\Connection.h",
+              "RelativeToolTip": "Ehsan\\Connection.h",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-12T14:41:13.146Z",
-=======
-              "DocumentIndex": 0,
+              "WhenOpened": "2025-05-13T07:32:14.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "MainForm.h [Design]",
               "DocumentMoniker": "F:\\my Projects\\Ehsan_New\\Ehsan\\MainForm.h",
               "RelativeDocumentMoniker": "Ehsan\\MainForm.h",
               "ToolTip": "F:\\my Projects\\Ehsan_New\\Ehsan\\MainForm.h [Design]",
               "RelativeToolTip": "Ehsan\\MainForm.h [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-12T11:45:39.156Z",
->>>>>>> 2c120b620220c3155f71502a727398f3cf317cfe
+              "WhenOpened": "2025-05-13T06:13:21.63Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 2,
-=======
               "DocumentIndex": 1,
->>>>>>> 2c120b620220c3155f71502a727398f3cf317cfe
-              "Title": "MainForm.h",
-              "DocumentMoniker": "F:\\my Projects\\Ehsan_New\\Ehsan\\MainForm.h",
-              "RelativeDocumentMoniker": "Ehsan\\MainForm.h",
-              "ToolTip": "F:\\my Projects\\Ehsan_New\\Ehsan\\MainForm.h",
-              "RelativeToolTip": "Ehsan\\MainForm.h",
-<<<<<<< HEAD
-              "ViewState": "AgIAAHsAAAAAAAAAAAAAAA4AAAAbAAAAAAAAAA==",
+              "Title": "AddCaseForm.h [Design]",
+              "DocumentMoniker": "F:\\my Projects\\Ehsan_New\\Ehsan\\AddCaseForm.h",
+              "RelativeDocumentMoniker": "Ehsan\\AddCaseForm.h",
+              "ToolTip": "F:\\my Projects\\Ehsan_New\\Ehsan\\AddCaseForm.h [Design]",
+              "RelativeToolTip": "Ehsan\\AddCaseForm.h [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-11T17:38:44.019Z",
-=======
-              "ViewState": "AgIAAEMAAAAAAAAAAAAhwNQAAABUAAAAAAAAAA==",
+              "WhenOpened": "2025-05-13T03:58:47.6Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AddCaseForm.h",
+              "DocumentMoniker": "F:\\my Projects\\Ehsan_New\\Ehsan\\AddCaseForm.h",
+              "RelativeDocumentMoniker": "Ehsan\\AddCaseForm.h",
+              "ToolTip": "F:\\my Projects\\Ehsan_New\\Ehsan\\AddCaseForm.h",
+              "RelativeToolTip": "Ehsan\\AddCaseForm.h",
+              "ViewState": "AgIAAHkBAAAAAAAAAAAowE4CAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-12T11:44:29.435Z",
->>>>>>> 2c120b620220c3155f71502a727398f3cf317cfe
+              "WhenOpened": "2025-05-13T03:36:32.244Z",
               "EditorCaption": ""
             }
           ]
