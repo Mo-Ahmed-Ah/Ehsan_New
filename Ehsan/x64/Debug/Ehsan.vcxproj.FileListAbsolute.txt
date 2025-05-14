@@ -2,3 +2,4 @@ F:\my Projects\Ehsan_New\Ehsan\x64\Debug\Ehsan.vcxproj.AssemblyReference.cache
 F:\my Projects\Ehsan_New\Ehsan\x64\Debug\Ehsan.MainForm.resources
 F:\my Projects\Ehsan_New\Ehsan\x64\Debug\Ehsan.vcxproj.GenerateResource.cache
 F:\my Projects\Ehsan_New\Ehsan\x64\Debug\Ehsan.AddCaseForm.resources
+F:\my Projects\Ehsan_New\Ehsan\x64\Debug\Ehsan.TodayViewForm.resources

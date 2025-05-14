@@ -57,6 +57,9 @@
     <ClInclude Include="AddCaseForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SelectAidForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -93,6 +96,9 @@
       <Filter>Header Files</Filter>
     </ClCompile>
     <ClCompile Include="AddCaseForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectAidForm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

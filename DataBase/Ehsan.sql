@@ -34,16 +34,6 @@ CREATE TABLE Cases (
     CONSTRAINT CHK_MotherStatus CHECK (MotherStatus IN (0,1))
 );
 GO
---اضافة الحالة
-/*
-	
-*/
--- حذف 
--- تعديل
--- بحث
---تنشيط والغاء تنشيط الحالة 
--- جلب جميع الحالات 
-
 
 CREATE INDEX IX_Cases_NationalID ON Cases(NationalID);
 GO

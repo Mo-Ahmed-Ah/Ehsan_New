@@ -69,8 +69,9 @@
 		private: System::Windows::Forms::Label^ HomePageNumberOfTodaysAid;
 		private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel1;
 		private: System::Windows::Forms::Button^ HomePageToDayButton;
+		private: System::Windows::Forms::Button^ AddAidButton;
 
-		private: System::Windows::Forms::Button^ button2;
+
 		private: System::Windows::Forms::Button^ button3;
 		private: System::Windows::Forms::Button^ button4;
 		private: System::Windows::Forms::Button^ HomeBageAddCasesButton;
@@ -111,7 +112,7 @@
 				this->flowLayoutPanel1 = (gcnew System::Windows::Forms::FlowLayoutPanel());
 				this->HomePageToDayButton = (gcnew System::Windows::Forms::Button());
 				this->HomeBageAddCasesButton = (gcnew System::Windows::Forms::Button());
-				this->button2 = (gcnew System::Windows::Forms::Button());
+				this->AddAidButton = (gcnew System::Windows::Forms::Button());
 				this->button3 = (gcnew System::Windows::Forms::Button());
 				this->button4 = (gcnew System::Windows::Forms::Button());
 				this->HomeInfoPanal->SuspendLayout();
@@ -357,7 +358,7 @@
 				// 
 				this->flowLayoutPanel1->Controls->Add(this->HomePageToDayButton);
 				this->flowLayoutPanel1->Controls->Add(this->HomeBageAddCasesButton);
-				this->flowLayoutPanel1->Controls->Add(this->button2);
+				this->flowLayoutPanel1->Controls->Add(this->AddAidButton);
 				this->flowLayoutPanel1->Controls->Add(this->button3);
 				this->flowLayoutPanel1->Controls->Add(this->button4);
 				this->flowLayoutPanel1->Location = System::Drawing::Point(216, 189);
@@ -406,24 +407,25 @@
 				this->HomeBageAddCasesButton->UseVisualStyleBackColor = false;
 				this->HomeBageAddCasesButton->Click += gcnew System::EventHandler(this, &MainForm::HomeBageAddCasesButton_Click);
 				// 
-				// button2
+				// AddAidButton
 				// 
-				this->button2->BackColor = System::Drawing::SystemColors::HotTrack;
-				this->button2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-				this->button2->Cursor = System::Windows::Forms::Cursors::Hand;
-				this->button2->FlatAppearance->BorderColor = System::Drawing::Color::Cyan;
-				this->button2->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Cyan;
-				this->button2->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Cyan;
-				this->button2->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				this->AddAidButton->BackColor = System::Drawing::SystemColors::HotTrack;
+				this->AddAidButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+				this->AddAidButton->Cursor = System::Windows::Forms::Cursors::Hand;
+				this->AddAidButton->FlatAppearance->BorderColor = System::Drawing::Color::Cyan;
+				this->AddAidButton->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Cyan;
+				this->AddAidButton->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Cyan;
+				this->AddAidButton->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					static_cast<System::Byte>(0)));
-				this->button2->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-				this->button2->Location = System::Drawing::Point(4, 95);
-				this->button2->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
-				this->button2->Name = L"button2";
-				this->button2->Size = System::Drawing::Size(271, 40);
-				this->button2->TabIndex = 8;
-				this->button2->Text = L"عرض اليوم ";
-				this->button2->UseVisualStyleBackColor = false;
+				this->AddAidButton->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+				this->AddAidButton->Location = System::Drawing::Point(4, 95);
+				this->AddAidButton->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
+				this->AddAidButton->Name = L"AddAidButton";
+				this->AddAidButton->Size = System::Drawing::Size(271, 40);
+				this->AddAidButton->TabIndex = 8;
+				this->AddAidButton->Text = L"إضافة مساعدة";
+				this->AddAidButton->UseVisualStyleBackColor = false;
+				this->AddAidButton->Click += gcnew System::EventHandler(this, &MainForm::AddAidButton_Click);
 				// 
 				// button3
 				// 
@@ -521,5 +523,7 @@
 			AddCasesViewForm->Show();
 		}
 
+private: System::Void AddAidButton_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 	}

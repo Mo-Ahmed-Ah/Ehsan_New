@@ -1,5 +1,6 @@
   Ehsan.AddCaseForm.resources - Embedded, ContainedInManifestFile, 
   Ehsan.MainForm.resources - Embedded, ContainedInManifestFile, 
+  Ehsan.TodayViewForm.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly Ehsan, Version=0.0.*, Culture=Invariant Language (Invariant Country): 
 	hash=SHA1, flags=PublicKey
