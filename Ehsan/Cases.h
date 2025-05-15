@@ -10,6 +10,7 @@ private:
     String^ fName;
     String^ lName;
     String^ nickName;
+    String^ phoneNumber;
     Nullable<bool> gender;
     Nullable<DateTime> birthDate;
     String^ area;
@@ -20,10 +21,10 @@ private:
     Nullable<Byte> maleChildren;
     Nullable<Byte> femaleChildren;
     Nullable<bool> isActive;
+    Nullable<DateTime> createIN;
+    Nullable<DateTime> updateIN;
 
 public:
-    // ✅ Constructors
-    Cases() {}
 
     Cases(
         Nullable<int> id,
@@ -31,6 +32,7 @@ public:
         String^ fName,
         String^ lName,
         String^ nickName,
+        String^ phoneNumber,
         Nullable<bool> gender,
         Nullable<DateTime> birthDate,
         String^ area,
@@ -40,7 +42,9 @@ public:
         Nullable<bool> motherStatus,
         Nullable<Byte> maleChildren,
         Nullable<Byte> femaleChildren,
-        Nullable<bool> isActive
+        Nullable<bool> isActive,
+        Nullable<DateTime> createIN,
+        Nullable<DateTime> updateIN
     )
     {
         this->id = id;
@@ -48,6 +52,7 @@ public:
         this->fName = fName;
         this->lName = lName;
         this->nickName = nickName;
+        this->phoneNumber = phoneNumber;
         this->gender = gender;
         this->birthDate = birthDate;
         this->area = area;
@@ -58,7 +63,50 @@ public:
         this->maleChildren = maleChildren;
         this->femaleChildren = femaleChildren;
         this->isActive = isActive;
+        this->createIN = createIN;
+        this->updateIN = updateIN;
     }
+
+    Cases(
+        String^ nationalID,
+        String^ fName,
+        String^ lName,
+        String^ nickName,
+        String^ phoneNumber,
+        Nullable<bool> gender,
+        Nullable<DateTime> birthDate,
+        String^ area,
+        String^ street,
+        String^ maritalStatus,
+        Nullable<bool> fatherStatus,
+        Nullable<bool> motherStatus,
+        Nullable<Byte> maleChildren,
+        Nullable<Byte> femaleChildren,
+        Nullable<bool> isActive,
+        Nullable<DateTime> createIN,
+        Nullable<DateTime> updateIN
+    )
+    {
+        this->nationalID = nationalID;
+        this->fName = fName;
+        this->lName = lName;
+        this->nickName = nickName;
+        this->phoneNumber = phoneNumber;
+        this->gender = gender;
+        this->birthDate = birthDate;
+        this->area = area;
+        this->street = street;
+        this->maritalStatus = maritalStatus;
+        this->fatherStatus = fatherStatus;
+        this->motherStatus = motherStatus;
+        this->maleChildren = maleChildren;
+        this->femaleChildren = femaleChildren;
+        this->isActive = isActive;
+        this->createIN = createIN;
+        this->updateIN = updateIN;
+    }
+
+    // ✅ Properties
 
     property Nullable<int> ID {
         Nullable<int> get() { return id; }
@@ -83,6 +131,11 @@ public:
     property String^ NickName {
         String^ get() { return nickName; }
         void set(String^ value) { nickName = value; }
+    }
+
+    property String^ PhoneNumber {
+        String^ get() { return phoneNumber; }
+        void set(String^ value) { phoneNumber = value; }
     }
 
     property Nullable<bool> Gender {
@@ -133,5 +186,15 @@ public:
     property Nullable<bool> IsActive {
         Nullable<bool> get() { return isActive; }
         void set(Nullable<bool> value) { isActive = value; }
+    }
+
+    property Nullable<DateTime> CreateIN {
+        Nullable<DateTime> get() { return createIN; }
+        void set(Nullable<DateTime> value) { createIN = value; }
+    }
+
+    property Nullable<DateTime> UpdateIN {
+        Nullable<DateTime> get() { return updateIN; }
+        void set(Nullable<DateTime> value) { updateIN = value; }
     }
 };

@@ -145,6 +145,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="SeasonalFinancialAid.h" />
+    <ClInclude Include="SelectAidForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="TodayViewForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -161,11 +164,21 @@
     <ClCompile Include="ReportsForm.cpp" />
     <ClCompile Include="SearchCaseForm.cpp" />
     <ClCompile Include="SeasonalFinancialAid.cpp" />
+    <ClCompile Include="SelectAidForm.cpp" />
     <ClCompile Include="TodayViewForm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddCaseForm.resx">
+      <DependentUpon>AddCaseForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectAidForm.resx">
+      <DependentUpon>SelectAidForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TodayViewForm.resx">
+      <DependentUpon>TodayViewForm.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

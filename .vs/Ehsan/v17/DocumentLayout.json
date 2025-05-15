@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "F:\\my Projects\\Ehsan_New\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|F:\\my Projects\\Ehsan_New\\Ehsan\\MainForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
-      "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\MainForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
+      "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|F:\\my Projects\\Ehsan_New\\Ehsan\\TodayViewForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
+      "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\TodayViewForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|F:\\my Projects\\Ehsan_New\\Ehsan\\TodayViewForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\TodayViewForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|F:\\my Projects\\Ehsan_New\\Ehsan\\MainForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\MainForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|F:\\my Projects\\Ehsan_New\\Ehsan\\MainForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
+      "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\MainForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,12 +31,50 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "TodayViewForm.h [Design]",
+              "DocumentMoniker": "F:\\my Projects\\Ehsan_New\\Ehsan\\TodayViewForm.h",
+              "RelativeDocumentMoniker": "Ehsan\\TodayViewForm.h",
+              "ToolTip": "F:\\my Projects\\Ehsan_New\\Ehsan\\TodayViewForm.h [Design]",
+              "RelativeToolTip": "Ehsan\\TodayViewForm.h [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-14T03:49:57.257Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TodayViewForm.h",
+              "DocumentMoniker": "F:\\my Projects\\Ehsan_New\\Ehsan\\TodayViewForm.h",
+              "RelativeDocumentMoniker": "Ehsan\\TodayViewForm.h",
+              "ToolTip": "F:\\my Projects\\Ehsan_New\\Ehsan\\TodayViewForm.h",
+              "RelativeToolTip": "Ehsan\\TodayViewForm.h",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAnwFgAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-13T17:57:28.623Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainForm.h",
+              "DocumentMoniker": "F:\\my Projects\\Ehsan_New\\Ehsan\\MainForm.h",
+              "RelativeDocumentMoniker": "Ehsan\\MainForm.h",
+              "ToolTip": "F:\\my Projects\\Ehsan_New\\Ehsan\\MainForm.h",
+              "RelativeToolTip": "Ehsan\\MainForm.h",
+              "ViewState": "AgIAAHIBAAAAAAAAAAAowIMBAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-13T17:54:07.005Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "MainForm.h [Design]",
               "DocumentMoniker": "F:\\my Projects\\Ehsan_New\\Ehsan\\MainForm.h",
               "RelativeDocumentMoniker": "Ehsan\\MainForm.h",
               "ToolTip": "F:\\my Projects\\Ehsan_New\\Ehsan\\MainForm.h [Design]",
               "RelativeToolTip": "Ehsan\\MainForm.h [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+<<<<<<< HEAD
               "WhenOpened": "2025-05-12T11:45:39.156Z",
               "EditorCaption": " [Design]"
             },
@@ -43,6 +89,9 @@
               "ViewState": "AgIAAEMAAAAAAAAAAAAhwNQAAABUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-05-12T11:44:29.435Z"
+=======
+              "WhenOpened": "2025-05-13T17:53:20.819Z"
+>>>>>>> 49ee1280d6771caf3f7a1351de5cb990cdd13116
             }
           ]
         }
