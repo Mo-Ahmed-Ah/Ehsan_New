@@ -57,8 +57,8 @@ public:
     {
         Connect(); // فتح الاتصال بقاعدة البيانات
 
-        String^ query = "INSERT INTO Cases (NationalID, FName, LName, NickName, PhoneNumber, Gender, BirthDate, Area, Street, MaritalStatus, FatherStatus, MotherStatus, MaleChildren, FemaleChildren, CreateIN, UpdateIN, IsActive) " +
-            "VALUES (@NationalID, @FName, @LName, @NickName, @PhoneNumber, @Gender, @BirthDate, @Area, @Street, @MaritalStatus, @FatherStatus, @MotherStatus, @MaleChildren, @FemaleChildren, @CreateIN, @UpdateIN, @IsActive)";
+        String^ query = "INSERT INTO Cases (NationalID, FName, LName, NickName, PhoneNumber, Gender, BirthDate, Area, Street, MaritalStatus, FatherStatus, MotherStatus, MaleChildren, FemaleChildren, CreatedAt, UpdatedAt, IsActive) " +
+            "VALUES (@NationalID, @FName, @LName, @NickName, @PhoneNumber, @Gender, @BirthDate, @Area, @Street, @MaritalStatus, @FatherStatus, @MotherStatus, @MaleChildren, @FemaleChildren, @CreateAt, @UpdateAt, @IsActive)";
 
         SqlCommand^ cmd = gcnew SqlCommand(query, sqlConn);
 
@@ -77,8 +77,8 @@ public:
         cmd->Parameters->AddWithValue("@MotherStatus", c->MotherStatus.HasValue ? (Object^)c->MotherStatus.Value : DBNull::Value);
         cmd->Parameters->AddWithValue("@MaleChildren", c->MaleChildren.HasValue ? (Object^)c->MaleChildren.Value : DBNull::Value);
         cmd->Parameters->AddWithValue("@FemaleChildren", c->FemaleChildren.HasValue ? (Object^)c->FemaleChildren.Value : DBNull::Value);
-        cmd->Parameters->AddWithValue("@CreateIN", c->CreateIN.HasValue ? (Object^)c->CreateIN.Value : DateTime::Now);
-        cmd->Parameters->AddWithValue("@UpdateIN", c->UpdateIN.HasValue ? (Object^)c->UpdateIN.Value : DateTime::Now);
+        cmd->Parameters->AddWithValue("@CreateAt", c->CreateIN.HasValue ? (Object^)c->CreateIN.Value : DateTime::Now);
+        cmd->Parameters->AddWithValue("@UpdateAt", c->UpdateIN.HasValue ? (Object^)c->UpdateIN.Value : DateTime::Now);
         cmd->Parameters->AddWithValue("@IsActive", c->IsActive.HasValue ? (Object^)c->IsActive.Value : true); // افتراضي: الحالة مفعلة
 
         try
@@ -125,8 +125,8 @@ public:
                     reader->IsDBNull(reader->GetOrdinal("MaleChildren")) ? Nullable<Byte>() : safe_cast<Byte>(reader["MaleChildren"]),
                     reader->IsDBNull(reader->GetOrdinal("FemaleChildren")) ? Nullable<Byte>() : safe_cast<Byte>(reader["FemaleChildren"]),
                     reader->IsDBNull(reader->GetOrdinal("IsActive")) ? Nullable<bool>() : safe_cast<bool>(reader["IsActive"]),
-                    reader->IsDBNull(reader->GetOrdinal("CreateIN")) ? Nullable<DateTime>() : safe_cast<DateTime>(reader["CreateIN"]),
-                    reader->IsDBNull(reader->GetOrdinal("UpdateIN")) ? Nullable<DateTime>() : safe_cast<DateTime>(reader["UpdateIN"])
+                    reader->IsDBNull(reader->GetOrdinal("CreatedAt")) ? Nullable<DateTime>() : safe_cast<DateTime>(reader["CreatedAt"]),
+                    reader->IsDBNull(reader->GetOrdinal("UpdatedAt")) ? Nullable<DateTime>() : safe_cast<DateTime>(reader["UpdatedAt"])
                 );
 
                 casesList->Add(c);

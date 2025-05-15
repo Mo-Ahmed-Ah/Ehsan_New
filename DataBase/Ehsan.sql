@@ -1,3 +1,4 @@
+
 -- Create By Ahmed Mohamed Ahmed 
 GO
 IF NOT EXISTS (SELECT name FROM sys.databases WHERE name = 'Ehsan')
@@ -16,6 +17,7 @@ CREATE TABLE Cases (
     FName NVARCHAR(50) NOT NULL,  
     LName NVARCHAR(50) NOT NULL,  
     NickName NVARCHAR(50),  
+	PhoneNumber NVARCHAR(11),
     Gender BIT DEFAULT 0,  -- 0: Female, 1: Male
     BirthDate DATE,  
     Area NVARCHAR(100),  
