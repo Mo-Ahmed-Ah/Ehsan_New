@@ -132,12 +132,6 @@
     <ClInclude Include="MainForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="ManageAssistancesForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="ManageCasesForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="ReportsForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -146,6 +140,9 @@
     </ClInclude>
     <ClInclude Include="SeasonalFinancialAid.h" />
     <ClInclude Include="SelectAidForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ShowCases.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="TodayViewForm.h">
@@ -159,12 +156,11 @@
     <ClCompile Include="EditAssistanceForm.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainForm.cpp" />
-    <ClCompile Include="ManageAssistancesForm.cpp" />
-    <ClCompile Include="ManageCasesForm.cpp" />
     <ClCompile Include="ReportsForm.cpp" />
     <ClCompile Include="SearchCaseForm.cpp" />
     <ClCompile Include="SeasonalFinancialAid.cpp" />
     <ClCompile Include="SelectAidForm.cpp" />
+    <ClCompile Include="ShowCases.cpp" />
     <ClCompile Include="TodayViewForm.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -176,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SelectAidForm.resx">
       <DependentUpon>SelectAidForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowCases.resx">
+      <DependentUpon>ShowCases.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TodayViewForm.resx">
       <DependentUpon>TodayViewForm.h</DependentUpon>

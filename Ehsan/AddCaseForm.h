@@ -398,10 +398,10 @@ namespace Ehsan {
 			// 
 			this->AddCasesMaleChildrenNumericUpDown->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->AddCasesMaleChildrenNumericUpDown->Location = System::Drawing::Point(277, 408);
+			this->AddCasesMaleChildrenNumericUpDown->Location = System::Drawing::Point(275, 408);
 			this->AddCasesMaleChildrenNumericUpDown->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->AddCasesMaleChildrenNumericUpDown->Name = L"AddCasesMaleChildrenNumericUpDown";
-			this->AddCasesMaleChildrenNumericUpDown->Size = System::Drawing::Size(239, 31);
+			this->AddCasesMaleChildrenNumericUpDown->Size = System::Drawing::Size(241, 31);
 			this->AddCasesMaleChildrenNumericUpDown->TabIndex = 30;
 			this->AddCasesMaleChildrenNumericUpDown->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 

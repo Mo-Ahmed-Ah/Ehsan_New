@@ -1,5 +1,7 @@
   Ehsan.AddCaseForm.resources - Embedded, ContainedInManifestFile, 
   Ehsan.MainForm.resources - Embedded, ContainedInManifestFile, 
+  Ehsan.SelectAidForm.resources - Embedded, ContainedInManifestFile, 
+  Ehsan.ShowCases.resources - Embedded, ContainedInManifestFile, 
   Ehsan.TodayViewForm.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly Ehsan, Version=0.0.*, Culture=Invariant Language (Invariant Country): 
@@ -28,18 +30,18 @@ Class Ehsan.EditAssistanceForm: AutoLayout, AnsiClass, Class, Public, BeforeFiel
 Class Ehsan.TodayViewForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Ehsan.ShowCases: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Ehsan.MainForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class Ehsan.ManageAssistancesForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class Ehsan.ManageCasesForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Ehsan.ReportsForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Ehsan.SearchCaseForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Ehsan.SelectAidForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
