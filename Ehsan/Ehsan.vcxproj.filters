@@ -19,6 +19,9 @@
     <Filter Include="Header Files\Connection">
       <UniqueIdentifier>{6d7c0ca0-3a51-4740-8918-7b0b59ffec8b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Pages">
+      <UniqueIdentifier>{e684d010-af6d-4d71-8a82-6f59d302503c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AssistanceTypeForm.h">
@@ -31,12 +34,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SearchCaseForm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ManageCasesForm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ManageAssistancesForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ReportsForm.h">
@@ -60,6 +57,9 @@
     <ClInclude Include="SelectAidForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ShowCases.h">
+      <Filter>Header Files\Pages</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -75,12 +75,6 @@
       <Filter>Header Files</Filter>
     </ClCompile>
     <ClCompile Include="SearchCaseForm.cpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ManageCasesForm.cpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ManageAssistancesForm.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
     <ClCompile Include="ReportsForm.cpp">
@@ -100,6 +94,9 @@
     </ClCompile>
     <ClCompile Include="SelectAidForm.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowCases.cpp">
+      <Filter>Header Files\Pages</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

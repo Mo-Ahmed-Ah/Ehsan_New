@@ -95,6 +95,105 @@ public:
     }
 
 
+    static List<Cases^>^ GetAllCases()
+    {
+        List<Cases^>^ casesList = gcnew List<Cases^>();
+        Connect();
+
+        String^ query = "SELECT * FROM Cases";
+        SqlCommand^ cmd = gcnew SqlCommand(query, sqlConn);
+
+        try
+        {
+            SqlDataReader^ reader = cmd->ExecuteReader();
+            while (reader->Read())
+            {
+                Cases^ c = gcnew Cases(
+                    reader->IsDBNull(reader->GetOrdinal("ID")) ? Nullable<int>() : reader->GetInt32(reader->GetOrdinal("ID")),
+                    reader["NationalID"]->ToString(),
+                    reader["FName"]->ToString(),
+                    reader["LName"]->ToString(),
+                    reader->IsDBNull(reader->GetOrdinal("NickName")) ? nullptr : reader["NickName"]->ToString(),
+                    reader->IsDBNull(reader->GetOrdinal("PhoneNumber")) ? nullptr : reader["PhoneNumber"]->ToString(),
+                    reader->IsDBNull(reader->GetOrdinal("Gender")) ? Nullable<bool>() : safe_cast<bool>(reader["Gender"]),
+                    reader->IsDBNull(reader->GetOrdinal("BirthDate")) ? Nullable<DateTime>() : safe_cast<DateTime>(reader["BirthDate"]),
+                    reader->IsDBNull(reader->GetOrdinal("Area")) ? nullptr : reader["Area"]->ToString(),
+                    reader->IsDBNull(reader->GetOrdinal("Street")) ? nullptr : reader["Street"]->ToString(),
+                    reader->IsDBNull(reader->GetOrdinal("MaritalStatus")) ? nullptr : reader["MaritalStatus"]->ToString(),
+                    reader->IsDBNull(reader->GetOrdinal("FatherStatus")) ? Nullable<bool>() : safe_cast<bool>(reader["FatherStatus"]),
+                    reader->IsDBNull(reader->GetOrdinal("MotherStatus")) ? Nullable<bool>() : safe_cast<bool>(reader["MotherStatus"]),
+                    reader->IsDBNull(reader->GetOrdinal("MaleChildren")) ? Nullable<Byte>() : safe_cast<Byte>(reader["MaleChildren"]),
+                    reader->IsDBNull(reader->GetOrdinal("FemaleChildren")) ? Nullable<Byte>() : safe_cast<Byte>(reader["FemaleChildren"]),
+                    reader->IsDBNull(reader->GetOrdinal("IsActive")) ? Nullable<bool>() : safe_cast<bool>(reader["IsActive"]),
+                    reader->IsDBNull(reader->GetOrdinal("CreateIN")) ? Nullable<DateTime>() : safe_cast<DateTime>(reader["CreateIN"]),
+                    reader->IsDBNull(reader->GetOrdinal("UpdateIN")) ? Nullable<DateTime>() : safe_cast<DateTime>(reader["UpdateIN"])
+                );
+
+                casesList->Add(c);
+            }
+
+            reader->Close();
+        }
+        catch (Exception^ ex)
+        {
+            MessageBox::Show(L"حدث خطأ أثناء جلب الحالات: " + ex->Message, L"خطأ", MessageBoxButtons::OK, MessageBoxIcon::Error);
+        }
+
+        Disconnect();
+        return casesList;
+    }
+
+        static void DeleteCaseIfNoAid(int id)
+        {
+            Connect();
+
+            // استعلام للتحقق من وجود مساعدات مرتبطة بالحالة
+            String^ checkQuery =
+                "SELECT " +
+                "(SELECT COUNT(*) FROM SeasonalFinancialAid WHERE CaseID = @ID) + " +
+                "(SELECT COUNT(*) FROM SeasonalInKindAid WHERE CaseID = @ID) + " +
+                "(SELECT COUNT(*) FROM InKindAid WHERE CaseID = @ID) + " +
+                "(SELECT COUNT(*) FROM SpecialAid WHERE CaseID = @ID) + " +
+                "(SELECT COUNT(*) FROM FinancialAid WHERE CaseID = @ID) AS TotalAidCount";
+
+            SqlCommand^ checkCmd = gcnew SqlCommand(checkQuery, sqlConn);
+            checkCmd->Parameters->AddWithValue("@ID", id);
+
+            try
+            {
+                int totalAidCount = safe_cast<int>(checkCmd->ExecuteScalar());
+
+                if (totalAidCount > 0)
+                {
+                    MessageBox::Show(L"لا يمكن حذف الحالة لأنها مرتبطة بمساعدات مسجلة.", L"تنبيه", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+                }
+                else
+                {
+                    // إذا لا توجد مساعدات، نحذف الحالة
+                    String^ deleteQuery = "DELETE FROM Cases WHERE ID = @ID";
+                    SqlCommand^ deleteCmd = gcnew SqlCommand(deleteQuery, sqlConn);
+                    deleteCmd->Parameters->AddWithValue("@ID", id);
+
+                    int rowsAffected = deleteCmd->ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox::Show(L"تم حذف الحالة بنجاح.", L"نجاح", MessageBoxButtons::OK, MessageBoxIcon::Information);
+                    }
+                    else
+                    {
+                        MessageBox::Show(L"لم يتم العثور على الحالة المطلوبة.", L"تنبيه", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+                    }
+                }
+            }
+            catch (Exception^ ex)
+            {
+                MessageBox::Show(L"حدث خطأ أثناء عملية الحذف: " + ex->Message, L"خطأ", MessageBoxButtons::OK, MessageBoxIcon::Error);
+            }
+
+            Disconnect();
+        }
+
 
 
 

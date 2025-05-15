@@ -1,6 +1,7 @@
 ﻿	#pragma once
 #include "AddCaseForm.h"
 #include "TodayViewForm.h"
+#include "ShowCases.h"
 
 	namespace Ehsan {
 
@@ -69,7 +70,8 @@
 		private: System::Windows::Forms::Label^ HomePageNumberOfTodaysAid;
 		private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel1;
 		private: System::Windows::Forms::Button^ HomePageToDayButton;
-		private: System::Windows::Forms::Button^ AddAidButton;
+		private: System::Windows::Forms::Button^ ShowCasesButton;
+
 
 
 		private: System::Windows::Forms::Button^ button3;
@@ -112,7 +114,7 @@
 				this->flowLayoutPanel1 = (gcnew System::Windows::Forms::FlowLayoutPanel());
 				this->HomePageToDayButton = (gcnew System::Windows::Forms::Button());
 				this->HomeBageAddCasesButton = (gcnew System::Windows::Forms::Button());
-				this->AddAidButton = (gcnew System::Windows::Forms::Button());
+				this->ShowCasesButton = (gcnew System::Windows::Forms::Button());
 				this->button3 = (gcnew System::Windows::Forms::Button());
 				this->button4 = (gcnew System::Windows::Forms::Button());
 				this->HomeInfoPanal->SuspendLayout();
@@ -356,9 +358,9 @@
 				// 
 				// flowLayoutPanel1
 				// 
-				this->flowLayoutPanel1->Controls->Add(this->HomePageToDayButton);
 				this->flowLayoutPanel1->Controls->Add(this->HomeBageAddCasesButton);
-				this->flowLayoutPanel1->Controls->Add(this->AddAidButton);
+				this->flowLayoutPanel1->Controls->Add(this->ShowCasesButton);
+				this->flowLayoutPanel1->Controls->Add(this->HomePageToDayButton);
 				this->flowLayoutPanel1->Controls->Add(this->button3);
 				this->flowLayoutPanel1->Controls->Add(this->button4);
 				this->flowLayoutPanel1->Location = System::Drawing::Point(216, 189);
@@ -378,7 +380,7 @@
 				this->HomePageToDayButton->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					static_cast<System::Byte>(0)));
 				this->HomePageToDayButton->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-				this->HomePageToDayButton->Location = System::Drawing::Point(4, 3);
+				this->HomePageToDayButton->Location = System::Drawing::Point(4, 95);
 				this->HomePageToDayButton->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 				this->HomePageToDayButton->Name = L"HomePageToDayButton";
 				this->HomePageToDayButton->Size = System::Drawing::Size(271, 40);
@@ -398,7 +400,7 @@
 				this->HomeBageAddCasesButton->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 15.75F, System::Drawing::FontStyle::Bold,
 					System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 				this->HomeBageAddCasesButton->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-				this->HomeBageAddCasesButton->Location = System::Drawing::Point(4, 49);
+				this->HomeBageAddCasesButton->Location = System::Drawing::Point(4, 3);
 				this->HomeBageAddCasesButton->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 				this->HomeBageAddCasesButton->Name = L"HomeBageAddCasesButton";
 				this->HomeBageAddCasesButton->Size = System::Drawing::Size(271, 40);
@@ -407,25 +409,25 @@
 				this->HomeBageAddCasesButton->UseVisualStyleBackColor = false;
 				this->HomeBageAddCasesButton->Click += gcnew System::EventHandler(this, &MainForm::HomeBageAddCasesButton_Click);
 				// 
-				// AddAidButton
+				// ShowCasesButton
 				// 
-				this->AddAidButton->BackColor = System::Drawing::SystemColors::HotTrack;
-				this->AddAidButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-				this->AddAidButton->Cursor = System::Windows::Forms::Cursors::Hand;
-				this->AddAidButton->FlatAppearance->BorderColor = System::Drawing::Color::Cyan;
-				this->AddAidButton->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Cyan;
-				this->AddAidButton->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Cyan;
-				this->AddAidButton->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				this->ShowCasesButton->BackColor = System::Drawing::SystemColors::HotTrack;
+				this->ShowCasesButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+				this->ShowCasesButton->Cursor = System::Windows::Forms::Cursors::Hand;
+				this->ShowCasesButton->FlatAppearance->BorderColor = System::Drawing::Color::Cyan;
+				this->ShowCasesButton->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Cyan;
+				this->ShowCasesButton->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Cyan;
+				this->ShowCasesButton->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					static_cast<System::Byte>(0)));
-				this->AddAidButton->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-				this->AddAidButton->Location = System::Drawing::Point(4, 95);
-				this->AddAidButton->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
-				this->AddAidButton->Name = L"AddAidButton";
-				this->AddAidButton->Size = System::Drawing::Size(271, 40);
-				this->AddAidButton->TabIndex = 8;
-				this->AddAidButton->Text = L"إضافة مساعدة";
-				this->AddAidButton->UseVisualStyleBackColor = false;
-				this->AddAidButton->Click += gcnew System::EventHandler(this, &MainForm::AddAidButton_Click);
+				this->ShowCasesButton->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+				this->ShowCasesButton->Location = System::Drawing::Point(4, 49);
+				this->ShowCasesButton->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
+				this->ShowCasesButton->Name = L"ShowCasesButton";
+				this->ShowCasesButton->Size = System::Drawing::Size(271, 40);
+				this->ShowCasesButton->TabIndex = 8;
+				this->ShowCasesButton->Text = L"عرض الحالات";
+				this->ShowCasesButton->UseVisualStyleBackColor = false;
+				this->ShowCasesButton->Click += gcnew System::EventHandler(this, &MainForm::ShowCasesButton_Click);
 				// 
 				// button3
 				// 
@@ -523,7 +525,10 @@
 			AddCasesViewForm->Show();
 		}
 
-private: System::Void AddAidButton_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void ShowCasesButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	// Create an instance of AddCasesViewForm and show it
+	ShowCases^ ShowCasesViewForm = gcnew ShowCases();
+	ShowCasesViewForm->Show();
 }
 };
 	}
