@@ -1,4 +1,5 @@
   Ehsan.AddCaseForm.resources - Embedded, ContainedInManifestFile, 
+  Ehsan.CaseProfile.resources - Embedded, ContainedInManifestFile, 
   Ehsan.MainForm.resources - Embedded, ContainedInManifestFile, 
   Ehsan.SelectAidForm.resources - Embedded, ContainedInManifestFile, 
   Ehsan.ShowCases.resources - Embedded, ContainedInManifestFile, 
@@ -23,6 +24,10 @@ Class Ehsan.AddCaseForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Ehsan.AssistanceTypeForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Ehsan.CaseProfile: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(Cases): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Ehsan.EditAssistanceForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form

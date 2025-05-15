@@ -7,7 +7,7 @@ ref class Cases
 private:
     Nullable<int> id;
     String^ nationalID;
-    String^ fName;
+    String^ fName = "";
     String^ lName;
     String^ nickName;
     String^ phoneNumber;
@@ -25,7 +25,7 @@ private:
     Nullable<DateTime> updateIN;
 
 public:
-
+    // Constructor with id
     Cases(
         Nullable<int> id,
         String^ nationalID,
@@ -48,16 +48,16 @@ public:
     )
     {
         this->id = id;
-        this->nationalID = nationalID;
-        this->fName = fName;
-        this->lName = lName;
-        this->nickName = nickName;
-        this->phoneNumber = phoneNumber;
+        this->nationalID = !String::IsNullOrEmpty(nationalID) ? nationalID : "";
+        this->fName = !String::IsNullOrEmpty(fName) ? fName : "";
+        this->lName = !String::IsNullOrEmpty(lName) ? lName : "";
+        this->nickName = !String::IsNullOrEmpty(nickName) ? nickName : "";
+        this->phoneNumber = !String::IsNullOrEmpty(phoneNumber) ? phoneNumber : "";
         this->gender = gender;
         this->birthDate = birthDate;
-        this->area = area;
-        this->street = street;
-        this->maritalStatus = maritalStatus;
+        this->area = !String::IsNullOrEmpty(area) ? area : "";
+        this->street = !String::IsNullOrEmpty(street) ? street : "";
+        this->maritalStatus = !String::IsNullOrEmpty(maritalStatus) ? maritalStatus : "";
         this->fatherStatus = fatherStatus;
         this->motherStatus = motherStatus;
         this->maleChildren = maleChildren;
@@ -67,6 +67,7 @@ public:
         this->updateIN = updateIN;
     }
 
+    // Constructor without id
     Cases(
         String^ nationalID,
         String^ fName,
@@ -87,16 +88,16 @@ public:
         Nullable<DateTime> updateIN
     )
     {
-        this->nationalID = nationalID;
-        this->fName = fName;
-        this->lName = lName;
-        this->nickName = nickName;
-        this->phoneNumber = phoneNumber;
+        this->nationalID = !String::IsNullOrEmpty(nationalID) ? nationalID : "";
+        this->fName = !String::IsNullOrEmpty(fName) ? fName : "";
+        this->lName = !String::IsNullOrEmpty(lName) ? lName : "";
+        this->nickName = !String::IsNullOrEmpty(nickName) ? nickName : "";
+        this->phoneNumber = !String::IsNullOrEmpty(phoneNumber) ? phoneNumber : "";
         this->gender = gender;
         this->birthDate = birthDate;
-        this->area = area;
-        this->street = street;
-        this->maritalStatus = maritalStatus;
+        this->area = !String::IsNullOrEmpty(area) ? area : "";
+        this->street = !String::IsNullOrEmpty(street) ? street : "";
+        this->maritalStatus = !String::IsNullOrEmpty(maritalStatus) ? maritalStatus : "";
         this->fatherStatus = fatherStatus;
         this->motherStatus = motherStatus;
         this->maleChildren = maleChildren;
@@ -106,8 +107,7 @@ public:
         this->updateIN = updateIN;
     }
 
-    // ✅ Properties
-
+    // Properties with null-checks
     property Nullable<int> ID {
         Nullable<int> get() { return id; }
         void set(Nullable<int> value) { id = value; }
@@ -115,27 +115,27 @@ public:
 
     property String^ NationalID {
         String^ get() { return nationalID; }
-        void set(String^ value) { nationalID = value; }
+        void set(String^ value) { nationalID = !String::IsNullOrEmpty(value) ? value : ""; }
     }
 
     property String^ FName {
-        String^ get() { return fName; }
-        void set(String^ value) { fName = value; }
+        String^ get() { return fName ? fName : ""; }
+        void set(String^ value) { fName = !String::IsNullOrEmpty(value) ? value : ""; }
     }
 
     property String^ LName {
         String^ get() { return lName; }
-        void set(String^ value) { lName = value; }
+        void set(String^ value) { lName = !String::IsNullOrEmpty(value) ? value : ""; }
     }
 
     property String^ NickName {
         String^ get() { return nickName; }
-        void set(String^ value) { nickName = value; }
+        void set(String^ value) { nickName = !String::IsNullOrEmpty(value) ? value : ""; }
     }
 
     property String^ PhoneNumber {
         String^ get() { return phoneNumber; }
-        void set(String^ value) { phoneNumber = value; }
+        void set(String^ value) { phoneNumber = !String::IsNullOrEmpty(value) ? value : ""; }
     }
 
     property Nullable<bool> Gender {
@@ -150,17 +150,17 @@ public:
 
     property String^ Area {
         String^ get() { return area; }
-        void set(String^ value) { area = value; }
+        void set(String^ value) { area = !String::IsNullOrEmpty(value) ? value : ""; }
     }
 
     property String^ Street {
         String^ get() { return street; }
-        void set(String^ value) { street = value; }
+        void set(String^ value) { street = !String::IsNullOrEmpty(value) ? value : ""; }
     }
 
     property String^ MaritalStatus {
         String^ get() { return maritalStatus; }
-        void set(String^ value) { maritalStatus = value; }
+        void set(String^ value) { maritalStatus = !String::IsNullOrEmpty(value) ? value : ""; }
     }
 
     property Nullable<bool> FatherStatus {
@@ -197,4 +197,22 @@ public:
         Nullable<DateTime> get() { return updateIN; }
         void set(Nullable<DateTime> value) { updateIN = value; }
     }
+
+    // Calculated Age property
+    property Nullable<int> Age {
+        Nullable<int> get() {
+            if (birthDate.HasValue)
+            {
+                DateTime today = DateTime::Today;
+                int age = today.Year - birthDate.Value.Year;
+                if (today.Month < birthDate.Value.Month ||
+                    (today.Month == birthDate.Value.Month && today.Day < birthDate.Value.Day))
+                {
+                    age--;
+                }
+                return age;
+            }
+            return Nullable<int>();
+        }
+    };
 };

@@ -143,7 +143,7 @@ public:
         return casesList;
     }
 
-        static void DeleteCaseIfNoAid(int id)
+    static void DeleteCaseIfNoAid(int id)
         {
             Connect();
 
@@ -194,6 +194,59 @@ public:
             Disconnect();
         }
 
+    static Cases^ GetCaseById(Nullable<int> id)
+        {
+            Connect(); // فتح الاتصال بقاعدة البيانات
+
+            String^ query = "SELECT * FROM Cases WHERE ID = @ID";
+            SqlCommand^ cmd = gcnew SqlCommand(query, sqlConn);
+            cmd->Parameters->AddWithValue("@ID", id);
+
+            try
+            {
+                SqlDataReader^ reader = cmd->ExecuteReader();
+
+                if (reader->Read())
+                {
+                    Cases^ c = gcnew Cases(
+                        reader->IsDBNull(reader->GetOrdinal("ID")) ? Nullable<int>() : reader->GetInt32(reader->GetOrdinal("ID")),
+                        reader["NationalID"]->ToString(),
+                        reader["FName"]->ToString(),
+                        reader["LName"]->ToString(),
+                        reader->IsDBNull(reader->GetOrdinal("NickName")) ? nullptr : reader["NickName"]->ToString(),
+                        reader->IsDBNull(reader->GetOrdinal("PhoneNumber")) ? nullptr : reader["PhoneNumber"]->ToString(),
+                        reader->IsDBNull(reader->GetOrdinal("Gender")) ? Nullable<bool>() : safe_cast<bool>(reader["Gender"]),
+                        reader->IsDBNull(reader->GetOrdinal("BirthDate")) ? Nullable<DateTime>() : safe_cast<DateTime>(reader["BirthDate"]),
+                        reader->IsDBNull(reader->GetOrdinal("Area")) ? nullptr : reader["Area"]->ToString(),
+                        reader->IsDBNull(reader->GetOrdinal("Street")) ? nullptr : reader["Street"]->ToString(),
+                        reader->IsDBNull(reader->GetOrdinal("MaritalStatus")) ? nullptr : reader["MaritalStatus"]->ToString(),
+                        reader->IsDBNull(reader->GetOrdinal("FatherStatus")) ? Nullable<bool>() : safe_cast<bool>(reader["FatherStatus"]),
+                        reader->IsDBNull(reader->GetOrdinal("MotherStatus")) ? Nullable<bool>() : safe_cast<bool>(reader["MotherStatus"]),
+                        reader->IsDBNull(reader->GetOrdinal("MaleChildren")) ? Nullable<Byte>() : safe_cast<Byte>(reader["MaleChildren"]),
+                        reader->IsDBNull(reader->GetOrdinal("FemaleChildren")) ? Nullable<Byte>() : safe_cast<Byte>(reader["FemaleChildren"]),
+                        reader->IsDBNull(reader->GetOrdinal("IsActive")) ? Nullable<bool>() : safe_cast<bool>(reader["IsActive"]),
+                        reader->IsDBNull(reader->GetOrdinal("CreatedAt")) ? Nullable<DateTime>() : safe_cast<DateTime>(reader["CreatedAt"]),
+                        reader->IsDBNull(reader->GetOrdinal("UpdatedAt")) ? Nullable<DateTime>() : safe_cast<DateTime>(reader["UpdatedAt"])
+                    );
+
+                    reader->Close();
+                    Disconnect();
+                    return c;
+                }
+                else
+                {
+                    reader->Close();
+                    Disconnect();
+                    return nullptr; // لم يتم العثور على حالة
+                }
+            }
+            catch (Exception^ ex)
+            {
+                MessageBox::Show(L"حدث خطأ أثناء جلب الحالة: " + ex->Message, L"خطأ", MessageBoxButtons::OK, MessageBoxIcon::Error);
+                Disconnect();
+                return nullptr;
+            }
+        }
 
 
 

@@ -1,9 +1,10 @@
 ﻿#pragma once
 #include "Cases.h"
 #include "Connection.h"
+#include "CaseProfile.h"
 
 namespace Ehsan {
-	
+
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -195,6 +196,7 @@ namespace Ehsan {
 			this->ShowCasesPageCaseProfileButton->TabIndex = 3;
 			this->ShowCasesPageCaseProfileButton->Text = L"الملف الشخصي";
 			this->ShowCasesPageCaseProfileButton->UseVisualStyleBackColor = false;
+			// Event handler wired up dynamically below
 			// 
 			// ShowCasesPageCaseNameValueLabel
 			// 
@@ -219,7 +221,6 @@ namespace Ehsan {
 			this->ShowCasesPageNaturalIdValueLabel->Size = System::Drawing::Size(150, 24);
 			this->ShowCasesPageNaturalIdValueLabel->TabIndex = 5;
 			this->ShowCasesPageNaturalIdValueLabel->Text = L"01234567891234";
-			this->ShowCasesPageNaturalIdValueLabel->Click += gcnew System::EventHandler(this, &ShowCases::label2_Click);
 			// 
 			// ShowCasesPageCaseNickNameValueLabel
 			// 
@@ -232,7 +233,6 @@ namespace Ehsan {
 			this->ShowCasesPageCaseNickNameValueLabel->Size = System::Drawing::Size(61, 24);
 			this->ShowCasesPageCaseNickNameValueLabel->TabIndex = 7;
 			this->ShowCasesPageCaseNickNameValueLabel->Text = L"ابو علاء";
-			this->ShowCasesPageCaseNickNameValueLabel->Click += gcnew System::EventHandler(this, &ShowCases::ShowCasesPageCaseNickNameValueLabel_Click);
 			// 
 			// ShowCasesPageCaseNickNameLabel
 			// 
@@ -245,7 +245,6 @@ namespace Ehsan {
 			this->ShowCasesPageCaseNickNameLabel->Size = System::Drawing::Size(56, 24);
 			this->ShowCasesPageCaseNickNameLabel->TabIndex = 6;
 			this->ShowCasesPageCaseNickNameLabel->Text = L"اللقب : ";
-			this->ShowCasesPageCaseNickNameLabel->Click += gcnew System::EventHandler(this, &ShowCases::ShowCasesPageCaseNickNameLabel_Click);
 			// 
 			// ShowCasesPageCasePhoneNumberValueLabel
 			// 
@@ -269,7 +268,7 @@ namespace Ehsan {
 			this->ShowCasesPageCasePhoneNumberLabel->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
 			this->ShowCasesPageCasePhoneNumberLabel->Size = System::Drawing::Size(85, 24);
 			this->ShowCasesPageCasePhoneNumberLabel->TabIndex = 8;
-			this->ShowCasesPageCasePhoneNumberLabel->Text = L"رقم الهاتق : ";
+			this->ShowCasesPageCasePhoneNumberLabel->Text = L"رقم الهاتف : ";
 			// 
 			// ShowCasesPageCaseIsActiveValueLabel
 			// 
@@ -326,7 +325,7 @@ namespace Ehsan {
 	}
 
 	private: void DisplayAllCases() {
-		// Clear existing controls (except the first panel which is the template)
+		// Clear existing controls
 		ShowCasesPagePanel->Controls->Clear();
 
 		int yPos = 10; // Starting Y position for the first case panel
@@ -418,7 +417,8 @@ namespace Ehsan {
 			profileButton->Size = System::Drawing::Size(115, 37);
 			profileButton->Text = L"الملف الشخصي";
 			profileButton->UseVisualStyleBackColor = false;
-			profileButton->Tag = caseItem->ID; // Store case ID for event handling
+			profileButton->Tag = caseItem; // store the Cases object in Tag for event handling
+			profileButton->Click += gcnew System::EventHandler(this, &ShowCases::ProfileButton_Click);
 
 			Button^ deleteButton = gcnew Button();
 			deleteButton->BackColor = System::Drawing::Color::Red;
@@ -453,39 +453,49 @@ namespace Ehsan {
 		}
 	}
 
-private: System::Void DeleteButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	Button^ deleteButton = safe_cast<Button^>(sender);
-	int caseId = safe_cast<int>(deleteButton->Tag);
+	private: System::Void ProfileButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		Button^ button = safe_cast<Button^>(sender);
+		Cases^ selectedCase = dynamic_cast<Cases^>(button->Tag);
+		Cases^ ThisCase = Connection::GetCaseById(selectedCase->ID);
 
+		CaseProfile^ profileForm = gcnew CaseProfile(ThisCase);
+		
+		profileForm->ShowDialog();
+	}
 
-	// الحصول على اسم الحالة لعرضه في رسالة التأكيد
-	String^ caseName = safe_cast<Label^>(deleteButton->Parent->Controls[1])->Text;
+	private: System::Void DeleteButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		Button^ deleteButton = safe_cast<Button^>(sender);
+		int caseId = safe_cast<int>(deleteButton->Tag);
 
-	// رسالة تأكيد أوضح
-	System::Windows::Forms::DialogResult result = MessageBox::Show(
-		String::Format(L"هل أنت متأكد من رغبتك في حذف الحالة '{0}'؟", caseName),
-		L"تأكيد الحذف",
-		MessageBoxButtons::YesNo,
-		MessageBoxIcon::Warning,
-		MessageBoxDefaultButton::Button2);
+		// الحصول على اسم الحالة لعرضه في رسالة التأكيد
+		String^ caseName = safe_cast<Label^>(deleteButton->Parent->Controls[1])->Text;
 
-	if (result == System::Windows::Forms::DialogResult::Yes)
-	{
-		try
+		// رسالة تأكيد أوضح
+		System::Windows::Forms::DialogResult result = MessageBox::Show(
+			String::Format(L"هل أنت متأكد من رغبتك في حذف الحالة '{0}'؟", caseName),
+			L"تأكيد الحذف",
+			MessageBoxButtons::YesNo,
+			MessageBoxIcon::Warning,
+			MessageBoxDefaultButton::Button2);
+
+		if (result == System::Windows::Forms::DialogResult::Yes)
 		{
-			Connection::DeleteCaseIfNoAid(caseId);
-			// إعادة تحميل البيانات
-			AllCases = Connection::GetAllCases();
-			DisplayAllCases();
-		}
-		catch (Exception^ ex)
-		{
-			MessageBox::Show(
-				L"حدث خطأ أثناء محاولة الحذف:\n " + ex->Message,
-				L"خطأ",
-				MessageBoxButtons::OK,
-				MessageBoxIcon::Error);
+			try
+			{
+				Connection::DeleteCaseIfNoAid(caseId);
+				// إعادة تحميل البيانات
+				AllCases = Connection::GetAllCases();
+				DisplayAllCases();
+			}
+			catch (Exception^ ex)
+			{
+				MessageBox::Show(
+					L"حدث خطأ أثناء محاولة الحذف:\n " + ex->Message,
+					L"خطأ",
+					MessageBoxButtons::OK,
+					MessageBoxIcon::Error);
+			}
 		}
 	}
-}	};
+	};
 }
