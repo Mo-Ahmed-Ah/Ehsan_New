@@ -124,6 +124,9 @@
     <ClInclude Include="AssistanceTypeForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="CaseProfile.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Cases.h" />
     <ClInclude Include="EditAssistanceForm.h">
       <FileType>CppForm</FileType>
@@ -152,6 +155,7 @@
   <ItemGroup>
     <ClCompile Include="AddCaseForm.cpp" />
     <ClCompile Include="AssistanceTypeForm.cpp" />
+    <ClCompile Include="CaseProfile.cpp" />
     <ClCompile Include="Cases.cpp" />
     <ClCompile Include="EditAssistanceForm.cpp" />
     <ClCompile Include="main.cpp" />
@@ -166,6 +170,9 @@
   <ItemGroup>
     <EmbeddedResource Include="AddCaseForm.resx">
       <DependentUpon>AddCaseForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CaseProfile.resx">
+      <DependentUpon>CaseProfile.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.h</DependentUpon>

@@ -25,7 +25,7 @@ CREATE TABLE Cases (
     MaritalStatus NVARCHAR(100),  
     FatherStatus BIT DEFAULT 0,  
     MotherStatus BIT DEFAULT 0,  
-    MaleChildren TINYINT DEFAULT 0,  
+    MaleChildren TINYINT DEFAULT 0,
     FemaleChildren TINYINT DEFAULT 0,  
     IsActive BIT DEFAULT 1,  
     CreatedAt DATETIME DEFAULT GETDATE(),
