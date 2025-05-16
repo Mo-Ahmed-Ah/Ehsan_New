@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include "Cases.h"
+#include "Connection.h"
 
 namespace Ehsan {
 
@@ -137,6 +138,8 @@ private: System::Windows::Forms::Button^ CasesProfilePageDeleteButton;
 			   this->CasesProfilePagePanal = (gcnew System::Windows::Forms::Panel());
 			   this->CasesProfilePageTitleLabel = (gcnew System::Windows::Forms::Label());
 			   this->CasesProfilePageInformationPanel = (gcnew System::Windows::Forms::Panel());
+			   this->CasesProfilePageChangeStatusButton = (gcnew System::Windows::Forms::Button());
+			   this->CasesProfilePageDeleteButton = (gcnew System::Windows::Forms::Button());
 			   this->CasesProfilePageIsActiveValueLabel = (gcnew System::Windows::Forms::Label());
 			   this->CasesProfilePageIsActiveLabel = (gcnew System::Windows::Forms::Label());
 			   this->CasesProfilePageUpdatedAtValueLabel = (gcnew System::Windows::Forms::Label());
@@ -173,8 +176,6 @@ private: System::Windows::Forms::Button^ CasesProfilePageDeleteButton;
 			   this->CasesProfilePageLastNameLabel = (gcnew System::Windows::Forms::Label());
 			   this->CasesProfilePageFristNameValueLabel = (gcnew System::Windows::Forms::Label());
 			   this->CasesProfilePageFristNameLabel = (gcnew System::Windows::Forms::Label());
-			   this->CasesProfilePageDeleteButton = (gcnew System::Windows::Forms::Button());
-			   this->CasesProfilePageChangeStatusButton = (gcnew System::Windows::Forms::Button());
 			   this->CasesProfilePagePanal->SuspendLayout();
 			   this->CasesProfilePageInformationPanel->SuspendLayout();
 			   this->SuspendLayout();
@@ -247,6 +248,34 @@ private: System::Windows::Forms::Button^ CasesProfilePageDeleteButton;
 			   this->CasesProfilePageInformationPanel->Name = L"CasesProfilePageInformationPanel";
 			   this->CasesProfilePageInformationPanel->Size = System::Drawing::Size(244, 619);
 			   this->CasesProfilePageInformationPanel->TabIndex = 5;
+			   // 
+			   // CasesProfilePageChangeStatusButton
+			   // 
+			   this->CasesProfilePageChangeStatusButton->BackColor = System::Drawing::Color::Olive;
+			   this->CasesProfilePageChangeStatusButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold,
+				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			   this->CasesProfilePageChangeStatusButton->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			   this->CasesProfilePageChangeStatusButton->Location = System::Drawing::Point(6, 573);
+			   this->CasesProfilePageChangeStatusButton->Name = L"CasesProfilePageChangeStatusButton";
+			   this->CasesProfilePageChangeStatusButton->Size = System::Drawing::Size(107, 34);
+			   this->CasesProfilePageChangeStatusButton->TabIndex = 38;
+			   this->CasesProfilePageChangeStatusButton->Text = L"إلغاء التفعيل";
+			   this->CasesProfilePageChangeStatusButton->UseVisualStyleBackColor = false;
+			   this->CasesProfilePageChangeStatusButton->Click += gcnew System::EventHandler(this, &CaseProfile::Deactivate_Status_Click);
+			   // 
+			   // CasesProfilePageDeleteButton
+			   // 
+			   this->CasesProfilePageDeleteButton->BackColor = System::Drawing::Color::Red;
+			   this->CasesProfilePageDeleteButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold,
+				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			   this->CasesProfilePageDeleteButton->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			   this->CasesProfilePageDeleteButton->Location = System::Drawing::Point(140, 573);
+			   this->CasesProfilePageDeleteButton->Name = L"CasesProfilePageDeleteButton";
+			   this->CasesProfilePageDeleteButton->Size = System::Drawing::Size(97, 34);
+			   this->CasesProfilePageDeleteButton->TabIndex = 37;
+			   this->CasesProfilePageDeleteButton->Text = L"حذف";
+			   this->CasesProfilePageDeleteButton->UseVisualStyleBackColor = false;
+			   this->CasesProfilePageDeleteButton->Click += gcnew System::EventHandler(this, &CaseProfile::DeleteButton_Click);
 			   // 
 			   // CasesProfilePageIsActiveValueLabel
 			   // 
@@ -664,32 +693,6 @@ private: System::Windows::Forms::Button^ CasesProfilePageDeleteButton;
 			   this->CasesProfilePageFristNameLabel->TabIndex = 0;
 			   this->CasesProfilePageFristNameLabel->Text = L"الاسم الاول : ";
 			   // 
-			   // CasesProfilePageDeleteButton
-			   // 
-			   this->CasesProfilePageDeleteButton->BackColor = System::Drawing::Color::Red;
-			   this->CasesProfilePageDeleteButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold,
-				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			   this->CasesProfilePageDeleteButton->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			   this->CasesProfilePageDeleteButton->Location = System::Drawing::Point(140, 573);
-			   this->CasesProfilePageDeleteButton->Name = L"CasesProfilePageDeleteButton";
-			   this->CasesProfilePageDeleteButton->Size = System::Drawing::Size(97, 34);
-			   this->CasesProfilePageDeleteButton->TabIndex = 37;
-			   this->CasesProfilePageDeleteButton->Text = L"حذف";
-			   this->CasesProfilePageDeleteButton->UseVisualStyleBackColor = false;
-			   // 
-			   // CasesProfilePageChangeStatusButton
-			   // 
-			   this->CasesProfilePageChangeStatusButton->BackColor = System::Drawing::Color::Olive;
-			   this->CasesProfilePageChangeStatusButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold,
-				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			   this->CasesProfilePageChangeStatusButton->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			   this->CasesProfilePageChangeStatusButton->Location = System::Drawing::Point(6, 573);
-			   this->CasesProfilePageChangeStatusButton->Name = L"CasesProfilePageChangeStatusButton";
-			   this->CasesProfilePageChangeStatusButton->Size = System::Drawing::Size(107, 34);
-			   this->CasesProfilePageChangeStatusButton->TabIndex = 38;
-			   this->CasesProfilePageChangeStatusButton->Text = L"إلغاء التفعيل";
-			   this->CasesProfilePageChangeStatusButton->UseVisualStyleBackColor = false;
-			   // 
 			   // CaseProfile
 			   // 
 			   this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -709,7 +712,83 @@ private: System::Windows::Forms::Button^ CasesProfilePageDeleteButton;
 #pragma endregion
 	private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-private: System::Void CasesProfilePageIDValueLabel_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void CasesProfilePageIDValueLabel_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+	private: System::Void DeleteButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		// رسالة تأكيد أوضح
+		System::Windows::Forms::DialogResult result = MessageBox::Show(
+			String::Format(L"هل أنت متأكد من رغبتك في حذف الحالة '{0} {1}'؟",
+				currentCase->FName, currentCase->LName),
+			L"تأكيد الحذف",
+			MessageBoxButtons::YesNo,
+			MessageBoxIcon::Warning,
+			MessageBoxDefaultButton::Button2);
+
+		if (result == System::Windows::Forms::DialogResult::Yes)
+		{
+			try
+			{
+				// استخدم ID من currentCase بدلاً من محاولة الحصول عليه من الزر
+				Connection::DeleteCaseIfNoAid(currentCase->ID);
+				this->Close();
+			}
+			catch (Exception^ ex)
+			{
+				MessageBox::Show(
+					L"حدث خطأ أثناء محاولة الحذف:\n " + ex->Message,
+					L"خطأ",
+					MessageBoxButtons::OK,
+					MessageBoxIcon::Error);
+			}
+		}
+	}
+	private: System::Void Deactivate_Status_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	
+		try
+		{
+			if (this->CasesProfilePageChangeStatusButton->Text == L"تفعيل") {
+				// استدعاء دالة إلغاء التفعيل من كلاس الاتصال
+				Connection::DeactivateCase(currentCase->ID.Value , 1);
+
+				// تحديث حالة الكائن الحالي
+				currentCase->IsActive = false;
+				currentCase->UpdateIN = DateTime::Now;
+
+				// تحديث واجهة المستخدم
+				this->CasesProfilePageIsActiveValueLabel->Text = L"نشط";
+				this->CasesProfilePageUpdatedAtValueLabel->Text = currentCase->UpdateIN.Value.ToString("dd/MM/yyyy");
+
+				// تغيير نص الزر إذا لزم الأمر
+				this->CasesProfilePageChangeStatusButton->Text = L"إلغاء التفعيل";
+			}
+			else {
+				// استدعاء دالة إلغاء التفعيل من كلاس الاتصال
+				Connection::DeactivateCase(currentCase->ID.Value , 0);
+
+				// تحديث حالة الكائن الحالي
+				currentCase->IsActive = false;
+				currentCase->UpdateIN = DateTime::Now;
+
+				// تحديث واجهة المستخدم
+				this->CasesProfilePageIsActiveValueLabel->Text = L"غير نشط";
+				this->CasesProfilePageUpdatedAtValueLabel->Text = currentCase->UpdateIN.Value.ToString("dd/MM/yyyy");
+
+				// تغيير نص الزر إذا لزم الأمر
+				this->CasesProfilePageChangeStatusButton->Text = L"تفعيل";
+			}
+			
+
+		
+		}
+		catch (Exception^ ex)
+		{
+			MessageBox::Show(L"حدث خطأ أثناء محاولة إلغاء التفعيل:\n" + ex->Message,
+				L"خطأ",
+				MessageBoxButtons::OK,
+				MessageBoxIcon::Error);
+		}
+	
 }
 };
 }

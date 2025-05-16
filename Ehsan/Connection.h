@@ -143,7 +143,7 @@ public:
         return casesList;
     }
 
-    static void DeleteCaseIfNoAid(int id)
+    static void DeleteCaseIfNoAid(Nullable<int> id)
         {
             Connect();
 
@@ -248,6 +248,39 @@ public:
             }
         }
 
+    static void DeactivateCase(Nullable<int> id , int activValue)
+    {
+        Connect(); // فتح الاتصال بقاعدة البيانات
 
+        String^ query = "UPDATE Cases SET IsActive = @avtivValue, UpdatedAt = @UpdatedAt WHERE ID = @ID";
+        SqlCommand^ cmd = gcnew SqlCommand(query, sqlConn);
+
+        cmd->Parameters->AddWithValue("@ID", id);
+        cmd->Parameters->AddWithValue("@avtivValue" , activValue),
+        cmd->Parameters->AddWithValue("@UpdatedAt", DateTime::Now);
+
+        try
+        {
+            int rowsAffected = cmd->ExecuteNonQuery();
+
+            if (rowsAffected > 0)
+            {
+                MessageBox::Show(L"تم إلغاء تفعيل الحالة بنجاح", L"نجاح",
+                    MessageBoxButtons::OK, MessageBoxIcon::Information);
+            }
+            else
+            {
+                MessageBox::Show(L"لم يتم العثور على الحالة المطلوبة", L"تحذير",
+                    MessageBoxButtons::OK, MessageBoxIcon::Warning);
+            }
+        }
+        catch (Exception^ ex)
+        {
+            MessageBox::Show(L"حدث خطأ أثناء محاولة إلغاء التفعيل: " + ex->Message,
+                L"خطأ", MessageBoxButtons::OK, MessageBoxIcon::Error);
+        }
+
+        Disconnect(); // إغلاق الاتصال
+    }
 
 };
