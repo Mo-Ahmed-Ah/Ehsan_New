@@ -3,28 +3,8 @@
   "WorkspaceRootPath": "F:\\my Projects\\Ehsan_New\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|F:\\my Projects\\Ehsan_New\\Ehsan\\CaseProfile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\CaseProfile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|F:\\my Projects\\Ehsan_New\\Ehsan\\CaseProfile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
-      "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\CaseProfile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|F:\\my Projects\\Ehsan_New\\Ehsan\\Connection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\Connection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|F:\\my Projects\\Ehsan_New\\Ehsan\\ShowCases.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
-      "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\ShowCases.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|F:\\my Projects\\Ehsan_New\\Ehsan\\ShowCases.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\ShowCases.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|F:\\my Projects\\Ehsan_New\\Ehsan\\Cases.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\Cases.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|F:\\my Projects\\Ehsan_New\\Ehsan\\Aid.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\Aid.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,81 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Connection.h",
-              "DocumentMoniker": "F:\\my Projects\\Ehsan_New\\Ehsan\\Connection.h",
-              "RelativeDocumentMoniker": "Ehsan\\Connection.h",
-              "ToolTip": "F:\\my Projects\\Ehsan_New\\Ehsan\\Connection.h",
-              "RelativeToolTip": "Ehsan\\Connection.h",
-              "ViewState": "AgIAAJEAAAAAAAAAAADwvwkBAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-16T04:15:13.84Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Cases.h",
-              "DocumentMoniker": "F:\\my Projects\\Ehsan_New\\Ehsan\\Cases.h",
-              "RelativeDocumentMoniker": "Ehsan\\Cases.h",
-              "ToolTip": "F:\\my Projects\\Ehsan_New\\Ehsan\\Cases.h",
-              "RelativeToolTip": "Ehsan\\Cases.h",
-              "ViewState": "AgIAAGUAAAAAAAAAAAAowHkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-15T15:44:27.967Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ShowCases.h",
-              "DocumentMoniker": "F:\\my Projects\\Ehsan_New\\Ehsan\\ShowCases.h",
-              "RelativeDocumentMoniker": "Ehsan\\ShowCases.h",
-              "ToolTip": "F:\\my Projects\\Ehsan_New\\Ehsan\\ShowCases.h",
-              "RelativeToolTip": "Ehsan\\ShowCases.h",
-              "ViewState": "AgIAAMgBAAAAAAAAAADwv/IBAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-15T15:37:04.363Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ShowCases.h [Design]",
-              "DocumentMoniker": "F:\\my Projects\\Ehsan_New\\Ehsan\\ShowCases.h",
-              "RelativeDocumentMoniker": "Ehsan\\ShowCases.h",
-              "ToolTip": "F:\\my Projects\\Ehsan_New\\Ehsan\\ShowCases.h [Design]",
-              "RelativeToolTip": "Ehsan\\ShowCases.h [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-15T15:37:01.847Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CaseProfile.h [Design]",
-              "DocumentMoniker": "F:\\my Projects\\Ehsan_New\\Ehsan\\CaseProfile.h",
-              "RelativeDocumentMoniker": "Ehsan\\CaseProfile.h",
-              "ToolTip": "F:\\my Projects\\Ehsan_New\\Ehsan\\CaseProfile.h [Design]",
-              "RelativeToolTip": "Ehsan\\CaseProfile.h [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-15T08:10:33.189Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CaseProfile.h",
-              "DocumentMoniker": "F:\\my Projects\\Ehsan_New\\Ehsan\\CaseProfile.h",
-              "RelativeDocumentMoniker": "Ehsan\\CaseProfile.h",
-              "ToolTip": "F:\\my Projects\\Ehsan_New\\Ehsan\\CaseProfile.h",
-              "RelativeToolTip": "Ehsan\\CaseProfile.h",
-              "ViewState": "AgIAAOwCAAAAAAAAAAAAAAEDAAAiAAAAAAAAAA==",
+              "Title": "Aid.h",
+              "DocumentMoniker": "F:\\my Projects\\Ehsan_New\\Ehsan\\Aid.h",
+              "RelativeDocumentMoniker": "Ehsan\\Aid.h",
+              "ToolTip": "F:\\my Projects\\Ehsan_New\\Ehsan\\Aid.h",
+              "RelativeToolTip": "Ehsan\\Aid.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-15T15:21:25.391Z",
+              "WhenOpened": "2025-05-16T06:51:12.598Z",
               "EditorCaption": ""
             }
           ]

@@ -40,142 +40,37 @@ GO
 CREATE INDEX IX_Cases_NationalID ON Cases(NationalID);
 GO
 
--- Table: Volunteers
-CREATE TABLE Volunteers (
-    ID INT IDENTITY(1,1) PRIMARY KEY,
-    FullName NVARCHAR(100) NOT NULL,
-    NationalID NVARCHAR(14) UNIQUE NOT NULL,
-    Phone NVARCHAR(20),
-    Email NVARCHAR(100),
-    JoinDate DATE DEFAULT GETDATE(),
-    IsActive BIT DEFAULT 1
-);
+
 GO
 
--- Table: Visits (زيارات الحالات)
-CREATE TABLE Visits (
+CREATE TABLE Aid (
     ID INT IDENTITY(1,1) PRIMARY KEY,
     CaseID INT NOT NULL,
-    VisitDate DATE NOT NULL,
+    -- نوع المساعدة: Financial, InKind, SeasonalFinancial, SeasonalInKind, Special
+    AidCategory NVARCHAR(50) NOT NULL,
+    -- النوع داخل التصنيف، مثال: "نقد شهري", "بطانية", "رمضان", "زكاة"
+    AidType NVARCHAR(100),
+    -- للعينية فقط (مثلاً "أرز وسكر"، "بطانية")
+    AidContent NVARCHAR(255),
+    -- تكرار المساعدة: شهري، أسبوعي، لمرة واحدة
+    Frequency NVARCHAR(50),
+    IsRecurring BIT DEFAULT 0,
+    -- للمساعدات المالية
+    Amount DECIMAL(18,2),
+    -- للمساعدات المتكررة
+    ReceivedCount INT DEFAULT 0,
+    -- للموسمية فقط (رمضان، عيد الأضحى، شتاء...)
+    SeasonType NVARCHAR(100),
+    -- التواريخ
+    RegistrationDate DATE NOT NULL,
+    ReceivedDate DATE,
+    NextDueDate DATE,
+
     Notes NVARCHAR(1000),
-    VisitorName NVARCHAR(100),
+    IsActive BIT DEFAULT 1,
     CreatedAt DATETIME DEFAULT GETDATE(),
+    UpdatedAt DATETIME,
 
     FOREIGN KEY (CaseID) REFERENCES Cases(ID) ON DELETE CASCADE
 );
-GO
 
--- Table: Orphans (الأيتام)
-CREATE TABLE Orphans (
-    ID INT IDENTITY(1,1) PRIMARY KEY,
-    CaseID INT NOT NULL,
-    FullName NVARCHAR(100) NOT NULL,
-    BirthDate DATE NOT NULL,
-    School NVARCHAR(100),
-    Notes NVARCHAR(1000),
-
-    FOREIGN KEY (CaseID) REFERENCES Cases(ID) ON DELETE CASCADE
-);
-GO
-
--- Table: Widows (الأرامل)
-CREATE TABLE Widows (
-    ID INT IDENTITY(1,1) PRIMARY KEY,
-    CaseID INT NOT NULL,
-    HusbandDeathDate DATE,
-    NumberOfChildren INT DEFAULT 0,
-    NeedsDescription NVARCHAR(1000),
-
-    FOREIGN KEY (CaseID) REFERENCES Cases(ID) ON DELETE CASCADE
-);
-GO
-
--- Table: SeasonalFinancialAid
-CREATE TABLE SeasonalFinancialAid (
-    ID INT IDENTITY(1,1) PRIMARY KEY, 
-    CaseID INT NOT NULL, 
-    SeasonType NVARCHAR(100) NOT NULL,  
-    Amount DECIMAL(18,2) NOT NULL,  
-    RegistrationDate DATE NOT NULL,  
-    ReceivedDate DATE,  
-    Notes NVARCHAR(1000),  
-    CreatedAt DATETIME DEFAULT GETDATE(),
-    UpdatedAt DATETIME,
-
-    CONSTRAINT FK_SFA_Cases FOREIGN KEY (CaseID) 
-        REFERENCES Cases(ID) ON DELETE NO ACTION ON UPDATE CASCADE,
-    CONSTRAINT CHK_SFA_ReceivedDate CHECK (ReceivedDate IS NULL OR ReceivedDate >= RegistrationDate)
-);
-GO
-
--- Table: SeasonalInKindAid
-CREATE TABLE SeasonalInKindAid (
-    ID INT IDENTITY(1,1) PRIMARY KEY, 
-    CaseID INT NOT NULL, 
-    SeasonType NVARCHAR(100) NOT NULL,  
-    AidType NVARCHAR(100) NOT NULL,  
-    RegistrationDate DATE NOT NULL,  
-    ReceivedDate DATE,  
-    Notes NVARCHAR(1000),  
-    CreatedAt DATETIME DEFAULT GETDATE(),
-    UpdatedAt DATETIME,
-
-    CONSTRAINT FK_SIKA_Cases FOREIGN KEY (CaseID) 
-        REFERENCES Cases(ID) ON DELETE NO ACTION ON UPDATE CASCADE,
-    CONSTRAINT CHK_SIKA_ReceivedDate CHECK (ReceivedDate IS NULL OR ReceivedDate >= RegistrationDate)
-);
-GO
-
--- Table: InKindAid
-CREATE TABLE InKindAid (
-    ID INT IDENTITY(1,1) PRIMARY KEY, 
-    CaseID INT NOT NULL, 
-    AidContent NVARCHAR(255) NOT NULL,  
-    Frequency NVARCHAR(50) NOT NULL,  
-    RegistrationDate DATE NOT NULL,  
-    NextDueDate DATE,  
-    ReceivedCount INT DEFAULT 0,  
-    IsActive BIT DEFAULT 1,  
-    CreatedAt DATETIME DEFAULT GETDATE(),
-    UpdatedAt DATETIME,
-
-    CONSTRAINT FK_InKindAid_Cases FOREIGN KEY (CaseID) 
-        REFERENCES Cases(ID) ON DELETE NO ACTION ON UPDATE CASCADE
-);
-GO
-
--- Table: SpecialAid
-CREATE TABLE SpecialAid (
-    ID INT IDENTITY(1,1) PRIMARY KEY, 
-    CaseID INT NOT NULL, 
-    AidType NVARCHAR(100) NOT NULL,  
-    Amount DECIMAL(18,2) NOT NULL,  
-    RegistrationDate DATE NOT NULL,  
-    ReceivedDate DATE,  
-    CreatedAt DATETIME DEFAULT GETDATE(),
-    UpdatedAt DATETIME,
-
-    CONSTRAINT FK_SA_Cases FOREIGN KEY (CaseID) 
-        REFERENCES Cases(ID) ON DELETE NO ACTION ON UPDATE CASCADE,
-    CONSTRAINT CHK_SA_ReceivedDate CHECK (ReceivedDate IS NULL OR ReceivedDate >= RegistrationDate)
-);
-GO
-
--- Table: FinancialAid
-CREATE TABLE FinancialAid (
-    ID INT IDENTITY(1,1) PRIMARY KEY, 
-    CaseID INT NOT NULL, 
-    AidType NVARCHAR(100) NOT NULL,  
-    Frequency NVARCHAR(50) NOT NULL,  
-    RegistrationDate DATE NOT NULL,  
-    NextDueDate DATE,  
-    Amount DECIMAL(18,2) NOT NULL,  
-    ReceivedCount INT DEFAULT 0,  
-    IsActive BIT DEFAULT 1,  
-    CreatedAt DATETIME DEFAULT GETDATE(),
-    UpdatedAt DATETIME,
-
-    CONSTRAINT FK_FA_Cases FOREIGN KEY (CaseID) 
-        REFERENCES Cases(ID) ON DELETE NO ACTION ON UPDATE CASCADE
-);
-GO

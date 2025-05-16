@@ -63,6 +63,12 @@
     <ClInclude Include="CaseProfile.h">
       <Filter>Header Files\Pages</Filter>
     </ClInclude>
+    <ClInclude Include="AddAidPage.h">
+      <Filter>Header Files\Pages</Filter>
+    </ClInclude>
+    <ClInclude Include="Aid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -103,6 +109,12 @@
     </ClCompile>
     <ClCompile Include="CaseProfile.cpp">
       <Filter>Header Files\Pages</Filter>
+    </ClCompile>
+    <ClCompile Include="AddAidPage.cpp">
+      <Filter>Header Files\Pages</Filter>
+    </ClCompile>
+    <ClCompile Include="Aid.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

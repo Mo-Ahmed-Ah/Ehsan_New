@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include "Cases.h"
 #include "SeasonalFinancialAid.h"
+#include "Aid.h"
 
 using namespace System;
 using namespace System::Data;
@@ -144,55 +145,50 @@ public:
     }
 
     static void DeleteCaseIfNoAid(Nullable<int> id)
+    {
+        Connect();
+
+        // استعلام جديد للتحقق من وجود مساعدات مرتبطة بالحالة في الجدول الموحد
+        String^ checkQuery = "SELECT COUNT(*) FROM Aids WHERE CaseID = @ID";
+
+        SqlCommand^ checkCmd = gcnew SqlCommand(checkQuery, sqlConn);
+        checkCmd->Parameters->AddWithValue("@ID", id);
+
+        try
         {
-            Connect();
+            int totalAidCount = safe_cast<int>(checkCmd->ExecuteScalar());
 
-            // استعلام للتحقق من وجود مساعدات مرتبطة بالحالة
-            String^ checkQuery =
-                "SELECT " +
-                "(SELECT COUNT(*) FROM SeasonalFinancialAid WHERE CaseID = @ID) + " +
-                "(SELECT COUNT(*) FROM SeasonalInKindAid WHERE CaseID = @ID) + " +
-                "(SELECT COUNT(*) FROM InKindAid WHERE CaseID = @ID) + " +
-                "(SELECT COUNT(*) FROM SpecialAid WHERE CaseID = @ID) + " +
-                "(SELECT COUNT(*) FROM FinancialAid WHERE CaseID = @ID) AS TotalAidCount";
-
-            SqlCommand^ checkCmd = gcnew SqlCommand(checkQuery, sqlConn);
-            checkCmd->Parameters->AddWithValue("@ID", id);
-
-            try
+            if (totalAidCount > 0)
             {
-                int totalAidCount = safe_cast<int>(checkCmd->ExecuteScalar());
+                MessageBox::Show(L"لا يمكن حذف الحالة لأنها مرتبطة بمساعدات مسجلة.", L"تنبيه", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+            }
+            else
+            {
+                // إذا لا توجد مساعدات، نحذف الحالة
+                String^ deleteQuery = "DELETE FROM Cases WHERE ID = @ID";
+                SqlCommand^ deleteCmd = gcnew SqlCommand(deleteQuery, sqlConn);
+                deleteCmd->Parameters->AddWithValue("@ID", id);
 
-                if (totalAidCount > 0)
+                int rowsAffected = deleteCmd->ExecuteNonQuery();
+
+                if (rowsAffected > 0)
                 {
-                    MessageBox::Show(L"لا يمكن حذف الحالة لأنها مرتبطة بمساعدات مسجلة.", L"تنبيه", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+                    MessageBox::Show(L"تم حذف الحالة بنجاح.", L"نجاح", MessageBoxButtons::OK, MessageBoxIcon::Information);
                 }
                 else
                 {
-                    // إذا لا توجد مساعدات، نحذف الحالة
-                    String^ deleteQuery = "DELETE FROM Cases WHERE ID = @ID";
-                    SqlCommand^ deleteCmd = gcnew SqlCommand(deleteQuery, sqlConn);
-                    deleteCmd->Parameters->AddWithValue("@ID", id);
-
-                    int rowsAffected = deleteCmd->ExecuteNonQuery();
-
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox::Show(L"تم حذف الحالة بنجاح.", L"نجاح", MessageBoxButtons::OK, MessageBoxIcon::Information);
-                    }
-                    else
-                    {
-                        MessageBox::Show(L"لم يتم العثور على الحالة المطلوبة.", L"تنبيه", MessageBoxButtons::OK, MessageBoxIcon::Warning);
-                    }
+                    MessageBox::Show(L"لم يتم العثور على الحالة المطلوبة.", L"تنبيه", MessageBoxButtons::OK, MessageBoxIcon::Warning);
                 }
             }
-            catch (Exception^ ex)
-            {
-                MessageBox::Show(L"حدث خطأ أثناء عملية الحذف: " + ex->Message, L"خطأ", MessageBoxButtons::OK, MessageBoxIcon::Error);
-            }
-
-            Disconnect();
         }
+        catch (Exception^ ex)
+        {
+            MessageBox::Show(L"حدث خطأ أثناء عملية الحذف: " + ex->Message, L"خطأ", MessageBoxButtons::OK, MessageBoxIcon::Error);
+        }
+
+        Disconnect();
+    }
+
 
     static Cases^ GetCaseById(Nullable<int> id)
         {
@@ -265,8 +261,15 @@ public:
 
             if (rowsAffected > 0)
             {
-                MessageBox::Show(L"تم إلغاء تفعيل الحالة بنجاح", L"نجاح",
-                    MessageBoxButtons::OK, MessageBoxIcon::Information);
+                if (activValue == 0) {
+                    MessageBox::Show(L"تم إلغاء تفعيل الحالة بنجاح", L"نجاح",
+                        MessageBoxButtons::OK, MessageBoxIcon::Information);
+                }
+                else {
+                    MessageBox::Show(L"تم تفعيل الحالة بنجاح", L"نجاح",
+                        MessageBoxButtons::OK, MessageBoxIcon::Information);
+                }
+                
             }
             else
             {
@@ -281,6 +284,87 @@ public:
         }
 
         Disconnect(); // إغلاق الاتصال
+    }
+
+    static bool AddAid(Aid^ aid)
+    {
+        Connect(); // فتح الاتصال بقاعدة البيانات
+
+        // 1. التحقق من وجود الحالة المرتبطة بالمساعدة
+        String^ checkCaseQuery = "SELECT COUNT(*) FROM Cases WHERE ID = @CaseID AND IsActive = 1";
+        SqlCommand^ checkCaseCmd = gcnew SqlCommand(checkCaseQuery, sqlConn);
+        checkCaseCmd->Parameters->AddWithValue("@CaseID", aid->CaseID);
+
+        try
+        {
+            int caseExists = safe_cast<int>(checkCaseCmd->ExecuteScalar());
+            if (caseExists == 0)
+            {
+                MessageBox::Show("الحالة غير موجودة أو غير مفعلة في النظام", "خطأ",
+                    MessageBoxButtons::OK, MessageBoxIcon::Error);
+                Disconnect();
+                return false;
+            }
+
+            // 2. إدراج المساعدة الجديدة
+            String^ insertQuery = "INSERT INTO Aid (CaseID, AidCategory, AidType, AidContent, "
+                "Frequency, IsRecurring, Amount, ReceivedCount, SeasonType, "
+                "RegistrationDate, ReceivedDate, NextDueDate, Notes, IsActive, CreatedAt) "
+                "VALUES (@CaseID, @AidCategory, @AidType, @AidContent, "
+                "@Frequency, @IsRecurring, @Amount, @ReceivedCount, @SeasonType, "
+                "@RegistrationDate, @ReceivedDate, @NextDueDate, @Notes, @IsActive, @CreatedAt)";
+
+            SqlCommand^ cmd = gcnew SqlCommand(insertQuery, sqlConn);
+
+            // إضافة المعاملات مع التحقق من القيم الفارغة
+            cmd->Parameters->AddWithValue("@CaseID", aid->CaseID);
+            cmd->Parameters->AddWithValue("@AidCategory", aid->AidCategory);
+            cmd->Parameters->AddWithValue("@AidType", String::IsNullOrEmpty(aid->AidType) ? (Object^)DBNull::Value : aid->AidType);
+            cmd->Parameters->AddWithValue("@AidContent", String::IsNullOrEmpty(aid->AidContent) ? (Object^)DBNull::Value : aid->AidContent);
+            cmd->Parameters->AddWithValue("@Frequency", String::IsNullOrEmpty(aid->Frequency) ? (Object^)DBNull::Value : aid->Frequency);
+            cmd->Parameters->AddWithValue("@IsRecurring", aid->IsRecurring);
+            cmd->Parameters->AddWithValue("@Amount", aid->Amount.HasValue ? (Object^)aid->Amount.Value : DBNull::Value);
+            cmd->Parameters->AddWithValue("@ReceivedCount", aid->ReceivedCount);
+            cmd->Parameters->AddWithValue("@SeasonType", String::IsNullOrEmpty(aid->SeasonType) ? (Object^)DBNull::Value : aid->SeasonType);
+            cmd->Parameters->AddWithValue("@RegistrationDate", aid->RegistrationDate);
+            cmd->Parameters->AddWithValue("@ReceivedDate", aid->ReceivedDate.HasValue ? (Object^)aid->ReceivedDate.Value : DBNull::Value);
+            cmd->Parameters->AddWithValue("@NextDueDate", aid->NextDueDate.HasValue ? (Object^)aid->NextDueDate.Value : DBNull::Value);
+            cmd->Parameters->AddWithValue("@Notes", String::IsNullOrEmpty(aid->Notes) ? (Object^)DBNull::Value : aid->Notes);
+            cmd->Parameters->AddWithValue("@IsActive", aid->IsActive);
+            cmd->Parameters->AddWithValue("@CreatedAt", DateTime::Now);
+
+            // تنفيذ الأمر
+            int rowsAffected = cmd->ExecuteNonQuery();
+
+            if (rowsAffected > 0)
+            {
+                MessageBox::Show("تمت إضافة المساعدة بنجاح", "نجاح",
+                    MessageBoxButtons::OK, MessageBoxIcon::Information);
+                Disconnect();
+                return true;
+            }
+            else
+            {
+                MessageBox::Show("لم يتم إضافة المساعدة", "تحذير",
+                    MessageBoxButtons::OK, MessageBoxIcon::Warning);
+                Disconnect();
+                return false;
+            }
+        }
+        catch (SqlException^ sqlEx)
+        {
+            MessageBox::Show("حدث خطأ في قاعدة البيانات: " + sqlEx->Message, "خطأ",
+                MessageBoxButtons::OK, MessageBoxIcon::Error);
+            Disconnect();
+            return false;
+        }
+        catch (Exception^ ex)
+        {
+            MessageBox::Show("حدث خطأ: " + ex->Message, "خطأ",
+                MessageBoxButtons::OK, MessageBoxIcon::Error);
+            Disconnect();
+            return false;
+        }
     }
 
 };

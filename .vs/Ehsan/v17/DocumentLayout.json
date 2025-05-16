@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "F:\\my Projects\\Ehsan_New\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|F:\\my Projects\\Ehsan_New\\Ehsan\\CaseProfile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
-      "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\CaseProfile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
+      "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|F:\\my Projects\\Ehsan_New\\Ehsan\\Aid.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\Aid.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|F:\\my Projects\\Ehsan_New\\Ehsan\\Connection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\Connection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +18,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CaseProfile.h [Design]",
-              "DocumentMoniker": "F:\\my Projects\\Ehsan_New\\Ehsan\\CaseProfile.h",
-              "RelativeDocumentMoniker": "Ehsan\\CaseProfile.h",
-              "ToolTip": "F:\\my Projects\\Ehsan_New\\Ehsan\\CaseProfile.h [Design]",
-              "RelativeToolTip": "Ehsan\\CaseProfile.h [Design]",
+              "DocumentIndex": 1,
+              "Title": "Connection.h",
+              "DocumentMoniker": "F:\\my Projects\\Ehsan_New\\Ehsan\\Connection.h",
+              "RelativeDocumentMoniker": "Ehsan\\Connection.h",
+              "ToolTip": "F:\\my Projects\\Ehsan_New\\Ehsan\\Connection.h",
+              "RelativeToolTip": "Ehsan\\Connection.h",
+              "ViewState": "AgIAAC8BAAAAAAAAAAAAAAMAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-15T08:10:33.189Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-16T08:38:17.003Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Aid.h",
+              "DocumentMoniker": "F:\\my Projects\\Ehsan_New\\Ehsan\\Aid.h",
+              "RelativeDocumentMoniker": "Ehsan\\Aid.h",
+              "ToolTip": "F:\\my Projects\\Ehsan_New\\Ehsan\\Aid.h",
+              "RelativeToolTip": "Ehsan\\Aid.h",
+              "ViewState": "AgIAAMEAAAAAAAAAAADwv/4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-16T06:51:12.598Z",
+              "EditorCaption": ""
             }
           ]
         }

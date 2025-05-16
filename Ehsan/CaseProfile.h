@@ -187,7 +187,7 @@ private: System::Windows::Forms::Button^ CasesProfilePageDeleteButton;
 			   this->CasesProfilePagePanal->Location = System::Drawing::Point(1, 1);
 			   this->CasesProfilePagePanal->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			   this->CasesProfilePagePanal->Name = L"CasesProfilePagePanal";
-			   this->CasesProfilePagePanal->Size = System::Drawing::Size(763, 49);
+			   this->CasesProfilePagePanal->Size = System::Drawing::Size(1170, 49);
 			   this->CasesProfilePagePanal->TabIndex = 4;
 			   // 
 			   // CasesProfilePageTitleLabel
@@ -196,7 +196,7 @@ private: System::Windows::Forms::Button^ CasesProfilePageDeleteButton;
 			   this->CasesProfilePageTitleLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 21.75F, System::Drawing::FontStyle::Bold,
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->CasesProfilePageTitleLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			   this->CasesProfilePageTitleLabel->Location = System::Drawing::Point(251, 9);
+			   this->CasesProfilePageTitleLabel->Location = System::Drawing::Point(455, 9);
 			   this->CasesProfilePageTitleLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			   this->CasesProfilePageTitleLabel->Name = L"CasesProfilePageTitleLabel";
 			   this->CasesProfilePageTitleLabel->Size = System::Drawing::Size(262, 33);
@@ -244,9 +244,9 @@ private: System::Windows::Forms::Button^ CasesProfilePageDeleteButton;
 			   this->CasesProfilePageInformationPanel->Controls->Add(this->CasesProfilePageLastNameLabel);
 			   this->CasesProfilePageInformationPanel->Controls->Add(this->CasesProfilePageFristNameValueLabel);
 			   this->CasesProfilePageInformationPanel->Controls->Add(this->CasesProfilePageFristNameLabel);
-			   this->CasesProfilePageInformationPanel->Location = System::Drawing::Point(509, 53);
+			   this->CasesProfilePageInformationPanel->Location = System::Drawing::Point(927, 58);
 			   this->CasesProfilePageInformationPanel->Name = L"CasesProfilePageInformationPanel";
-			   this->CasesProfilePageInformationPanel->Size = System::Drawing::Size(244, 619);
+			   this->CasesProfilePageInformationPanel->Size = System::Drawing::Size(244, 712);
 			   this->CasesProfilePageInformationPanel->TabIndex = 5;
 			   // 
 			   // CasesProfilePageChangeStatusButton
@@ -255,7 +255,7 @@ private: System::Windows::Forms::Button^ CasesProfilePageDeleteButton;
 			   this->CasesProfilePageChangeStatusButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold,
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->CasesProfilePageChangeStatusButton->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			   this->CasesProfilePageChangeStatusButton->Location = System::Drawing::Point(6, 573);
+			   this->CasesProfilePageChangeStatusButton->Location = System::Drawing::Point(6, 661);
 			   this->CasesProfilePageChangeStatusButton->Name = L"CasesProfilePageChangeStatusButton";
 			   this->CasesProfilePageChangeStatusButton->Size = System::Drawing::Size(107, 34);
 			   this->CasesProfilePageChangeStatusButton->TabIndex = 38;
@@ -269,7 +269,7 @@ private: System::Windows::Forms::Button^ CasesProfilePageDeleteButton;
 			   this->CasesProfilePageDeleteButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold,
 				   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			   this->CasesProfilePageDeleteButton->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			   this->CasesProfilePageDeleteButton->Location = System::Drawing::Point(140, 573);
+			   this->CasesProfilePageDeleteButton->Location = System::Drawing::Point(140, 661);
 			   this->CasesProfilePageDeleteButton->Name = L"CasesProfilePageDeleteButton";
 			   this->CasesProfilePageDeleteButton->Size = System::Drawing::Size(97, 34);
 			   this->CasesProfilePageDeleteButton->TabIndex = 37;
@@ -697,7 +697,7 @@ private: System::Windows::Forms::Button^ CasesProfilePageDeleteButton;
 			   // 
 			   this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			   this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			   this->ClientSize = System::Drawing::Size(765, 678);
+			   this->ClientSize = System::Drawing::Size(1174, 767);
 			   this->Controls->Add(this->CasesProfilePageInformationPanel);
 			   this->Controls->Add(this->CasesProfilePagePanal);
 			   this->Name = L"CaseProfile";

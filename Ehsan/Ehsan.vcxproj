@@ -118,9 +118,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AddAidPage.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="AddCaseForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Aid.h" />
     <ClInclude Include="AssistanceTypeForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -153,7 +157,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AddAidPage.cpp" />
     <ClCompile Include="AddCaseForm.cpp" />
+    <ClCompile Include="Aid.cpp" />
     <ClCompile Include="AssistanceTypeForm.cpp" />
     <ClCompile Include="CaseProfile.cpp" />
     <ClCompile Include="Cases.cpp" />
@@ -168,6 +174,9 @@
     <ClCompile Include="TodayViewForm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddAidPage.resx">
+      <DependentUpon>AddAidPage.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddCaseForm.resx">
       <DependentUpon>AddCaseForm.h</DependentUpon>
     </EmbeddedResource>

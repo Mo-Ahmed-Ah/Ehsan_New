@@ -6,3 +6,4 @@ F:\my Projects\Ehsan_New\Ehsan\x64\Debug\Ehsan.TodayViewForm.resources
 F:\my Projects\Ehsan_New\Ehsan\x64\Debug\Ehsan.SelectAidForm.resources
 F:\my Projects\Ehsan_New\Ehsan\x64\Debug\Ehsan.ShowCases.resources
 F:\my Projects\Ehsan_New\Ehsan\x64\Debug\Ehsan.CaseProfile.resources
+F:\my Projects\Ehsan_New\Ehsan\x64\Debug\Ehsan.AddAidPage.resources
