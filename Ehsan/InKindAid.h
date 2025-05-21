@@ -5,17 +5,17 @@ ref class InKindAid
 {
 private:
 	int id;
-	int caseID;
+	Nullable<int> caseID;
 	String^ aidType;
 	String^ aidContent;
 	String^ frequencyLong;
 	bool isRecurring;
-	int receivedCount;
+	Nullable<int> receivedCount;
 	String^ seasonType;
 	bool isOneTimeConfirmed;
-	DateTime registrationDate;
-	DateTime receivedDate;
-	DateTime nextDueDate;
+	Nullable<DateTime> registrationDate;
+	Nullable<DateTime> receivedDate;
+	Nullable<DateTime> nextDueDate;
 	String^ notes;
 	bool isActive;
 	DateTime createdAt;
@@ -24,9 +24,9 @@ private:
 
 public:
 	// Constructor 1: لاسترجاع البيانات من قاعدة البيانات
-	InKindAid(int id, int caseID, String^ aidType, String^ aidContent, String^ frequencyLong,
-		bool isRecurring, int receivedCount, String^ seasonType, bool isOneTimeConfirmed,
-		DateTime registrationDate, DateTime receivedDate, DateTime nextDueDate,
+	InKindAid(int id, Nullable<int> caseID, String^ aidType, String^ aidContent, String^ frequencyLong,
+		bool isRecurring, Nullable<int> receivedCount, String^ seasonType, bool isOneTimeConfirmed,
+		Nullable<DateTime> registrationDate, Nullable<DateTime> receivedDate, Nullable<DateTime> nextDueDate,
 		String^ notes, bool isActive, DateTime createdAt, DateTime updatedAt, String^ caseName)
 	{
 		this->id = id;
@@ -49,9 +49,9 @@ public:
 	}
 
 	// Constructor 2: للإضافة فقط (بدون id و CaseName)
-	InKindAid(int caseID, String^ aidType, String^ aidContent, String^ frequencyLong,
-		bool isRecurring, int receivedCount, String^ seasonType, bool isOneTimeConfirmed,
-		DateTime registrationDate, DateTime receivedDate, DateTime nextDueDate,
+	InKindAid(Nullable<int> caseID, String^ aidType, String^ aidContent, String^ frequencyLong,
+		bool isRecurring, Nullable<int> receivedCount, String^ seasonType, bool isOneTimeConfirmed,
+		Nullable<DateTime> registrationDate, Nullable<DateTime> receivedDate, Nullable<DateTime> nextDueDate,
 		String^ notes, bool isActive, DateTime createdAt, DateTime updatedAt)
 	{
 		this->caseID = caseID;
@@ -72,88 +72,88 @@ public:
 	}
 
 	// Properties
-	property int ID {
+	property int ID{
 		int get() { return id; }
 		void set(int value) { id = value; }
 	}
 
-	property int CaseID {
-		int get() { return caseID; }
-		void set(int value) { caseID = value; }
+		property Nullable<int> CaseID{
+			Nullable<int> get() { return caseID; }
+			void set(Nullable<int> value) { caseID = value; }
 	}
 
-	property String^ AidType {
-		String^ get() { return aidType; }
-		void set(String^ value) { aidType = value; }
+		property String^ AidType{
+			String ^ get() { return aidType; }
+			void set(String ^ value) { aidType = value; }
 	}
 
-	property String^ AidContent {
-		String^ get() { return aidContent; }
-		void set(String^ value) { aidContent = value; }
+		property String^ AidContent{
+			String ^ get() { return aidContent; }
+			void set(String ^ value) { aidContent = value; }
 	}
 
-	property String^ FrequencyLong {
-		String^ get() { return frequencyLong; }
-		void set(String^ value) { frequencyLong = value; }
+		property String^ FrequencyLong{
+			String ^ get() { return frequencyLong; }
+			void set(String ^ value) { frequencyLong = value; }
 	}
 
-	property bool IsRecurring {
-		bool get() { return isRecurring; }
-		void set(bool value) { isRecurring = value; }
+		property bool IsRecurring{
+			bool get() { return isRecurring; }
+			void set(bool value) { isRecurring = value; }
 	}
 
-	property int ReceivedCount {
-		int get() { return receivedCount; }
-		void set(int value) { receivedCount = value; }
+		property Nullable<int> ReceivedCount{
+			Nullable<int> get() { return receivedCount; }
+			void set(Nullable<int> value) { receivedCount = value; }
 	}
 
-	property String^ SeasonType {
-		String^ get() { return seasonType; }
-		void set(String^ value) { seasonType = value; }
+		property String^ SeasonType{
+			String ^ get() { return seasonType; }
+			void set(String ^ value) { seasonType = value; }
 	}
 
-	property bool IsOneTimeConfirmed {
-		bool get() { return isOneTimeConfirmed; }
-		void set(bool value) { isOneTimeConfirmed = value; }
+		property bool IsOneTimeConfirmed{
+			bool get() { return isOneTimeConfirmed; }
+			void set(bool value) { isOneTimeConfirmed = value; }
 	}
 
-	property DateTime RegistrationDate {
-		DateTime get() { return registrationDate; }
-		void set(DateTime value) { registrationDate = value; }
+		property Nullable<DateTime> RegistrationDate{
+			Nullable<DateTime> get() { return registrationDate; }
+			void set(Nullable<DateTime> value) { registrationDate = value; }
 	}
 
-	property DateTime ReceivedDate {
-		DateTime get() { return receivedDate; }
-		void set(DateTime value) { receivedDate = value; }
+		property Nullable<DateTime> ReceivedDate{
+			Nullable<DateTime> get() { return receivedDate; }
+			void set(Nullable<DateTime> value) { receivedDate = value; }
 	}
 
-	property DateTime NextDueDate {
-		DateTime get() { return nextDueDate; }
-		void set(DateTime value) { nextDueDate = value; }
+		property Nullable<DateTime> NextDueDate{
+			Nullable<DateTime> get() { return nextDueDate; }
+			void set(Nullable<DateTime> value) { nextDueDate = value; }
 	}
 
-	property String^ Notes {
-		String^ get() { return notes; }
-		void set(String^ value) { notes = value; }
+		property String^ Notes{
+			String ^ get() { return notes; }
+			void set(String ^ value) { notes = value; }
 	}
 
-	property bool IsActive {
-		bool get() { return isActive; }
-		void set(bool value) { isActive = value; }
+		property bool IsActive{
+			bool get() { return isActive; }
+			void set(bool value) { isActive = value; }
 	}
 
-	property DateTime CreatedAt {
-		DateTime get() { return createdAt; }
-		void set(DateTime value) { createdAt = value; }
+		property DateTime CreatedAt{
+			DateTime get() { return createdAt; }
+			void set(DateTime value) { createdAt = value; }
 	}
 
-	property DateTime UpdatedAt {
-		DateTime get() { return updatedAt; }
-		void set(DateTime value) { updatedAt = value; }
+		property DateTime UpdatedAt{
+			DateTime get() { return updatedAt; }
+			void set(DateTime value) { updatedAt = value; }
 	}
 
-	property String^ CaseName {
-		String^ get() { return caseName; }
-		void set(String^ value) { caseName = value; }
+		property String^ CaseName{
+			String ^ get() { return caseName; }
+			void set(String ^ value) { caseName = value; }
 	}
 };

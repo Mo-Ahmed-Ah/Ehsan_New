@@ -343,11 +343,9 @@ public:
         Connect();
 
         String^ query = "SELECT FA.*, C.FName + ' ' + C.LName AS CaseName "
-            "FROM FinancialAid FA "
-            "JOIN Cases C ON FA.CaseID = C.ID "
-            "WHERE FA.NextDueDate = CAST(GETDATE() AS DATE) "
-            "AND FA.IsActive = 1 "
-            "AND (FA.IsOneTimeConfirmed = 0 OR FA.IsRecurring = 1)";
+            "FROM FinancialAid AS FA "
+            "JOIN Cases AS C ON FA.CaseID = C.ID "
+            "WHERE FA.IsActive = 1";
 
         SqlCommand^ cmd = gcnew SqlCommand(query, sqlConn);
 
@@ -358,23 +356,24 @@ public:
             {
                 FinancialAid^ aid = gcnew FinancialAid(
                     reader->GetInt32(reader->GetOrdinal("ID")),
-                    reader->GetInt32(reader->GetOrdinal("CaseID")),
-                    reader["AidType"]->ToString(),
-                    reader->GetDecimal(reader->GetOrdinal("Amount")),
-                    reader["Frequency"]->ToString(),
+                    reader->IsDBNull(reader->GetOrdinal("CaseID")) ? Nullable<int>() : reader->GetInt32(reader->GetOrdinal("CaseID")),
+                    reader->IsDBNull(reader->GetOrdinal("AidType")) ? "" : reader["AidType"]->ToString(),
+                    reader->IsDBNull(reader->GetOrdinal("Amount")) ? Nullable<Decimal>() : reader->GetDecimal(reader->GetOrdinal("Amount")),
+                    reader->IsDBNull(reader->GetOrdinal("Frequency")) ? "" : reader["Frequency"]->ToString(),
                     reader->GetBoolean(reader->GetOrdinal("IsRecurring")),
-                    reader->GetInt32(reader->GetOrdinal("ReceivedCount")),
+                    reader->IsDBNull(reader->GetOrdinal("ReceivedCount")) ? Nullable<int>() : reader->GetInt32(reader->GetOrdinal("ReceivedCount")),
                     reader->IsDBNull(reader->GetOrdinal("SeasonType")) ? "" : reader["SeasonType"]->ToString(),
                     reader->GetBoolean(reader->GetOrdinal("IsOneTimeConfirmed")),
                     reader->GetDateTime(reader->GetOrdinal("RegistrationDate")),
                     reader->IsDBNull(reader->GetOrdinal("ReceivedDate")) ? DateTime::MinValue : reader->GetDateTime(reader->GetOrdinal("ReceivedDate")),
-                    reader->GetDateTime(reader->GetOrdinal("NextDueDate")),
+                    reader->IsDBNull(reader->GetOrdinal("NextDueDate")) ? DateTime::MinValue : reader->GetDateTime(reader->GetOrdinal("NextDueDate")),
                     reader->IsDBNull(reader->GetOrdinal("Notes")) ? "" : reader["Notes"]->ToString(),
                     reader->GetBoolean(reader->GetOrdinal("IsActive")),
                     reader->GetDateTime(reader->GetOrdinal("CreatedAt")),
                     reader->GetDateTime(reader->GetOrdinal("UpdatedAt")),
-                    reader["CaseName"]->ToString()
+                    reader->IsDBNull(reader->GetOrdinal("CaseName")) ? "" : reader["CaseName"]->ToString()
                 );
+
 
                 financialAids->Add(aid);
             }
@@ -394,12 +393,10 @@ public:
         List<InKindAid^>^ inKindAids = gcnew List<InKindAid^>();
         Connect();
 
-        String^ query = "SELECT I.*, C.FName + ' ' + C.LName AS CaseName "
-            "FROM InKindAid I "
-            "JOIN Cases C ON I.CaseID = C.ID "
-            "WHERE I.NextDueDate = CAST(GETDATE() AS DATE) "
-            "AND I.IsActive = 1 "
-            "AND (I.IsOneTimeConfirmed = 0 OR I.IsRecurring = 1)";
+        String^ query = "SELECT InK.*, C.FName + ' ' + C.LName AS CaseName "
+            "FROM InKindAid AS InK "
+            "JOIN Cases AS C ON InK.CaseID = C.ID "
+            "WHERE InK.IsActive = 1";
 
         SqlCommand^ cmd = gcnew SqlCommand(query, sqlConn);
 
@@ -408,24 +405,39 @@ public:
             SqlDataReader^ reader = cmd->ExecuteReader();
             while (reader->Read())
             {
+                int id = reader->GetInt32(reader->GetOrdinal("ID"));
+                int caseID = reader->GetInt32(reader->GetOrdinal("CaseID"));
+                String^ aidType = reader["AidType"]->ToString();
+                String^ aidContent = reader->IsDBNull(reader->GetOrdinal("AidContent")) ? "" : reader["AidContent"]->ToString();
+                String^ frequency = reader["Frequency"]->ToString();
+                bool isRecurring = reader->GetBoolean(reader->GetOrdinal("IsRecurring"));
+                int receivedCount = reader->GetInt32(reader->GetOrdinal("ReceivedCount"));
+                String^ seasonType = reader->IsDBNull(reader->GetOrdinal("SeasonType")) ? "" : reader["SeasonType"]->ToString();
+                bool isOneTimeConfirmed = reader->GetBoolean(reader->GetOrdinal("IsOneTimeConfirmed"));
+                DateTime registrationDate = reader->GetDateTime(reader->GetOrdinal("RegistrationDate"));
+
+                DateTime receivedDate = reader->IsDBNull(reader->GetOrdinal("ReceivedDate")) ?
+                    DateTime::MinValue : reader->GetDateTime(reader->GetOrdinal("ReceivedDate"));
+
+                DateTime nextDueDate = reader->IsDBNull(reader->GetOrdinal("NextDueDate")) ?
+                    DateTime::MinValue : reader->GetDateTime(reader->GetOrdinal("NextDueDate"));
+
+                String^ notes = reader->IsDBNull(reader->GetOrdinal("Notes")) ? "" : reader["Notes"]->ToString();
+                bool isActive = reader->GetBoolean(reader->GetOrdinal("IsActive"));
+
+                DateTime createdAt = reader->IsDBNull(reader->GetOrdinal("CreatedAt")) ?
+                    DateTime::MinValue : reader->GetDateTime(reader->GetOrdinal("CreatedAt"));
+
+                DateTime updatedAt = reader->IsDBNull(reader->GetOrdinal("UpdatedAt")) ?
+                    DateTime::MinValue : reader->GetDateTime(reader->GetOrdinal("UpdatedAt"));
+
+                String^ caseName = reader["CaseName"]->ToString();
+
                 InKindAid^ aid = gcnew InKindAid(
-                    reader->GetInt32(reader->GetOrdinal("ID")),
-                    reader->GetInt32(reader->GetOrdinal("CaseID")),
-                    reader["AidType"]->ToString(),
-                    reader->IsDBNull(reader->GetOrdinal("AidContent")) ? "" : reader["AidContent"]->ToString(),
-                    reader["Frequency"]->ToString(),
-                    reader->GetBoolean(reader->GetOrdinal("IsRecurring")),
-                    reader->GetInt32(reader->GetOrdinal("ReceivedCount")),
-                    reader->IsDBNull(reader->GetOrdinal("SeasonType")) ? "" : reader["SeasonType"]->ToString(),
-                    reader->GetBoolean(reader->GetOrdinal("IsOneTimeConfirmed")),
-                    reader->GetDateTime(reader->GetOrdinal("RegistrationDate")),
-                    reader->IsDBNull(reader->GetOrdinal("ReceivedDate")) ? DateTime::MinValue : reader->GetDateTime(reader->GetOrdinal("ReceivedDate")),
-                    reader->GetDateTime(reader->GetOrdinal("NextDueDate")),
-                    reader->IsDBNull(reader->GetOrdinal("Notes")) ? "" : reader["Notes"]->ToString(),
-                    reader->GetBoolean(reader->GetOrdinal("IsActive")),
-                    reader->GetDateTime(reader->GetOrdinal("CreatedAt")),
-                    reader->GetDateTime(reader->GetOrdinal("UpdatedAt")),
-                    reader["CaseName"]->ToString()
+                    id, caseID, aidType, aidContent, frequency,
+                    isRecurring, receivedCount, seasonType, isOneTimeConfirmed,
+                    registrationDate, receivedDate, nextDueDate,
+                    notes, isActive, createdAt, updatedAt, caseName
                 );
 
                 inKindAids->Add(aid);
@@ -441,5 +453,102 @@ public:
         return inKindAids;
     }
 
+    static void ConfirmFinancialAidReceipt(int aidID, bool isRecurring, String^ frequency)
+    {
+        Connect();
+
+        String^ query;
+
+        if (!isRecurring)
+        {
+            query = "UPDATE FinancialAid SET IsOneTimeConfirmed = 1 WHERE ID = @AidID";
+        }
+        else
+        {
+            DateTime today = DateTime::Now;
+            DateTime nextDueDate;
+
+            if (frequency == "شهرياً")
+                nextDueDate = today.AddMonths(1);
+            else if (frequency == "أسبوعياً")
+                nextDueDate = today.AddDays(7);
+            else if (frequency == "سنوياً")
+                nextDueDate = today.AddYears(1);
+            else if (frequency == "يومياً")
+                nextDueDate = today.AddDays(1);
+            else
+                nextDueDate = today;
+
+            query = "UPDATE FinancialAid SET ReceivedDate = @Today, NextDueDate = @NextDueDate, ReceivedCount = ISNULL(ReceivedCount, 0) + 1 WHERE ID = @AidID";
+
+            SqlCommand^ cmd = gcnew SqlCommand(query, sqlConn);
+            cmd->Parameters->AddWithValue("@Today", today);
+            cmd->Parameters->AddWithValue("@NextDueDate", nextDueDate);
+            cmd->Parameters->AddWithValue("@AidID", aidID);
+
+            try { cmd->ExecuteNonQuery(); }
+            catch (Exception^ ex) { MessageBox::Show("خطأ: " + ex->Message); }
+
+            Disconnect();
+            return;
+        }
+
+        SqlCommand^ cmdSimple = gcnew SqlCommand(query, sqlConn);
+        cmdSimple->Parameters->AddWithValue("@AidID", aidID);
+
+        try { cmdSimple->ExecuteNonQuery(); }
+        catch (Exception^ ex) { MessageBox::Show("خطأ: " + ex->Message); }
+
+        Disconnect();
+    }
+
+    static void ConfirmInKindAidReceipt(int aidID, bool isRecurring, String^ frequency)
+    {
+        Connect();
+
+        String^ query;
+
+        if (!isRecurring)
+        {
+            query = "UPDATE InKindAid SET IsOneTimeConfirmed = 1 WHERE ID = @AidID";
+        }
+        else
+        {
+            DateTime today = DateTime::Now;
+            DateTime nextDueDate;
+
+            if (frequency == "شهرياً")
+                nextDueDate = today.AddMonths(1);
+            else if (frequency == "أسبوعياً")
+                nextDueDate = today.AddDays(7);
+            else if (frequency == "سنوياً")
+                nextDueDate = today.AddYears(1);
+            else if (frequency == "يومياً")
+                nextDueDate = today.AddDays(1);
+            else
+                nextDueDate = today;
+
+            query = "UPDATE InKindAid SET ReceivedDate = @Today, NextDueDate = @NextDueDate, ReceivedCount = ISNULL(ReceivedCount, 0) + 1 WHERE ID = @AidID";
+
+            SqlCommand^ cmd = gcnew SqlCommand(query, sqlConn);
+            cmd->Parameters->AddWithValue("@Today", today);
+            cmd->Parameters->AddWithValue("@NextDueDate", nextDueDate);
+            cmd->Parameters->AddWithValue("@AidID", aidID);
+
+            try { cmd->ExecuteNonQuery(); }
+            catch (Exception^ ex) { MessageBox::Show("خطأ: " + ex->Message); }
+
+            Disconnect();
+            return;
+        }
+
+        SqlCommand^ cmdSimple = gcnew SqlCommand(query, sqlConn);
+        cmdSimple->Parameters->AddWithValue("@AidID", aidID);
+
+        try { cmdSimple->ExecuteNonQuery(); }
+        catch (Exception^ ex) { MessageBox::Show("خطأ: " + ex->Message); }
+
+        Disconnect();
+    }
 
 };
