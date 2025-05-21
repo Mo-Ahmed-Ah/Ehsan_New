@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include "Cases.h"
-#include "SeasonalFinancialAid.h"
+#include "FinancialAid.h"
+#include "InKindAid.h"
 #include "Aid.h"
 
 using namespace System;
@@ -102,6 +103,55 @@ public:
         Connect();
 
         String^ query = "SELECT * FROM Cases";
+        SqlCommand^ cmd = gcnew SqlCommand(query, sqlConn);
+
+        try
+        {
+            SqlDataReader^ reader = cmd->ExecuteReader();
+            while (reader->Read())
+            {
+                Cases^ c = gcnew Cases(
+                    reader->IsDBNull(reader->GetOrdinal("ID")) ? Nullable<int>() : reader->GetInt32(reader->GetOrdinal("ID")),
+                    reader["NationalID"]->ToString(),
+                    reader["FName"]->ToString(),
+                    reader["LName"]->ToString(),
+                    reader->IsDBNull(reader->GetOrdinal("NickName")) ? nullptr : reader["NickName"]->ToString(),
+                    reader->IsDBNull(reader->GetOrdinal("PhoneNumber")) ? nullptr : reader["PhoneNumber"]->ToString(),
+                    reader->IsDBNull(reader->GetOrdinal("Gender")) ? Nullable<bool>() : safe_cast<bool>(reader["Gender"]),
+                    reader->IsDBNull(reader->GetOrdinal("BirthDate")) ? Nullable<DateTime>() : safe_cast<DateTime>(reader["BirthDate"]),
+                    reader->IsDBNull(reader->GetOrdinal("Area")) ? nullptr : reader["Area"]->ToString(),
+                    reader->IsDBNull(reader->GetOrdinal("Street")) ? nullptr : reader["Street"]->ToString(),
+                    reader->IsDBNull(reader->GetOrdinal("MaritalStatus")) ? nullptr : reader["MaritalStatus"]->ToString(),
+                    reader->IsDBNull(reader->GetOrdinal("FatherStatus")) ? Nullable<bool>() : safe_cast<bool>(reader["FatherStatus"]),
+                    reader->IsDBNull(reader->GetOrdinal("MotherStatus")) ? Nullable<bool>() : safe_cast<bool>(reader["MotherStatus"]),
+                    reader->IsDBNull(reader->GetOrdinal("MaleChildren")) ? Nullable<Byte>() : safe_cast<Byte>(reader["MaleChildren"]),
+                    reader->IsDBNull(reader->GetOrdinal("FemaleChildren")) ? Nullable<Byte>() : safe_cast<Byte>(reader["FemaleChildren"]),
+                    reader->IsDBNull(reader->GetOrdinal("IsActive")) ? Nullable<bool>() : safe_cast<bool>(reader["IsActive"]),
+                    reader->IsDBNull(reader->GetOrdinal("CreatedAt")) ? Nullable<DateTime>() : safe_cast<DateTime>(reader["CreatedAt"]),
+                    reader->IsDBNull(reader->GetOrdinal("UpdatedAt")) ? Nullable<DateTime>() : safe_cast<DateTime>(reader["UpdatedAt"])
+                );
+
+                casesList->Add(c);
+            }
+
+            reader->Close();
+        }
+        catch (Exception^ ex)
+        {
+            MessageBox::Show(L"حدث خطأ أثناء جلب الحالات: " + ex->Message, L"خطأ", MessageBoxButtons::OK, MessageBoxIcon::Error);
+        }
+
+        Disconnect();
+        return casesList;
+    }
+
+    static List<Cases^>^ GetAllCasesIsActive()
+    {
+        List<Cases^>^ casesList = gcnew List<Cases^>();
+        Connect();
+
+        String^ query = "SELECT * FROM Cases WHERE IsActive = 1";
+
         SqlCommand^ cmd = gcnew SqlCommand(query, sqlConn);
 
         try
@@ -286,85 +336,110 @@ public:
         Disconnect(); // إغلاق الاتصال
     }
 
-    static bool AddAid(Aid^ aid)
+    // جلب المساعدات المالية الموسمية النشطة مع اسم الحالة
+    static List<FinancialAid^>^ GetTodayFinancialAids()
     {
-        Connect(); // فتح الاتصال بقاعدة البيانات
+        List<FinancialAid^>^ financialAids = gcnew List<FinancialAid^>();
+        Connect();
 
-        // 1. التحقق من وجود الحالة المرتبطة بالمساعدة
-        String^ checkCaseQuery = "SELECT COUNT(*) FROM Cases WHERE ID = @CaseID AND IsActive = 1";
-        SqlCommand^ checkCaseCmd = gcnew SqlCommand(checkCaseQuery, sqlConn);
-        checkCaseCmd->Parameters->AddWithValue("@CaseID", aid->CaseID);
+        String^ query = "SELECT FA.*, C.FName + ' ' + C.LName AS CaseName "
+            "FROM FinancialAid FA "
+            "JOIN Cases C ON FA.CaseID = C.ID "
+            "WHERE FA.NextDueDate = CAST(GETDATE() AS DATE) "
+            "AND FA.IsActive = 1 "
+            "AND (FA.IsOneTimeConfirmed = 0 OR FA.IsRecurring = 1)";
+
+        SqlCommand^ cmd = gcnew SqlCommand(query, sqlConn);
 
         try
         {
-            int caseExists = safe_cast<int>(checkCaseCmd->ExecuteScalar());
-            if (caseExists == 0)
+            SqlDataReader^ reader = cmd->ExecuteReader();
+            while (reader->Read())
             {
-                MessageBox::Show("الحالة غير موجودة أو غير مفعلة في النظام", "خطأ",
-                    MessageBoxButtons::OK, MessageBoxIcon::Error);
-                Disconnect();
-                return false;
+                FinancialAid^ aid = gcnew FinancialAid(
+                    reader->GetInt32(reader->GetOrdinal("ID")),
+                    reader->GetInt32(reader->GetOrdinal("CaseID")),
+                    reader["AidType"]->ToString(),
+                    reader->GetDecimal(reader->GetOrdinal("Amount")),
+                    reader["Frequency"]->ToString(),
+                    reader->GetBoolean(reader->GetOrdinal("IsRecurring")),
+                    reader->GetInt32(reader->GetOrdinal("ReceivedCount")),
+                    reader->IsDBNull(reader->GetOrdinal("SeasonType")) ? "" : reader["SeasonType"]->ToString(),
+                    reader->GetBoolean(reader->GetOrdinal("IsOneTimeConfirmed")),
+                    reader->GetDateTime(reader->GetOrdinal("RegistrationDate")),
+                    reader->IsDBNull(reader->GetOrdinal("ReceivedDate")) ? DateTime::MinValue : reader->GetDateTime(reader->GetOrdinal("ReceivedDate")),
+                    reader->GetDateTime(reader->GetOrdinal("NextDueDate")),
+                    reader->IsDBNull(reader->GetOrdinal("Notes")) ? "" : reader["Notes"]->ToString(),
+                    reader->GetBoolean(reader->GetOrdinal("IsActive")),
+                    reader->GetDateTime(reader->GetOrdinal("CreatedAt")),
+                    reader->GetDateTime(reader->GetOrdinal("UpdatedAt")),
+                    reader["CaseName"]->ToString()
+                );
+
+                financialAids->Add(aid);
             }
-
-            // 2. إدراج المساعدة الجديدة
-            String^ insertQuery = "INSERT INTO Aid (CaseID, AidCategory, AidType, AidContent, "
-                "Frequency, IsRecurring, Amount, ReceivedCount, SeasonType, "
-                "RegistrationDate, ReceivedDate, NextDueDate, Notes, IsActive, CreatedAt) "
-                "VALUES (@CaseID, @AidCategory, @AidType, @AidContent, "
-                "@Frequency, @IsRecurring, @Amount, @ReceivedCount, @SeasonType, "
-                "@RegistrationDate, @ReceivedDate, @NextDueDate, @Notes, @IsActive, @CreatedAt)";
-
-            SqlCommand^ cmd = gcnew SqlCommand(insertQuery, sqlConn);
-
-            // إضافة المعاملات مع التحقق من القيم الفارغة
-            cmd->Parameters->AddWithValue("@CaseID", aid->CaseID);
-            cmd->Parameters->AddWithValue("@AidCategory", aid->AidCategory);
-            cmd->Parameters->AddWithValue("@AidType", String::IsNullOrEmpty(aid->AidType) ? (Object^)DBNull::Value : aid->AidType);
-            cmd->Parameters->AddWithValue("@AidContent", String::IsNullOrEmpty(aid->AidContent) ? (Object^)DBNull::Value : aid->AidContent);
-            cmd->Parameters->AddWithValue("@Frequency", String::IsNullOrEmpty(aid->Frequency) ? (Object^)DBNull::Value : aid->Frequency);
-            cmd->Parameters->AddWithValue("@IsRecurring", aid->IsRecurring);
-            cmd->Parameters->AddWithValue("@Amount", aid->Amount.HasValue ? (Object^)aid->Amount.Value : DBNull::Value);
-            cmd->Parameters->AddWithValue("@ReceivedCount", aid->ReceivedCount);
-            cmd->Parameters->AddWithValue("@SeasonType", String::IsNullOrEmpty(aid->SeasonType) ? (Object^)DBNull::Value : aid->SeasonType);
-            cmd->Parameters->AddWithValue("@RegistrationDate", aid->RegistrationDate);
-            cmd->Parameters->AddWithValue("@ReceivedDate", aid->ReceivedDate.HasValue ? (Object^)aid->ReceivedDate.Value : DBNull::Value);
-            cmd->Parameters->AddWithValue("@NextDueDate", aid->NextDueDate.HasValue ? (Object^)aid->NextDueDate.Value : DBNull::Value);
-            cmd->Parameters->AddWithValue("@Notes", String::IsNullOrEmpty(aid->Notes) ? (Object^)DBNull::Value : aid->Notes);
-            cmd->Parameters->AddWithValue("@IsActive", aid->IsActive);
-            cmd->Parameters->AddWithValue("@CreatedAt", DateTime::Now);
-
-            // تنفيذ الأمر
-            int rowsAffected = cmd->ExecuteNonQuery();
-
-            if (rowsAffected > 0)
-            {
-                MessageBox::Show("تمت إضافة المساعدة بنجاح", "نجاح",
-                    MessageBoxButtons::OK, MessageBoxIcon::Information);
-                Disconnect();
-                return true;
-            }
-            else
-            {
-                MessageBox::Show("لم يتم إضافة المساعدة", "تحذير",
-                    MessageBoxButtons::OK, MessageBoxIcon::Warning);
-                Disconnect();
-                return false;
-            }
-        }
-        catch (SqlException^ sqlEx)
-        {
-            MessageBox::Show("حدث خطأ في قاعدة البيانات: " + sqlEx->Message, "خطأ",
-                MessageBoxButtons::OK, MessageBoxIcon::Error);
-            Disconnect();
-            return false;
+            reader->Close();
         }
         catch (Exception^ ex)
         {
-            MessageBox::Show("حدث خطأ: " + ex->Message, "خطأ",
-                MessageBoxButtons::OK, MessageBoxIcon::Error);
-            Disconnect();
-            return false;
+            MessageBox::Show("حدث خطأ أثناء جلب المساعدات المالية: " + ex->Message, "خطأ", MessageBoxButtons::OK, MessageBoxIcon::Error);
         }
+
+        Disconnect();
+        return financialAids;
     }
+
+    static List<InKindAid^>^ GetTodayInKindAids()
+    {
+        List<InKindAid^>^ inKindAids = gcnew List<InKindAid^>();
+        Connect();
+
+        String^ query = "SELECT I.*, C.FName + ' ' + C.LName AS CaseName "
+            "FROM InKindAid I "
+            "JOIN Cases C ON I.CaseID = C.ID "
+            "WHERE I.NextDueDate = CAST(GETDATE() AS DATE) "
+            "AND I.IsActive = 1 "
+            "AND (I.IsOneTimeConfirmed = 0 OR I.IsRecurring = 1)";
+
+        SqlCommand^ cmd = gcnew SqlCommand(query, sqlConn);
+
+        try
+        {
+            SqlDataReader^ reader = cmd->ExecuteReader();
+            while (reader->Read())
+            {
+                InKindAid^ aid = gcnew InKindAid(
+                    reader->GetInt32(reader->GetOrdinal("ID")),
+                    reader->GetInt32(reader->GetOrdinal("CaseID")),
+                    reader["AidType"]->ToString(),
+                    reader->IsDBNull(reader->GetOrdinal("AidContent")) ? "" : reader["AidContent"]->ToString(),
+                    reader["Frequency"]->ToString(),
+                    reader->GetBoolean(reader->GetOrdinal("IsRecurring")),
+                    reader->GetInt32(reader->GetOrdinal("ReceivedCount")),
+                    reader->IsDBNull(reader->GetOrdinal("SeasonType")) ? "" : reader["SeasonType"]->ToString(),
+                    reader->GetBoolean(reader->GetOrdinal("IsOneTimeConfirmed")),
+                    reader->GetDateTime(reader->GetOrdinal("RegistrationDate")),
+                    reader->IsDBNull(reader->GetOrdinal("ReceivedDate")) ? DateTime::MinValue : reader->GetDateTime(reader->GetOrdinal("ReceivedDate")),
+                    reader->GetDateTime(reader->GetOrdinal("NextDueDate")),
+                    reader->IsDBNull(reader->GetOrdinal("Notes")) ? "" : reader["Notes"]->ToString(),
+                    reader->GetBoolean(reader->GetOrdinal("IsActive")),
+                    reader->GetDateTime(reader->GetOrdinal("CreatedAt")),
+                    reader->GetDateTime(reader->GetOrdinal("UpdatedAt")),
+                    reader["CaseName"]->ToString()
+                );
+
+                inKindAids->Add(aid);
+            }
+            reader->Close();
+        }
+        catch (Exception^ ex)
+        {
+            MessageBox::Show("حدث خطأ أثناء جلب المساعدات العينية: " + ex->Message, "خطأ", MessageBoxButtons::OK, MessageBoxIcon::Error);
+        }
+
+        Disconnect();
+        return inKindAids;
+    }
+
 
 };

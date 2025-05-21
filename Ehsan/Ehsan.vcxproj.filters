@@ -45,9 +45,6 @@
     <ClInclude Include="Connection.h">
       <Filter>Header Files\Connection</Filter>
     </ClInclude>
-    <ClInclude Include="SeasonalFinancialAid.h">
-      <Filter>Header Files\Model</Filter>
-    </ClInclude>
     <ClInclude Include="MainForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -68,6 +65,15 @@
     </ClInclude>
     <ClInclude Include="Aid.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ToDayShowAid.h">
+      <Filter>Header Files\Pages</Filter>
+    </ClInclude>
+    <ClInclude Include="FinancialAid.h">
+      <Filter>Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="InKindAid.h">
+      <Filter>Header Files\Model</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -92,9 +98,6 @@
     <ClCompile Include="Cases.cpp">
       <Filter>Header Files\Model</Filter>
     </ClCompile>
-    <ClCompile Include="SeasonalFinancialAid.cpp">
-      <Filter>Header Files\Model</Filter>
-    </ClCompile>
     <ClCompile Include="AddCaseForm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -115,6 +118,15 @@
     </ClCompile>
     <ClCompile Include="Aid.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ToDayShowAid.cpp">
+      <Filter>Header Files\Pages</Filter>
+    </ClCompile>
+    <ClCompile Include="FinancialAid.cpp">
+      <Filter>Header Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="InKindAid.cpp">
+      <Filter>Header Files\Model</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

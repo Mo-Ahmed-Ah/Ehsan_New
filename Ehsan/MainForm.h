@@ -1,6 +1,6 @@
 ﻿	#pragma once
 #include "AddCaseForm.h"
-#include "TodayViewForm.h"
+#include "ToDayShowAid.h"
 #include "ShowCases.h"
 
 	namespace Ehsan {
@@ -112,9 +112,9 @@
 				this->HomeTitlePanal = (gcnew System::Windows::Forms::Panel());
 				this->HomePageTitleLabel = (gcnew System::Windows::Forms::Label());
 				this->flowLayoutPanel1 = (gcnew System::Windows::Forms::FlowLayoutPanel());
-				this->HomePageToDayButton = (gcnew System::Windows::Forms::Button());
 				this->HomeBageAddCasesButton = (gcnew System::Windows::Forms::Button());
 				this->ShowCasesButton = (gcnew System::Windows::Forms::Button());
+				this->HomePageToDayButton = (gcnew System::Windows::Forms::Button());
 				this->button3 = (gcnew System::Windows::Forms::Button());
 				this->button4 = (gcnew System::Windows::Forms::Button());
 				this->HomeInfoPanal->SuspendLayout();
@@ -136,10 +136,10 @@
 				this->HomeInfoPanal->Controls->Add(this->HomePageMostCommonPanel);
 				this->HomeInfoPanal->Controls->Add(this->HomePageTodaysAidPanel);
 				this->HomeInfoPanal->FlowDirection = System::Windows::Forms::FlowDirection::RightToLeft;
-				this->HomeInfoPanal->Location = System::Drawing::Point(14, 65);
+				this->HomeInfoPanal->Location = System::Drawing::Point(-1, 54);
 				this->HomeInfoPanal->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 				this->HomeInfoPanal->Name = L"HomeInfoPanal";
-				this->HomeInfoPanal->Size = System::Drawing::Size(736, 119);
+				this->HomeInfoPanal->Size = System::Drawing::Size(1170, 119);
 				this->HomeInfoPanal->TabIndex = 1;
 				// 
 				// HomePageCasesPanel
@@ -147,10 +147,10 @@
 				this->HomePageCasesPanel->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
 				this->HomePageCasesPanel->Controls->Add(this->HomePageNumberOfCasesLabel);
 				this->HomePageCasesPanel->Controls->Add(this->HomePageCasesNumberLabel);
-				this->HomePageCasesPanel->Location = System::Drawing::Point(495, 3);
+				this->HomePageCasesPanel->Location = System::Drawing::Point(931, 3);
 				this->HomePageCasesPanel->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 				this->HomePageCasesPanel->Name = L"HomePageCasesPanel";
-				this->HomePageCasesPanel->Size = System::Drawing::Size(233, 48);
+				this->HomePageCasesPanel->Size = System::Drawing::Size(231, 48);
 				this->HomePageCasesPanel->TabIndex = 0;
 				// 
 				// HomePageNumberOfCasesLabel
@@ -184,7 +184,7 @@
 				this->HomePageAssistancePanel->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
 				this->HomePageAssistancePanel->Controls->Add(this->HomePageNumberOfAssistance);
 				this->HomePageAssistancePanel->Controls->Add(this->HomePageAssistanceLabel);
-				this->HomePageAssistancePanel->Location = System::Drawing::Point(254, 3);
+				this->HomePageAssistancePanel->Location = System::Drawing::Point(690, 3);
 				this->HomePageAssistancePanel->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 				this->HomePageAssistancePanel->Name = L"HomePageAssistancePanel";
 				this->HomePageAssistancePanel->Size = System::Drawing::Size(233, 48);
@@ -221,7 +221,7 @@
 				this->HomePageExpensesPanel->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
 				this->HomePageExpensesPanel->Controls->Add(this->HomePageExpensesValue);
 				this->HomePageExpensesPanel->Controls->Add(this->HomePageExpensesLabel);
-				this->HomePageExpensesPanel->Location = System::Drawing::Point(13, 3);
+				this->HomePageExpensesPanel->Location = System::Drawing::Point(449, 3);
 				this->HomePageExpensesPanel->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 				this->HomePageExpensesPanel->Name = L"HomePageExpensesPanel";
 				this->HomePageExpensesPanel->Size = System::Drawing::Size(233, 48);
@@ -260,10 +260,10 @@
 				this->HomePageMostCommonPanel->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
 				this->HomePageMostCommonPanel->Controls->Add(this->HomePageMostCommonlValue);
 				this->HomePageMostCommonPanel->Controls->Add(this->HomePageMostCommonlabel);
-				this->HomePageMostCommonPanel->Location = System::Drawing::Point(495, 57);
+				this->HomePageMostCommonPanel->Location = System::Drawing::Point(219, 3);
 				this->HomePageMostCommonPanel->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 				this->HomePageMostCommonPanel->Name = L"HomePageMostCommonPanel";
-				this->HomePageMostCommonPanel->Size = System::Drawing::Size(233, 48);
+				this->HomePageMostCommonPanel->Size = System::Drawing::Size(222, 48);
 				this->HomePageMostCommonPanel->TabIndex = 3;
 				// 
 				// HomePageMostCommonlValue
@@ -298,10 +298,10 @@
 				this->HomePageTodaysAidPanel->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
 				this->HomePageTodaysAidPanel->Controls->Add(this->HomePageNumberOfTodaysAid);
 				this->HomePageTodaysAidPanel->Controls->Add(this->HomePageTodaysAidLabel);
-				this->HomePageTodaysAidPanel->Location = System::Drawing::Point(256, 57);
+				this->HomePageTodaysAidPanel->Location = System::Drawing::Point(17, 3);
 				this->HomePageTodaysAidPanel->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 				this->HomePageTodaysAidPanel->Name = L"HomePageTodaysAidPanel";
-				this->HomePageTodaysAidPanel->Size = System::Drawing::Size(231, 48);
+				this->HomePageTodaysAidPanel->Size = System::Drawing::Size(194, 48);
 				this->HomePageTodaysAidPanel->TabIndex = 4;
 				this->HomePageTodaysAidPanel->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MainForm::HomePageTodaysAidPanel_Paint);
 				// 
@@ -325,7 +325,7 @@
 				this->HomePageTodaysAidLabel->AutoSize = true;
 				this->HomePageTodaysAidLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular,
 					System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-				this->HomePageTodaysAidLabel->Location = System::Drawing::Point(99, 12);
+				this->HomePageTodaysAidLabel->Location = System::Drawing::Point(74, 12);
 				this->HomePageTodaysAidLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 				this->HomePageTodaysAidLabel->Name = L"HomePageTodaysAidLabel";
 				this->HomePageTodaysAidLabel->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
@@ -340,7 +340,7 @@
 				this->HomeTitlePanal->Location = System::Drawing::Point(-1, -1);
 				this->HomeTitlePanal->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 				this->HomeTitlePanal->Name = L"HomeTitlePanal";
-				this->HomeTitlePanal->Size = System::Drawing::Size(768, 49);
+				this->HomeTitlePanal->Size = System::Drawing::Size(1170, 49);
 				this->HomeTitlePanal->TabIndex = 2;
 				// 
 				// HomePageTitleLabel
@@ -363,31 +363,11 @@
 				this->flowLayoutPanel1->Controls->Add(this->HomePageToDayButton);
 				this->flowLayoutPanel1->Controls->Add(this->button3);
 				this->flowLayoutPanel1->Controls->Add(this->button4);
-				this->flowLayoutPanel1->Location = System::Drawing::Point(216, 189);
+				this->flowLayoutPanel1->Location = System::Drawing::Point(399, 192);
 				this->flowLayoutPanel1->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 				this->flowLayoutPanel1->Name = L"flowLayoutPanel1";
-				this->flowLayoutPanel1->Size = System::Drawing::Size(274, 370);
+				this->flowLayoutPanel1->Size = System::Drawing::Size(395, 491);
 				this->flowLayoutPanel1->TabIndex = 3;
-				// 
-				// HomePageToDayButton
-				// 
-				this->HomePageToDayButton->BackColor = System::Drawing::SystemColors::HotTrack;
-				this->HomePageToDayButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-				this->HomePageToDayButton->Cursor = System::Windows::Forms::Cursors::Hand;
-				this->HomePageToDayButton->FlatAppearance->BorderColor = System::Drawing::Color::Cyan;
-				this->HomePageToDayButton->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Cyan;
-				this->HomePageToDayButton->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Cyan;
-				this->HomePageToDayButton->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-					static_cast<System::Byte>(0)));
-				this->HomePageToDayButton->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-				this->HomePageToDayButton->Location = System::Drawing::Point(4, 95);
-				this->HomePageToDayButton->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
-				this->HomePageToDayButton->Name = L"HomePageToDayButton";
-				this->HomePageToDayButton->Size = System::Drawing::Size(271, 40);
-				this->HomePageToDayButton->TabIndex = 6;
-				this->HomePageToDayButton->Text = L"عرض اليوم ";
-				this->HomePageToDayButton->UseVisualStyleBackColor = false;
-				this->HomePageToDayButton->Click += gcnew System::EventHandler(this, &MainForm::HomePageToDayButton_Click);
 				// 
 				// HomeBageAddCasesButton
 				// 
@@ -403,7 +383,7 @@
 				this->HomeBageAddCasesButton->Location = System::Drawing::Point(4, 3);
 				this->HomeBageAddCasesButton->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 				this->HomeBageAddCasesButton->Name = L"HomeBageAddCasesButton";
-				this->HomeBageAddCasesButton->Size = System::Drawing::Size(271, 40);
+				this->HomeBageAddCasesButton->Size = System::Drawing::Size(391, 40);
 				this->HomeBageAddCasesButton->TabIndex = 7;
 				this->HomeBageAddCasesButton->Text = L"إضافة حالة";
 				this->HomeBageAddCasesButton->UseVisualStyleBackColor = false;
@@ -423,11 +403,31 @@
 				this->ShowCasesButton->Location = System::Drawing::Point(4, 49);
 				this->ShowCasesButton->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 				this->ShowCasesButton->Name = L"ShowCasesButton";
-				this->ShowCasesButton->Size = System::Drawing::Size(271, 40);
+				this->ShowCasesButton->Size = System::Drawing::Size(391, 40);
 				this->ShowCasesButton->TabIndex = 8;
 				this->ShowCasesButton->Text = L"عرض الحالات";
 				this->ShowCasesButton->UseVisualStyleBackColor = false;
 				this->ShowCasesButton->Click += gcnew System::EventHandler(this, &MainForm::ShowCasesButton_Click);
+				// 
+				// HomePageToDayButton
+				// 
+				this->HomePageToDayButton->BackColor = System::Drawing::SystemColors::HotTrack;
+				this->HomePageToDayButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+				this->HomePageToDayButton->Cursor = System::Windows::Forms::Cursors::Hand;
+				this->HomePageToDayButton->FlatAppearance->BorderColor = System::Drawing::Color::Cyan;
+				this->HomePageToDayButton->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Cyan;
+				this->HomePageToDayButton->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Cyan;
+				this->HomePageToDayButton->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+					static_cast<System::Byte>(0)));
+				this->HomePageToDayButton->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+				this->HomePageToDayButton->Location = System::Drawing::Point(4, 95);
+				this->HomePageToDayButton->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
+				this->HomePageToDayButton->Name = L"HomePageToDayButton";
+				this->HomePageToDayButton->Size = System::Drawing::Size(391, 40);
+				this->HomePageToDayButton->TabIndex = 6;
+				this->HomePageToDayButton->Text = L"عرض اليوم ";
+				this->HomePageToDayButton->UseVisualStyleBackColor = false;
+				this->HomePageToDayButton->Click += gcnew System::EventHandler(this, &MainForm::HomePageToDayButton_Click);
 				// 
 				// button3
 				// 
@@ -443,7 +443,7 @@
 				this->button3->Location = System::Drawing::Point(4, 141);
 				this->button3->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 				this->button3->Name = L"button3";
-				this->button3->Size = System::Drawing::Size(271, 40);
+				this->button3->Size = System::Drawing::Size(391, 40);
 				this->button3->TabIndex = 9;
 				this->button3->Text = L"عرض اليوم ";
 				this->button3->UseVisualStyleBackColor = false;
@@ -462,7 +462,7 @@
 				this->button4->Location = System::Drawing::Point(4, 187);
 				this->button4->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 				this->button4->Name = L"button4";
-				this->button4->Size = System::Drawing::Size(271, 40);
+				this->button4->Size = System::Drawing::Size(391, 40);
 				this->button4->TabIndex = 10;
 				this->button4->Text = L"عرض اليوم ";
 				this->button4->UseVisualStyleBackColor = false;
@@ -472,7 +472,7 @@
 				this->AccessibleRole = System::Windows::Forms::AccessibleRole::None;
 				this->AutoScaleDimensions = System::Drawing::SizeF(7, 12);
 				this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-				this->ClientSize = System::Drawing::Size(768, 568);
+				this->ClientSize = System::Drawing::Size(1170, 773);
 				this->Controls->Add(this->flowLayoutPanel1);
 				this->Controls->Add(this->HomeTitlePanal);
 				this->Controls->Add(this->HomeInfoPanal);
@@ -482,6 +482,7 @@
 				this->MaximizeBox = false;
 				this->MinimizeBox = false;
 				this->Name = L"MainForm";
+				this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 				this->Text = L"MainForm";
 				this->Load += gcnew System::EventHandler(this, &MainForm::MainForm_Load);
 				this->HomeInfoPanal->ResumeLayout(false);
@@ -513,8 +514,8 @@
 		private: void MainForm::HomePageToDayButton_Click(System::Object^ sender, System::EventArgs^ e)
 		{
 			// Create an instance of TodayViewForm and show it
-			TodayViewForm^ todayViewForm = gcnew TodayViewForm();
-			todayViewForm->Show();
+			ToDayShowAid^ todayShowAid = gcnew ToDayShowAid();
+			todayShowAid->Show();
 		}
 
 

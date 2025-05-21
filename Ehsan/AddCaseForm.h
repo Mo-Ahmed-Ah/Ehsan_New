@@ -11,6 +11,8 @@ namespace Ehsan {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace System::Text;
+	using namespace System::Text::RegularExpressions;
+
 
 	/// <summary>
 	/// Summary for AddCaseForm
@@ -381,6 +383,7 @@ namespace Ehsan {
 			this->AddCasesMaritalStatusComboBox->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
 			this->AddCasesMaritalStatusComboBox->Size = System::Drawing::Size(240, 32);
 			this->AddCasesMaritalStatusComboBox->TabIndex = 21;
+			this->AddCasesMaritalStatusComboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &AddCaseForm::Change_In_Marital_Status);
 			// 
 			// AddCasesMaleChildrenLabel
 			// 
@@ -847,5 +850,30 @@ private: System::Void AddCasesCleanButton_Click(System::Object^ sender, System::
 	AddCasesGenderMailRadioButton->Checked = false;
 	AddCasesGenderFemailRadioButton->Checked = true; // أو العكس حسب ما تريد
 }
+private: System::Void Change_In_Marital_Status(System::Object^ sender, System::EventArgs^ e)
+{
+	// الحصول على الحالة الاجتماعية المختارة
+	String^ selectedStatus = AddCasesMaritalStatusComboBox->SelectedItem != nullptr ?
+		AddCasesMaritalStatusComboBox->SelectedItem->ToString() : "";
+
+	// التحقق إذا كانت تحتوي على "يعول" بأي صيغة باستخدام Regex
+	bool hasChildren = System::Text::RegularExpressions::Regex::IsMatch(selectedStatus, L"ويعول");
+
+
+	// إظهار أو إخفاء الحقول بناءً على وجود أطفال
+	AddCasesMaleChildrenLabel->Visible = hasChildren;
+	AddCasesMaleChildrenNumericUpDown->Visible = hasChildren;
+	AddCasesFemaleChildrenLabel->Visible = hasChildren;
+	AddCasesFemaleChildrenNumericUpDown->Visible = hasChildren;
+
+	// إذا لم يكن لديه أطفال، قم بتصفير القيم
+	if (!hasChildren)
+	{
+		AddCasesMaleChildrenNumericUpDown->Value = 0;
+		AddCasesFemaleChildrenNumericUpDown->Value = 0;
+	}
+}
+
+
 };
 }

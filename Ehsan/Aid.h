@@ -244,11 +244,11 @@ public:
     }
 
         // Default constructor
-        Aid() {
-        _isRecurring = false;
-        _receivedCount = 0;
-        _isActive = true;
-        _createdAt = DateTime::Now;
-        _registrationDate = DateTime::Now;
-    }
+          /*  Aid() {
+            _isRecurring = false;
+            _receivedCount = 0;
+            _isActive = true;
+            _createdAt = DateTime::Now;
+            _registrationDate = DateTime::Now;
+        }*/
 };

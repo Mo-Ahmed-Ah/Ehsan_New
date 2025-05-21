@@ -136,6 +136,8 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Connection.h" />
+    <ClInclude Include="FinancialAid.h" />
+    <ClInclude Include="InKindAid.h" />
     <ClInclude Include="MainForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -145,11 +147,13 @@
     <ClInclude Include="SearchCaseForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="SeasonalFinancialAid.h" />
     <ClInclude Include="SelectAidForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ShowCases.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ToDayShowAid.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="TodayViewForm.h">
@@ -164,13 +168,15 @@
     <ClCompile Include="CaseProfile.cpp" />
     <ClCompile Include="Cases.cpp" />
     <ClCompile Include="EditAssistanceForm.cpp" />
+    <ClCompile Include="FinancialAid.cpp" />
+    <ClCompile Include="InKindAid.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainForm.cpp" />
     <ClCompile Include="ReportsForm.cpp" />
     <ClCompile Include="SearchCaseForm.cpp" />
-    <ClCompile Include="SeasonalFinancialAid.cpp" />
     <ClCompile Include="SelectAidForm.cpp" />
     <ClCompile Include="ShowCases.cpp" />
+    <ClCompile Include="ToDayShowAid.cpp" />
     <ClCompile Include="TodayViewForm.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -191,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ShowCases.resx">
       <DependentUpon>ShowCases.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToDayShowAid.resx">
+      <DependentUpon>ToDayShowAid.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TodayViewForm.resx">
       <DependentUpon>TodayViewForm.h</DependentUpon>
