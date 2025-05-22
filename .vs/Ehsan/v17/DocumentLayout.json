@@ -1,17 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "F:\\my Projects\\Ehsan_New\\",
+  "WorkspaceRootPath": "C:\\Users\\ahmoh\\OneDrive - Egyptian Ministry of Education\\\u0627\u0644\u0643\u0644\u064A\u0629\\3\\2\\task\\C\u002B\u002B\\Final Project\\Ehsan_New\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|F:\\my Projects\\Ehsan_New\\Ehsan\\ToDayShowAid.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\ToDayShowAid.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|C:\\Users\\ahmoh\\OneDrive - Egyptian Ministry of Education\\\u0627\u0644\u0643\u0644\u064A\u0629\\3\\2\\task\\C\u002B\u002B\\Final Project\\Ehsan_New\\Ehsan\\Cases.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\Cases.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|F:\\my Projects\\Ehsan_New\\Ehsan\\ToDayShowAid.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
-      "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\ToDayShowAid.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
+      "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|C:\\Users\\ahmoh\\OneDrive - Egyptian Ministry of Education\\\u0627\u0644\u0643\u0644\u064A\u0629\\3\\2\\task\\C\u002B\u002B\\Final Project\\Ehsan_New\\Ehsan\\AddNewAid.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\AddNewAid.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|F:\\my Projects\\Ehsan_New\\Ehsan\\Connection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|C:\\Users\\ahmoh\\OneDrive - Egyptian Ministry of Education\\\u0627\u0644\u0643\u0644\u064A\u0629\\3\\2\\task\\C\u002B\u002B\\Final Project\\Ehsan_New\\Ehsan\\AddNewAid.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
+      "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\AddNewAid.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|C:\\Users\\ahmoh\\OneDrive - Egyptian Ministry of Education\\\u0627\u0644\u0643\u0644\u064A\u0629\\3\\2\\task\\C\u002B\u002B\\Final Project\\Ehsan_New\\Ehsan\\Connection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{0777E21C-4579-56EF-84E7-CD1E6509EE32}|Ehsan\\Ehsan.vcxproj|solutionrelative:Ehsan\\Connection.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -22,44 +26,57 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Connection.h",
-              "DocumentMoniker": "F:\\my Projects\\Ehsan_New\\Ehsan\\Connection.h",
+              "DocumentMoniker": "C:\\Users\\ahmoh\\OneDrive - Egyptian Ministry of Education\\\u0627\u0644\u0643\u0644\u064A\u0629\\3\\2\\task\\C\u002B\u002B\\Final Project\\Ehsan_New\\Ehsan\\Connection.h",
               "RelativeDocumentMoniker": "Ehsan\\Connection.h",
-              "ToolTip": "F:\\my Projects\\Ehsan_New\\Ehsan\\Connection.h",
+              "ToolTip": "C:\\Users\\ahmoh\\OneDrive - Egyptian Ministry of Education\\\u0627\u0644\u0643\u0644\u064A\u0629\\3\\2\\task\\C\u002B\u002B\\Final Project\\Ehsan_New\\Ehsan\\Connection.h",
               "RelativeToolTip": "Ehsan\\Connection.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMcBAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEoCAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-21T10:52:32.257Z",
+              "WhenOpened": "2025-05-22T07:34:48.574Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ToDayShowAid.h [Design]",
-              "DocumentMoniker": "F:\\my Projects\\Ehsan_New\\Ehsan\\ToDayShowAid.h",
-              "RelativeDocumentMoniker": "Ehsan\\ToDayShowAid.h",
-              "ToolTip": "F:\\my Projects\\Ehsan_New\\Ehsan\\ToDayShowAid.h [Design]",
-              "RelativeToolTip": "Ehsan\\ToDayShowAid.h [Design]",
+              "DocumentIndex": 0,
+              "Title": "Cases.h",
+              "DocumentMoniker": "C:\\Users\\ahmoh\\OneDrive - Egyptian Ministry of Education\\\u0627\u0644\u0643\u0644\u064A\u0629\\3\\2\\task\\C\u002B\u002B\\Final Project\\Ehsan_New\\Ehsan\\Cases.h",
+              "RelativeDocumentMoniker": "Ehsan\\Cases.h",
+              "ToolTip": "C:\\Users\\ahmoh\\OneDrive - Egyptian Ministry of Education\\\u0627\u0644\u0643\u0644\u064A\u0629\\3\\2\\task\\C\u002B\u002B\\Final Project\\Ehsan_New\\Ehsan\\Cases.h",
+              "RelativeToolTip": "Ehsan\\Cases.h",
+              "ViewState": "AgIAALkAAAAAAAAAAADwv8gAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-21T10:03:57.292Z",
+              "WhenOpened": "2025-05-22T07:30:21.317Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AddNewAid.h [Design]",
+              "DocumentMoniker": "C:\\Users\\ahmoh\\OneDrive - Egyptian Ministry of Education\\\u0627\u0644\u0643\u0644\u064A\u0629\\3\\2\\task\\C\u002B\u002B\\Final Project\\Ehsan_New\\Ehsan\\AddNewAid.h",
+              "RelativeDocumentMoniker": "Ehsan\\AddNewAid.h",
+              "ToolTip": "C:\\Users\\ahmoh\\OneDrive - Egyptian Ministry of Education\\\u0627\u0644\u0643\u0644\u064A\u0629\\3\\2\\task\\C\u002B\u002B\\Final Project\\Ehsan_New\\Ehsan\\AddNewAid.h [Design]",
+              "RelativeToolTip": "Ehsan\\AddNewAid.h [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-22T06:45:46.502Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ToDayShowAid.h",
-              "DocumentMoniker": "F:\\my Projects\\Ehsan_New\\Ehsan\\ToDayShowAid.h",
-              "RelativeDocumentMoniker": "Ehsan\\ToDayShowAid.h",
-              "ToolTip": "F:\\my Projects\\Ehsan_New\\Ehsan\\ToDayShowAid.h",
-              "RelativeToolTip": "Ehsan\\ToDayShowAid.h",
-              "ViewState": "AgIAAPIBAAAAAAAAAAAkwP0BAAApAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "AddNewAid.h",
+              "DocumentMoniker": "C:\\Users\\ahmoh\\OneDrive - Egyptian Ministry of Education\\\u0627\u0644\u0643\u0644\u064A\u0629\\3\\2\\task\\C\u002B\u002B\\Final Project\\Ehsan_New\\Ehsan\\AddNewAid.h",
+              "RelativeDocumentMoniker": "Ehsan\\AddNewAid.h",
+              "ToolTip": "C:\\Users\\ahmoh\\OneDrive - Egyptian Ministry of Education\\\u0627\u0644\u0643\u0644\u064A\u0629\\3\\2\\task\\C\u002B\u002B\\Final Project\\Ehsan_New\\Ehsan\\AddNewAid.h",
+              "RelativeToolTip": "Ehsan\\AddNewAid.h",
+              "ViewState": "AgIAAA0CAAAAAAAAAADgvxgCAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-21T09:08:09.702Z",
+              "WhenOpened": "2025-05-22T06:49:39.26Z",
               "EditorCaption": ""
             }
           ]

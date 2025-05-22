@@ -1,5 +1,5 @@
-  Ehsan.AddAidPage.resources - Embedded, ContainedInManifestFile, 
   Ehsan.AddCaseForm.resources - Embedded, ContainedInManifestFile, 
+  Ehsan.AddNewAid.resources - Embedded, ContainedInManifestFile, 
   Ehsan.CaseProfile.resources - Embedded, ContainedInManifestFile, 
   Ehsan.MainForm.resources - Embedded, ContainedInManifestFile, 
   Ehsan.SelectAidForm.resources - Embedded, ContainedInManifestFile, 
@@ -21,9 +21,6 @@ Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=
 	hash=None, flags=None
 Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
-Class Ehsan.AddAidPage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Aid: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(Int32, Int32, System.String, System.String, System.String, System.String, Boolean, System.Nullable`1[System.Decimal], Int32, System.String, System.DateTime, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime], System.String, Boolean, System.DateTime, System.Nullable`1[System.DateTime]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(Int32, Int32, System.String, System.String, System.String, System.String, Boolean, System.Nullable`1[System.Decimal], Int32, System.String, System.DateTime, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime], System.String, Boolean): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -83,6 +80,9 @@ Class Aid: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     get_UpdatedAt(): PrivateScope, Public, HideBySig, SpecialName
     set_UpdatedAt(Nullable`1): PrivateScope, Public, HideBySig, SpecialName
 Class Ehsan.AddCaseForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Ehsan.AddNewAid: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Ehsan.AssistanceTypeForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit

@@ -60,9 +60,6 @@
     <ClInclude Include="CaseProfile.h">
       <Filter>Header Files\Pages</Filter>
     </ClInclude>
-    <ClInclude Include="AddAidPage.h">
-      <Filter>Header Files\Pages</Filter>
-    </ClInclude>
     <ClInclude Include="Aid.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -74,6 +71,9 @@
     </ClInclude>
     <ClInclude Include="InKindAid.h">
       <Filter>Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="AddNewAid.h">
+      <Filter>Header Files\Pages</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -113,9 +113,6 @@
     <ClCompile Include="CaseProfile.cpp">
       <Filter>Header Files\Pages</Filter>
     </ClCompile>
-    <ClCompile Include="AddAidPage.cpp">
-      <Filter>Header Files\Pages</Filter>
-    </ClCompile>
     <ClCompile Include="Aid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -127,6 +124,9 @@
     </ClCompile>
     <ClCompile Include="InKindAid.cpp">
       <Filter>Header Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="AddNewAid.cpp">
+      <Filter>Header Files\Pages</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

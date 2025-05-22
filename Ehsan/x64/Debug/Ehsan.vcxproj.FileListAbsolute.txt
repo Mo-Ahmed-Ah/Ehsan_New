@@ -8,3 +8,13 @@ F:\my Projects\Ehsan_New\Ehsan\x64\Debug\Ehsan.ShowCases.resources
 F:\my Projects\Ehsan_New\Ehsan\x64\Debug\Ehsan.CaseProfile.resources
 F:\my Projects\Ehsan_New\Ehsan\x64\Debug\Ehsan.AddAidPage.resources
 F:\my Projects\Ehsan_New\Ehsan\x64\Debug\Ehsan.ToDayShowAid.resources
+C:\Users\ahmoh\OneDrive - Egyptian Ministry of Education\الكلية\3\2\task\C++\Final Project\Ehsan_New\Ehsan\x64\Debug\Ehsan.vcxproj.AssemblyReference.cache
+C:\Users\ahmoh\OneDrive - Egyptian Ministry of Education\الكلية\3\2\task\C++\Final Project\Ehsan_New\Ehsan\x64\Debug\Ehsan.AddCaseForm.resources
+C:\Users\ahmoh\OneDrive - Egyptian Ministry of Education\الكلية\3\2\task\C++\Final Project\Ehsan_New\Ehsan\x64\Debug\Ehsan.CaseProfile.resources
+C:\Users\ahmoh\OneDrive - Egyptian Ministry of Education\الكلية\3\2\task\C++\Final Project\Ehsan_New\Ehsan\x64\Debug\Ehsan.MainForm.resources
+C:\Users\ahmoh\OneDrive - Egyptian Ministry of Education\الكلية\3\2\task\C++\Final Project\Ehsan_New\Ehsan\x64\Debug\Ehsan.SelectAidForm.resources
+C:\Users\ahmoh\OneDrive - Egyptian Ministry of Education\الكلية\3\2\task\C++\Final Project\Ehsan_New\Ehsan\x64\Debug\Ehsan.ShowCases.resources
+C:\Users\ahmoh\OneDrive - Egyptian Ministry of Education\الكلية\3\2\task\C++\Final Project\Ehsan_New\Ehsan\x64\Debug\Ehsan.ToDayShowAid.resources
+C:\Users\ahmoh\OneDrive - Egyptian Ministry of Education\الكلية\3\2\task\C++\Final Project\Ehsan_New\Ehsan\x64\Debug\Ehsan.TodayViewForm.resources
+C:\Users\ahmoh\OneDrive - Egyptian Ministry of Education\الكلية\3\2\task\C++\Final Project\Ehsan_New\Ehsan\x64\Debug\Ehsan.vcxproj.GenerateResource.cache
+C:\Users\ahmoh\OneDrive - Egyptian Ministry of Education\الكلية\3\2\task\C++\Final Project\Ehsan_New\Ehsan\x64\Debug\Ehsan.AddNewAid.resources

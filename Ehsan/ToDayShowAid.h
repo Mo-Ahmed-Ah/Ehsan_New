@@ -73,6 +73,20 @@ namespace Ehsan {
 
 
 
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ aColCaseName;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ aColAidValue;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ aColAidType;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ aNotes;
+	private: System::Windows::Forms::DataGridViewCheckBoxColumn^ aColIsDelivered;
+	private: System::Windows::Forms::DataGridViewCheckBoxColumn^ aColID;
+	private: System::Windows::Forms::DataGridViewCheckBoxColumn^ aColIsRecurring;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ fColCaseName;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ fColAidType;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ fColAmount;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ fColNotes;
+	private: System::Windows::Forms::DataGridViewCheckBoxColumn^ fColIsDelivered;
+	private: System::Windows::Forms::DataGridViewCheckBoxColumn^ fColID;
+	private: System::Windows::Forms::DataGridViewCheckBoxColumn^ fColIsRecurring;
 
 
 
@@ -87,20 +101,55 @@ namespace Ehsan {
 
 
 
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn5;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn6;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn7;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn8;
-	private: System::Windows::Forms::DataGridViewCheckBoxColumn^ dataGridViewCheckBoxColumn5;
-	private: System::Windows::Forms::DataGridViewCheckBoxColumn^ dataGridViewCheckBoxColumn6;
-	private: System::Windows::Forms::DataGridViewCheckBoxColumn^ dataGridViewCheckBoxColumn7;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ colCaseName;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ colAidType;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ colAmount;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ colNotes;
-	private: System::Windows::Forms::DataGridViewCheckBoxColumn^ colID;
-	private: System::Windows::Forms::DataGridViewCheckBoxColumn^ colIsDelivered;
-	private: System::Windows::Forms::DataGridViewCheckBoxColumn^ colIsRecurring;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -198,20 +247,20 @@ namespace Ehsan {
 			this->ToDayShowInKindAidPanel = (gcnew System::Windows::Forms::Panel());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->ToDayShowInKindAidDataGridView = (gcnew System::Windows::Forms::DataGridView());
-			this->dataGridViewTextBoxColumn5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->dataGridViewTextBoxColumn6 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->dataGridViewTextBoxColumn7 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->dataGridViewTextBoxColumn8 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->dataGridViewCheckBoxColumn5 = (gcnew System::Windows::Forms::DataGridViewCheckBoxColumn());
-			this->dataGridViewCheckBoxColumn6 = (gcnew System::Windows::Forms::DataGridViewCheckBoxColumn());
-			this->dataGridViewCheckBoxColumn7 = (gcnew System::Windows::Forms::DataGridViewCheckBoxColumn());
-			this->colIsRecurring = (gcnew System::Windows::Forms::DataGridViewCheckBoxColumn());
-			this->colIsDelivered = (gcnew System::Windows::Forms::DataGridViewCheckBoxColumn());
-			this->colID = (gcnew System::Windows::Forms::DataGridViewCheckBoxColumn());
-			this->colNotes = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->colAmount = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->colAidType = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->colCaseName = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->aColCaseName = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->aColAidValue = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->aColAidType = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->aNotes = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->aColIsDelivered = (gcnew System::Windows::Forms::DataGridViewCheckBoxColumn());
+			this->aColID = (gcnew System::Windows::Forms::DataGridViewCheckBoxColumn());
+			this->aColIsRecurring = (gcnew System::Windows::Forms::DataGridViewCheckBoxColumn());
+			this->fColCaseName = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->fColAidType = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->fColAmount = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->fColNotes = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->fColIsDelivered = (gcnew System::Windows::Forms::DataGridViewCheckBoxColumn());
+			this->fColID = (gcnew System::Windows::Forms::DataGridViewCheckBoxColumn());
+			this->fColIsRecurring = (gcnew System::Windows::Forms::DataGridViewCheckBoxColumn());
 			this->ToDayShowAidPagePanal->SuspendLayout();
 			this->ToDayShowFinancialAidPanel->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ToDayShowFinancialAidDataGridView))->BeginInit();
@@ -269,14 +318,14 @@ namespace Ehsan {
 			// 
 			this->ToDayShowFinancialAidDataGridView->AllowUserToAddRows = false;
 			this->ToDayShowFinancialAidDataGridView->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
-			this->ToDayShowFinancialAidDataGridView->AutoSizeRowsMode = System::Windows::Forms::DataGridViewAutoSizeRowsMode::AllCells;
+			this->ToDayShowFinancialAidDataGridView->AutoSizeRowsMode = System::Windows::Forms::DataGridViewAutoSizeRowsMode::DisplayedCells;
 			this->ToDayShowFinancialAidDataGridView->BackgroundColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->ToDayShowFinancialAidDataGridView->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
 			this->ToDayShowFinancialAidDataGridView->ColumnHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::Single;
 			this->ToDayShowFinancialAidDataGridView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->ToDayShowFinancialAidDataGridView->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(7) {
-				this->colCaseName,
-					this->colAidType, this->colAmount, this->colNotes, this->colID, this->colIsDelivered, this->colIsRecurring
+				this->fColCaseName,
+					this->fColAidType, this->fColAmount, this->fColNotes, this->fColIsDelivered, this->fColID, this->fColIsRecurring
 			});
 			this->ToDayShowFinancialAidDataGridView->Cursor = System::Windows::Forms::Cursors::Default;
 			this->ToDayShowFinancialAidDataGridView->GridColor = System::Drawing::SystemColors::ActiveCaption;
@@ -287,7 +336,7 @@ namespace Ehsan {
 			this->ToDayShowFinancialAidDataGridView->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
 			this->ToDayShowFinancialAidDataGridView->Size = System::Drawing::Size(1134, 307);
 			this->ToDayShowFinancialAidDataGridView->TabIndex = 0;
-			this->ToDayShowFinancialAidDataGridView->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ToDayShowAid::ToDayShowInKindAidDataGridView_CellContentClick);
+			this->ToDayShowFinancialAidDataGridView->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ToDayShowAid::ToDayShowFinancialAidDataGridView_CellContentClick);
 			// 
 			// CaseName
 			// 
@@ -372,9 +421,8 @@ namespace Ehsan {
 			this->ToDayShowInKindAidDataGridView->ColumnHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::Single;
 			this->ToDayShowInKindAidDataGridView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->ToDayShowInKindAidDataGridView->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(7) {
-				this->dataGridViewTextBoxColumn5,
-					this->dataGridViewTextBoxColumn6, this->dataGridViewTextBoxColumn7, this->dataGridViewTextBoxColumn8, this->dataGridViewCheckBoxColumn5,
-					this->dataGridViewCheckBoxColumn6, this->dataGridViewCheckBoxColumn7
+				this->aColCaseName,
+					this->aColAidValue, this->aColAidType, this->aNotes, this->aColIsDelivered, this->aColID, this->aColIsRecurring
 			});
 			this->ToDayShowInKindAidDataGridView->GridColor = System::Drawing::SystemColors::ActiveCaption;
 			this->ToDayShowInKindAidDataGridView->Location = System::Drawing::Point(3, 34);
@@ -384,104 +432,103 @@ namespace Ehsan {
 			this->ToDayShowInKindAidDataGridView->TabIndex = 0;
 			this->ToDayShowInKindAidDataGridView->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ToDayShowAid::ToDayShowInKindAidDataGridView_CellContentClick);
 			// 
-			// dataGridViewTextBoxColumn5
+			// aColCaseName
 			// 
-			this->dataGridViewTextBoxColumn5->HeaderText = L"أسم الحالة";
-			this->dataGridViewTextBoxColumn5->Name = L"dataGridViewTextBoxColumn5";
-			this->dataGridViewTextBoxColumn5->ReadOnly = true;
+			this->aColCaseName->HeaderText = L"أسم الحالة";
+			this->aColCaseName->Name = L"aColCaseName";
+			this->aColCaseName->ReadOnly = true;
 			// 
-			// dataGridViewTextBoxColumn6
+			// aColAidValue
 			// 
-			this->dataGridViewTextBoxColumn6->HeaderText = L"قيمة المساعدة";
-			this->dataGridViewTextBoxColumn6->Name = L"dataGridViewTextBoxColumn6";
-			this->dataGridViewTextBoxColumn6->ReadOnly = true;
+			this->aColAidValue->HeaderText = L"قيمة المساعدة";
+			this->aColAidValue->Name = L"aColAidValue";
+			this->aColAidValue->ReadOnly = true;
 			// 
-			// dataGridViewTextBoxColumn7
+			// aColAidType
 			// 
-			this->dataGridViewTextBoxColumn7->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
-			this->dataGridViewTextBoxColumn7->HeaderText = L"نوع المساعدة";
-			this->dataGridViewTextBoxColumn7->Name = L"dataGridViewTextBoxColumn7";
-			this->dataGridViewTextBoxColumn7->ReadOnly = true;
+			this->aColAidType->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->aColAidType->HeaderText = L"نوع المساعدة";
+			this->aColAidType->Name = L"aColAidType";
+			this->aColAidType->ReadOnly = true;
 			// 
-			// dataGridViewTextBoxColumn8
+			// aNotes
 			// 
-			this->dataGridViewTextBoxColumn8->HeaderText = L"الملاحظات";
-			this->dataGridViewTextBoxColumn8->Name = L"dataGridViewTextBoxColumn8";
-			this->dataGridViewTextBoxColumn8->ReadOnly = true;
+			this->aNotes->HeaderText = L"الملاحظات";
+			this->aNotes->Name = L"aNotes";
+			this->aNotes->ReadOnly = true;
 			// 
-			// dataGridViewCheckBoxColumn5
+			// aColIsDelivered
 			// 
-			this->dataGridViewCheckBoxColumn5->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::DisplayedCells;
-			this->dataGridViewCheckBoxColumn5->HeaderText = L"تم الاستلام";
-			this->dataGridViewCheckBoxColumn5->Name = L"dataGridViewCheckBoxColumn5";
-			this->dataGridViewCheckBoxColumn5->Width = 59;
+			this->aColIsDelivered->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::DisplayedCells;
+			this->aColIsDelivered->HeaderText = L"تم الاستلام";
+			this->aColIsDelivered->Name = L"aColIsDelivered";
+			this->aColIsDelivered->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::Automatic;
+			this->aColIsDelivered->Width = 78;
 			// 
-			// dataGridViewCheckBoxColumn6
+			// aColID
 			// 
-			this->dataGridViewCheckBoxColumn6->HeaderText = L"ID";
-			this->dataGridViewCheckBoxColumn6->Name = L"dataGridViewCheckBoxColumn6";
-			this->dataGridViewCheckBoxColumn6->ReadOnly = true;
-			this->dataGridViewCheckBoxColumn6->Visible = false;
+			this->aColID->HeaderText = L"ID";
+			this->aColID->Name = L"aColID";
+			this->aColID->ReadOnly = true;
+			this->aColID->Visible = false;
 			// 
-			// dataGridViewCheckBoxColumn7
+			// aColIsRecurring
 			// 
-			this->dataGridViewCheckBoxColumn7->HeaderText = L"IsRecurring";
-			this->dataGridViewCheckBoxColumn7->Name = L"dataGridViewCheckBoxColumn7";
-			this->dataGridViewCheckBoxColumn7->ReadOnly = true;
-			this->dataGridViewCheckBoxColumn7->Visible = false;
+			this->aColIsRecurring->HeaderText = L"IsRecurring";
+			this->aColIsRecurring->Name = L"aColIsRecurring";
+			this->aColIsRecurring->ReadOnly = true;
+			this->aColIsRecurring->Visible = false;
 			// 
-			// colIsRecurring
+			// fColCaseName
 			// 
-			this->colIsRecurring->HeaderText = L"IsRecurring";
-			this->colIsRecurring->Name = L"colIsRecurring";
-			this->colIsRecurring->Visible = false;
+			this->fColCaseName->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
+			this->fColCaseName->Frozen = true;
+			this->fColCaseName->HeaderText = L"اسم الحالة";
+			this->fColCaseName->Name = L"fColCaseName";
+			this->fColCaseName->Width = 253;
 			// 
-			// colIsDelivered
+			// fColAidType
 			// 
-			this->colIsDelivered->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
-			this->colIsDelivered->HeaderText = L"تم الأستلام";
-			this->colIsDelivered->Name = L"colIsDelivered";
-			this->colIsDelivered->Resizable = System::Windows::Forms::DataGridViewTriState::False;
-			this->colIsDelivered->Width = 219;
+			this->fColAidType->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
+			this->fColAidType->Frozen = true;
+			this->fColAidType->HeaderText = L"نوع المساعدة";
+			this->fColAidType->Name = L"fColAidType";
+			this->fColAidType->Width = 253;
 			// 
-			// colID
+			// fColAmount
 			// 
-			this->colID->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
-			this->colID->HeaderText = L"ID";
-			this->colID->Name = L"colID";
-			this->colID->Visible = false;
+			this->fColAmount->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
+			this->fColAmount->HeaderText = L"قيمة المساعدة";
+			this->fColAmount->Name = L"fColAmount";
+			this->fColAmount->Width = 253;
 			// 
-			// colNotes
+			// fColNotes
 			// 
-			this->colNotes->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
-			this->colNotes->Frozen = true;
-			this->colNotes->HeaderText = L"ملاحظات";
-			this->colNotes->Name = L"colNotes";
-			this->colNotes->Width = 218;
+			this->fColNotes->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
+			this->fColNotes->HeaderText = L"ملاحظات";
+			this->fColNotes->Name = L"fColNotes";
+			this->fColNotes->Width = 254;
 			// 
-			// colAmount
+			// fColIsDelivered
 			// 
-			this->colAmount->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
-			this->colAmount->Frozen = true;
-			this->colAmount->HeaderText = L"قيمة المساعدة";
-			this->colAmount->Name = L"colAmount";
-			this->colAmount->Width = 218;
+			this->fColIsDelivered->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
+			this->fColIsDelivered->HeaderText = L"تم الأستلام";
+			this->fColIsDelivered->Name = L"fColIsDelivered";
+			this->fColIsDelivered->Resizable = System::Windows::Forms::DataGridViewTriState::True;
+			this->fColIsDelivered->Width = 78;
 			// 
-			// colAidType
+			// fColID
 			// 
-			this->colAidType->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
-			this->colAidType->Frozen = true;
-			this->colAidType->HeaderText = L"نوع المساعدة";
-			this->colAidType->Name = L"colAidType";
-			this->colAidType->Width = 218;
+			this->fColID->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->fColID->HeaderText = L"ID";
+			this->fColID->Name = L"fColID";
+			this->fColID->Visible = false;
 			// 
-			// colCaseName
+			// fColIsRecurring
 			// 
-			this->colCaseName->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
-			this->colCaseName->Frozen = true;
-			this->colCaseName->HeaderText = L"اسم الحالة";
-			this->colCaseName->Name = L"colCaseName";
-			this->colCaseName->Width = 218;
+			this->fColIsRecurring->HeaderText = L"IsRecurring";
+			this->fColIsRecurring->Name = L"fColIsRecurring";
+			this->fColIsRecurring->Visible = false;
 			// 
 			// ToDayShowAid
 			// 
@@ -507,78 +554,93 @@ namespace Ehsan {
 			this->ToDayShowInKindAidPanel->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ToDayShowInKindAidDataGridView))->EndInit();
 			this->ResumeLayout(false);
-			this->ToDayShowFinancialAidDataGridView->CellContentClick +=
-				gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ToDayShowAid::ToDayShowFinancialAidDataGridView_CellContentClick);
+
 		}
 #pragma endregion
 	private: System::Void ToDayShowFinancialAidDataGridView_CellContentClick(System::Object^ sender,
 		System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 
 		// التحقق من أن النقر كان على عمود "تم الاستلام" وأن الصف صالح
-		if (e->ColumnIndex == 4 && e->RowIndex >= 0) // 4 هو مؤشر عمود colIsDelivered
+		if (e->ColumnIndex == this->fColIsDelivered->Index && e->RowIndex >= 0)
 		{
 			DataGridViewCheckBoxCell^ cell = (DataGridViewCheckBoxCell^)
 				this->ToDayShowFinancialAidDataGridView->Rows[e->RowIndex]->Cells[e->ColumnIndex];
 
-			bool newValue = !(bool)cell->Value;
-
-			// الحصول على بيانات الصف
-			int aidId = Convert::ToInt32(this->ToDayShowFinancialAidDataGridView->Rows[e->RowIndex]->Cells[5]->Value); // 5 هو مؤشر عمود colID
-			bool isRecurring = Convert::ToBoolean(this->ToDayShowFinancialAidDataGridView->Rows[e->RowIndex]->Cells[6]->Value); // 6 هو مؤشر عمود colIsRecurring
-			String^ frequency = "شهرياً"; // يجب استبدال هذا بالقيمة الفعلية من قاعدة البيانات
-
-			// تحديث قاعدة البيانات
-			Connection::ConfirmFinancialAidReceipt(aidId, isRecurring, frequency);
-
-			// تحديث القيمة في الـ DataGridView
+			// تبديل قيمة CheckBox
+			bool newValue = !Convert::ToBoolean(cell->Value);
 			cell->Value = newValue;
 			this->ToDayShowFinancialAidDataGridView->RefreshEdit();
 
-			// تحديث البيانات إذا لزم الأمر
-			this->ToDayShowAidPage_Load(nullptr, nullptr);
+			// الحصول على بيانات الصف
+			int aidId = Convert::ToInt32(this->ToDayShowFinancialAidDataGridView->Rows[e->RowIndex]->Cells[this->fColID->Index]->Value);
+			bool isRecurring = Convert::ToBoolean(this->ToDayShowFinancialAidDataGridView->Rows[e->RowIndex]->Cells[this->fColIsRecurring->Index]->Value);
+			String^ frequency; // القيمة الافتراضية
+
+			try {
+				// استدعاء الدالة لتأكيد الاستلام
+				Connection::ConfirmFinancialAidReceipt(aidId, isRecurring, frequency);
+
+				// رسالة تأكيد
+				MessageBox::Show(L"تم تحديث حالة الاستلام بنجاح", L"تم", MessageBoxButtons::OK, MessageBoxIcon::Information);
+			}
+			catch (Exception^ ex) {
+				// إعادة قيمة CheckBox إلى حالتها الأصلية في حالة الخطأ
+				cell->Value = !newValue;
+				this->ToDayShowFinancialAidDataGridView->RefreshEdit();
+				MessageBox::Show(L"حدث خطأ أثناء التحديث: " + ex->Message, L"خطأ", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			}
 		}
 	}
 
 	private: System::Void ToDayShowInKindAidDataGridView_CellContentClick(System::Object^ sender,
 		System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 
-		if (e->ColumnIndex == 4 && e->RowIndex >= 0) // 4 هو مؤشر عمود dataGridViewCheckBoxColumn5
+		if (e->ColumnIndex == this->aColIsDelivered->Index && e->RowIndex >= 0)
 		{
 			DataGridViewCheckBoxCell^ cell = (DataGridViewCheckBoxCell^)
 				this->ToDayShowInKindAidDataGridView->Rows[e->RowIndex]->Cells[e->ColumnIndex];
 
-			bool newValue = !(bool)cell->Value;
+			// تبديل قيمة CheckBox
 
-			int aidId = Convert::ToInt32(this->ToDayShowInKindAidDataGridView->Rows[e->RowIndex]->Cells[5]->Value); // 5 هو مؤشر عمود dataGridViewCheckBoxColumn6
-			bool isRecurring = Convert::ToBoolean(this->ToDayShowInKindAidDataGridView->Rows[e->RowIndex]->Cells[6]->Value); // 6 هو مؤشر عمود dataGridViewCheckBoxColumn7
-			String^ frequency = "شهرياً"; // يجب استبدال هذا بالقيمة الفعلية من قاعدة البيانات
-
-			Connection::ConfirmInKindAidReceipt(aidId, isRecurring, frequency);
-
+			bool newValue = !Convert::ToBoolean(cell->Value);
 			cell->Value = newValue;
 			this->ToDayShowInKindAidDataGridView->RefreshEdit();
-			this->ToDayShowAidPage_Load(nullptr, nullptr);
+
+			int aidId = Convert::ToInt32(this->ToDayShowInKindAidDataGridView->Rows[e->RowIndex]->Cells[this->aColID->Index]->Value);
+			bool isRecurring = Convert::ToBoolean(this->ToDayShowInKindAidDataGridView->Rows[e->RowIndex]->Cells[this->aColIsRecurring->Index]->Value);
+			String^ frequency ; // القيمة الافتراضية
+
+			try {
+				// استدعاء الدالة لتأكيد الاستلام
+				Connection::ConfirmInKindAidReceipt(aidId, isRecurring, frequency);
+
+				// رسالة تأكيد
+				MessageBox::Show(L"تم تحديث حالة الاستلام بنجاح", L"تم", MessageBoxButtons::OK, MessageBoxIcon::Information);
+			}
+			catch (Exception^ ex) {
+				// إعادة قيمة CheckBox إلى حالتها الأصلية في حالة الخطأ
+				cell->Value = !newValue;
+				this->ToDayShowInKindAidDataGridView->RefreshEdit();
+				MessageBox::Show(L"حدث خطأ أثناء التحديث: " + ex->Message, L"خطأ", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			}
 		}
 	}
 private: System::Void ToDayShowAidPage_Load(System::Object^ sender, System::EventArgs^ e) {
 	try {
-
 		// تحميل المساعدات المالية
 		List<FinancialAid^>^ financialAids = Connection::GetTodayFinancialAids();
 		this->ToDayShowFinancialAidDataGridView->Rows->Clear();
 
 		for each(FinancialAid ^ aid in financialAids) {
-
 			if (aid != nullptr) {
 				this->ToDayShowFinancialAidDataGridView->Rows->Add(
 					aid->CaseName,
-					aid->Amount,
 					aid->AidType,
+					aid->Amount,
 					aid->Notes,
-					aid->IsOneTimeConfirmed,
 					aid->ID,
-					aid->IsRecurring,
-					aid->NextDueDate
+					aid->IsOneTimeConfirmed,  
+					aid->IsRecurring         
 				);
 			}
 		}
@@ -594,9 +656,9 @@ private: System::Void ToDayShowAidPage_Load(System::Object^ sender, System::Even
 					aid->AidType,
 					aid->AidContent,
 					aid->Notes,
-					aid->IsOneTimeConfirmed,
 					aid->ID,
-					aid->IsRecurring
+					aid->IsOneTimeConfirmed,  
+					aid->IsRecurring          
 				);
 			}
 		}

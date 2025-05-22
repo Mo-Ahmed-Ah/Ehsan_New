@@ -1,13 +1,1 @@
-# Video/
-
-.vs/
-*.db
-*.ipch
-*.obj
-*.exe
-*.pdb
-*.log
-*.tlog/
-*.cache
-*.lastbuildstate
-*.suo
+Video/

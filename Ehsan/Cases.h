@@ -1,6 +1,7 @@
 ﻿#pragma once
 
 using namespace System;
+using namespace System::Windows::Forms;
 
 ref class Cases
 {
@@ -215,4 +216,5 @@ public:
             return Nullable<int>();
         }
     };
+
 };

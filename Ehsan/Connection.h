@@ -457,6 +457,7 @@ public:
     {
         Connect();
 
+
         String^ query;
 
         if (!isRecurring)
@@ -498,7 +499,6 @@ public:
 
         try { cmdSimple->ExecuteNonQuery(); }
         catch (Exception^ ex) { MessageBox::Show("خطأ: " + ex->Message); }
-
         Disconnect();
     }
 
@@ -506,10 +506,13 @@ public:
     {
         Connect();
 
+
         String^ query;
 
         if (!isRecurring)
         {
+            MessageBox::Show(L" Connection تم تحديث حالة الاستلام بنجاح", L"تم", MessageBoxButtons::OK, MessageBoxIcon::Information);
+
             query = "UPDATE InKindAid SET IsOneTimeConfirmed = 1 WHERE ID = @AidID";
         }
         else
@@ -550,5 +553,71 @@ public:
 
         Disconnect();
     }
+
+    static void AddFinancialAid(FinancialAid^ aid)
+    {
+        Connect(); // فتح الاتصال بقاعدة البيانات
+        String^ query = "INSERT INTO FinancialAid (CaseID, AidType, Amount, Frequency, IsRecurring, ReceivedCount, SeasonType, IsOneTimeConfirmed, RegistrationDate, Notes, IsActive, CreatedAt, UpdatedAt) " +
+            "VALUES (@CaseID, @AidType, @Amount, @Frequency, @IsRecurring, @ReceivedCount, @SeasonType, @IsOneTimeConfirmed, @RegistrationDate, @Notes, @IsActive, @CreatedAt, @UpdatedAt)";
+        SqlCommand^ cmd = gcnew SqlCommand(query, sqlConn);
+        // تعبئة المعاملات بالقيم من الكائن aid
+        cmd->Parameters->AddWithValue("@CaseID", aid->CaseID);
+        cmd->Parameters->AddWithValue("@AidType", aid->AidType);
+        cmd->Parameters->AddWithValue("@Amount", aid->Amount);
+        cmd->Parameters->AddWithValue("@Frequency", aid->FrequencyLong);
+        cmd->Parameters->AddWithValue("@IsRecurring", aid->IsRecurring);
+        cmd->Parameters->AddWithValue("@ReceivedCount", aid->ReceivedCount);
+        cmd->Parameters->AddWithValue("@SeasonType", aid->SeasonType);
+        cmd->Parameters->AddWithValue("@IsOneTimeConfirmed", aid->IsOneTimeConfirmed);
+        cmd->Parameters->AddWithValue("@RegistrationDate", aid->RegistrationDate);
+        cmd->Parameters->AddWithValue("@Notes", String::IsNullOrEmpty(aid->Notes) ? (Object^)DBNull::Value : aid->Notes);
+        cmd->Parameters->AddWithValue("@IsActive", aid->IsActive);
+        cmd->Parameters->AddWithValue("@CreatedAt", aid->CreatedAt);
+        cmd->Parameters->AddWithValue("@UpdatedAt", aid->UpdatedAt);
+        try
+        {
+            cmd->ExecuteNonQuery();
+            MessageBox::Show(L"تمت إضافة المساعدة المالية بنجاح.", L"نجاح", MessageBoxButtons::OK, MessageBoxIcon::Information);
+        }
+        catch (Exception^ ex)
+        {
+            MessageBox::Show(L"حدث خطأ أثناء إضافة المساعدة المالية: " + ex->Message, L"خطأ", MessageBoxButtons::OK, MessageBoxIcon::Error);
+        }
+        Disconnect(); // إغلاق الاتصال بقاعدة البيانات
+    }
+
+    static void AddInKindAid(InKindAid^ aid)
+    {
+        Connect(); // فتح الاتصال بقاعدة البيانات
+        String^ query = "INSERT INTO InKindAid (CaseID, AidType, AidContent, Frequency, IsRecurring, ReceivedCount, SeasonType, IsOneTimeConfirmed, RegistrationDate, Notes, IsActive, CreatedAt, UpdatedAt) " +
+            "VALUES (@CaseID, @AidType, @AidContent, @Frequency, @IsRecurring, @ReceivedCount, @SeasonType, @IsOneTimeConfirmed, @RegistrationDate, @Notes, @IsActive, @CreatedAt, @UpdatedAt)";
+        SqlCommand^ cmd = gcnew SqlCommand(query, sqlConn);
+        // تعبئة المعاملات بالقيم من الكائن aid
+        cmd->Parameters->AddWithValue("@CaseID", aid->CaseID);
+        cmd->Parameters->AddWithValue("@AidType", aid->AidType);
+        cmd->Parameters->AddWithValue("@AidContent", aid->AidContent);
+        cmd->Parameters->AddWithValue("@Frequency", aid->FrequencyLong);
+        cmd->Parameters->AddWithValue("@IsRecurring", aid->IsRecurring);
+        cmd->Parameters->AddWithValue("@ReceivedCount", aid->ReceivedCount);
+        cmd->Parameters->AddWithValue("@SeasonType", aid->SeasonType);
+        cmd->Parameters->AddWithValue("@IsOneTimeConfirmed", aid->IsOneTimeConfirmed);
+        cmd->Parameters->AddWithValue("@RegistrationDate", aid->RegistrationDate);
+        cmd->Parameters->AddWithValue("@Notes", String::IsNullOrEmpty(aid->Notes) ? (Object^)DBNull::Value : aid->Notes);
+        cmd->Parameters->AddWithValue("@IsActive", aid->IsActive);
+        cmd->Parameters->AddWithValue("@CreatedAt", aid->CreatedAt);
+        cmd->Parameters->AddWithValue("@UpdatedAt", aid->UpdatedAt);
+        try
+        {
+            cmd->ExecuteNonQuery();
+            MessageBox::Show(L"تمت إضافة المساعدة العينية بنجاح.", L"نجاح", MessageBoxButtons::OK, MessageBoxIcon::Information);
+        }
+        catch (Exception^ ex)
+        {
+            MessageBox::Show(L"حدث خطأ أثناء إضافة المساعدة العينية: " + ex->Message, L"خطأ", MessageBoxButtons::OK, MessageBoxIcon::Error);
+        }
+        Disconnect(); // إغلاق الاتصال بقاعدة البيانات
+    }
+
+
 
 };

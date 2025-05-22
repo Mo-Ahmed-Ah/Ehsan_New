@@ -2,6 +2,7 @@
 #include "AddCaseForm.h"
 #include "ToDayShowAid.h"
 #include "ShowCases.h"
+#include "AddNewAid.h"
 
 	namespace Ehsan {
 
@@ -71,10 +72,12 @@
 		private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel1;
 		private: System::Windows::Forms::Button^ HomePageToDayButton;
 		private: System::Windows::Forms::Button^ ShowCasesButton;
+		private: System::Windows::Forms::Button^ AddingNewAidButton;
 
 
 
-		private: System::Windows::Forms::Button^ button3;
+
+
 		private: System::Windows::Forms::Button^ button4;
 		private: System::Windows::Forms::Button^ HomeBageAddCasesButton;
 
@@ -115,7 +118,7 @@
 				this->HomeBageAddCasesButton = (gcnew System::Windows::Forms::Button());
 				this->ShowCasesButton = (gcnew System::Windows::Forms::Button());
 				this->HomePageToDayButton = (gcnew System::Windows::Forms::Button());
-				this->button3 = (gcnew System::Windows::Forms::Button());
+				this->AddingNewAidButton = (gcnew System::Windows::Forms::Button());
 				this->button4 = (gcnew System::Windows::Forms::Button());
 				this->HomeInfoPanal->SuspendLayout();
 				this->HomePageCasesPanel->SuspendLayout();
@@ -139,7 +142,7 @@
 				this->HomeInfoPanal->Location = System::Drawing::Point(-1, 54);
 				this->HomeInfoPanal->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 				this->HomeInfoPanal->Name = L"HomeInfoPanal";
-				this->HomeInfoPanal->Size = System::Drawing::Size(1170, 119);
+				this->HomeInfoPanal->Size = System::Drawing::Size(1170, 63);
 				this->HomeInfoPanal->TabIndex = 1;
 				// 
 				// HomePageCasesPanel
@@ -349,7 +352,7 @@
 				this->HomePageTitleLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 21.75F, System::Drawing::FontStyle::Bold,
 					System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 				this->HomePageTitleLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
-				this->HomePageTitleLabel->Location = System::Drawing::Point(127, 9);
+				this->HomePageTitleLabel->Location = System::Drawing::Point(372, 7);
 				this->HomePageTitleLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 				this->HomePageTitleLabel->Name = L"HomePageTitleLabel";
 				this->HomePageTitleLabel->Size = System::Drawing::Size(424, 33);
@@ -361,7 +364,7 @@
 				this->flowLayoutPanel1->Controls->Add(this->HomeBageAddCasesButton);
 				this->flowLayoutPanel1->Controls->Add(this->ShowCasesButton);
 				this->flowLayoutPanel1->Controls->Add(this->HomePageToDayButton);
-				this->flowLayoutPanel1->Controls->Add(this->button3);
+				this->flowLayoutPanel1->Controls->Add(this->AddingNewAidButton);
 				this->flowLayoutPanel1->Controls->Add(this->button4);
 				this->flowLayoutPanel1->Location = System::Drawing::Point(399, 192);
 				this->flowLayoutPanel1->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
@@ -429,24 +432,25 @@
 				this->HomePageToDayButton->UseVisualStyleBackColor = false;
 				this->HomePageToDayButton->Click += gcnew System::EventHandler(this, &MainForm::HomePageToDayButton_Click);
 				// 
-				// button3
+				// AddingNewAidButton
 				// 
-				this->button3->BackColor = System::Drawing::SystemColors::HotTrack;
-				this->button3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-				this->button3->Cursor = System::Windows::Forms::Cursors::Hand;
-				this->button3->FlatAppearance->BorderColor = System::Drawing::Color::Cyan;
-				this->button3->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Cyan;
-				this->button3->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Cyan;
-				this->button3->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				this->AddingNewAidButton->BackColor = System::Drawing::SystemColors::HotTrack;
+				this->AddingNewAidButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+				this->AddingNewAidButton->Cursor = System::Windows::Forms::Cursors::Hand;
+				this->AddingNewAidButton->FlatAppearance->BorderColor = System::Drawing::Color::Cyan;
+				this->AddingNewAidButton->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Cyan;
+				this->AddingNewAidButton->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Cyan;
+				this->AddingNewAidButton->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 					static_cast<System::Byte>(0)));
-				this->button3->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-				this->button3->Location = System::Drawing::Point(4, 141);
-				this->button3->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
-				this->button3->Name = L"button3";
-				this->button3->Size = System::Drawing::Size(391, 40);
-				this->button3->TabIndex = 9;
-				this->button3->Text = L"عرض اليوم ";
-				this->button3->UseVisualStyleBackColor = false;
+				this->AddingNewAidButton->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+				this->AddingNewAidButton->Location = System::Drawing::Point(4, 141);
+				this->AddingNewAidButton->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
+				this->AddingNewAidButton->Name = L"AddingNewAidButton";
+				this->AddingNewAidButton->Size = System::Drawing::Size(391, 40);
+				this->AddingNewAidButton->TabIndex = 9;
+				this->AddingNewAidButton->Text = L"إضافة مساعدة";
+				this->AddingNewAidButton->UseVisualStyleBackColor = false;
+				this->AddingNewAidButton->Click += gcnew System::EventHandler(this, &MainForm::AddingNewAidButton_Click);
 				// 
 				// button4
 				// 
@@ -472,7 +476,7 @@
 				this->AccessibleRole = System::Windows::Forms::AccessibleRole::None;
 				this->AutoScaleDimensions = System::Drawing::SizeF(7, 12);
 				this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-				this->ClientSize = System::Drawing::Size(1170, 773);
+				this->ClientSize = System::Drawing::Size(1169, 773);
 				this->Controls->Add(this->flowLayoutPanel1);
 				this->Controls->Add(this->HomeTitlePanal);
 				this->Controls->Add(this->HomeInfoPanal);
@@ -482,6 +486,7 @@
 				this->MaximizeBox = false;
 				this->MinimizeBox = false;
 				this->Name = L"MainForm";
+				this->ShowIcon = false;
 				this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 				this->Text = L"MainForm";
 				this->Load += gcnew System::EventHandler(this, &MainForm::MainForm_Load);
@@ -530,6 +535,11 @@ private: System::Void ShowCasesButton_Click(System::Object^ sender, System::Even
 	// Create an instance of AddCasesViewForm and show it
 	ShowCases^ ShowCasesViewForm = gcnew ShowCases();
 	ShowCasesViewForm->Show();
+}
+private: System::Void AddingNewAidButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	// Create an instance of AddCasesViewForm and show it
+	AddNewAid^ AddingNewAidForm = gcnew AddNewAid();
+	AddingNewAidForm->Show();
 }
 };
 	}

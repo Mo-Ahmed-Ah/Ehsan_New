@@ -118,10 +118,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AddAidPage.h">
+    <ClInclude Include="AddCaseForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="AddCaseForm.h">
+    <ClInclude Include="AddNewAid.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Aid.h" />
@@ -161,8 +161,8 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AddAidPage.cpp" />
     <ClCompile Include="AddCaseForm.cpp" />
+    <ClCompile Include="AddNewAid.cpp" />
     <ClCompile Include="Aid.cpp" />
     <ClCompile Include="AssistanceTypeForm.cpp" />
     <ClCompile Include="CaseProfile.cpp" />
@@ -180,11 +180,11 @@
     <ClCompile Include="TodayViewForm.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AddAidPage.resx">
-      <DependentUpon>AddAidPage.h</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AddCaseForm.resx">
       <DependentUpon>AddCaseForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewAid.resx">
+      <DependentUpon>AddNewAid.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CaseProfile.resx">
       <DependentUpon>CaseProfile.h</DependentUpon>

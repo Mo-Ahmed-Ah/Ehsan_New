@@ -98,36 +98,42 @@ GO
 
 
 
+GO
+	INSERT INTO Cases (
+		NationalID, FName, LName, NickName, PhoneNumber,
+		Gender, BirthDate, Area, Street, MaritalStatus,
+		FatherStatus, MotherStatus, MaleChildren, FemaleChildren,
+		IsActive, CreatedAt
+	)
+	VALUES
+	(N'29801011234567', N'أحمد', N'علي', N'أبو ياسر', N'01012345678',
+	 1, '1998-01-01', N'حلوان', N'شارع النصر', N'متزوج',
+	 1, 1, 2, 1, 1, GETDATE()),
+
+	(N'29902021234568', N'فاطمة', N'حسن', N'أم محمد', N'01098765432',
+	 0, '1999-02-02', N'المعادي', N'شارع السلام', N'أرملة',
+	 0, 1, 1, 2, 1, GETDATE()),
+
+	(N'30003031234569', N'محمد', N'سعيد', N'أبو عمر', N'01056781234',
+	 1, '2000-03-03', N'الهرم', N'شارع الملك فيصل', N'مطلق',
+	 1, 0, 0, 0, 1, GETDATE());
+GO
+
+Go
 -- إدراج مساعدات مالية لثلاث حالات مختلفة (يفترض وجود حالات بـ ID من 1 إلى 3)
-INSERT INTO FinancialAid (CaseID, AidType, Amount, Frequency, IsRecurring, RegistrationDate, Notes)
-VALUES
-(1, N'نقد شهري', 1000.00, N'شهري', 1, GETDATE(), N'مساعدة نقدية شهرية لحالة 1'),
-(2, N'زكاة', 1500.00, N'لمرة واحدة', 0, GETDATE(), N'زكاة رمضان لحالة 2'),
-(3, N'تبرع خاص', 750.00, N'أسبوعي', 1, GETDATE(), N'تبرع أسبوعي لحالة 3');
+	INSERT INTO FinancialAid (CaseID, AidType, Amount, Frequency, IsRecurring, RegistrationDate, Notes)
+	VALUES
+	(1, N'نقد شهري', 1000.00, N'شهري', 1, GETDATE(), N'مساعدة نقدية شهرية لحالة 1'),
+	(2, N'زكاة', 1500.00, N'لمرة واحدة', 0, GETDATE(), N'زكاة رمضان لحالة 2'),
+	(3, N'تبرع خاص', 750.00, N'أسبوعي', 1, GETDATE(), N'تبرع أسبوعي لحالة 3');
+Go
 
-
+Go
 -- إدراج مساعدات عينية لثلاث حالات مختلفة (يفترض وجود حالات بـ ID من 1 إلى 3)
-INSERT INTO InKindAid (CaseID, AidType, AidContent, Frequency, IsRecurring, RegistrationDate, Notes)
-VALUES
-(1, N'بطانية', N'بطانية شتوية ثقيلة', N'لمرة واحدة', 0, GETDATE(), N'مساعدة شتوية لحالة 1'),
-(2, N'سلة غذائية', N'أرز، زيت، سكر، مكرونة', N'شهري', 1, GETDATE(), N'سلة غذاء دورية لحالة 2'),
-(3, N'ملابس عيد', N'ملابس جديدة للأطفال', N'موسمية', 0, GETDATE(), N'مساعدة موسمية بمناسبة العيد لحالة 3');
+	INSERT INTO InKindAid (CaseID, AidType, AidContent, Frequency, IsRecurring, RegistrationDate, Notes)
+	VALUES
+	(1, N'بطانية', N'بطانية شتوية ثقيلة', N'لمرة واحدة', 0, GETDATE(), N'مساعدة شتوية لحالة 1'),
+	(2, N'سلة غذائية', N'أرز، زيت، سكر، مكرونة', N'شهري', 1, GETDATE(), N'سلة غذاء دورية لحالة 2'),
+	(3, N'ملابس عيد', N'ملابس جديدة للأطفال', N'موسمية', 0, GETDATE(), N'مساعدة موسمية بمناسبة العيد لحالة 3');
+GO
 
-INSERT INTO Cases (
-    NationalID, FName, LName, NickName, PhoneNumber,
-    Gender, BirthDate, Area, Street, MaritalStatus,
-    FatherStatus, MotherStatus, MaleChildren, FemaleChildren,
-    IsActive, CreatedAt
-)
-VALUES
-(N'29801011234567', N'أحمد', N'علي', N'أبو ياسر', N'01012345678',
- 1, '1998-01-01', N'حلوان', N'شارع النصر', N'متزوج',
- 1, 1, 2, 1, 1, GETDATE()),
-
-(N'29902021234568', N'فاطمة', N'حسن', N'أم محمد', N'01098765432',
- 0, '1999-02-02', N'المعادي', N'شارع السلام', N'أرملة',
- 0, 1, 1, 2, 1, GETDATE()),
-
-(N'30003031234569', N'محمد', N'سعيد', N'أبو عمر', N'01056781234',
- 1, '2000-03-03', N'الهرم', N'شارع الملك فيصل', N'مطلق',
- 1, 0, 0, 0, 1, GETDATE());
