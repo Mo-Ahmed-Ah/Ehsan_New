@@ -112,7 +112,7 @@ namespace Ehsan {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -710,170 +710,170 @@ namespace Ehsan {
 #pragma endregion
 
 
-private: System::Void AddCasesGenderLabel_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void AddCasesGenderMailRadioButton_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void AddCasesGenderFemailRadioButton_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void AddCasesFristNameLabel_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void AddCasesFrsitNameTextBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void AddCasesFatherStatuDeadRadioButton_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void AddCasesFatherStatusAliveRadioButton_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void AddCasesFatherStatusLabel_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void AddCaseSaveButton_Click(System::Object^ sender, System::EventArgs^ e)
-{
-	Cases^ c;
-
-	// قراءة البيانات من الحقول
-	String^ firstName = AddCasesFrsitNameTextBox->Text->Trim();
-	String^ lastName = AddCasesLastNameTextBox->Text->Trim();
-	String^ nationalId = AddCasesNationalIdTextBox->Text->Trim();
-	String^ nickName = AddCasesNickNameTextBox->Text->Trim();
-	String^ phoneNumber = AddCasesPhoneNumberTextBox->Text->Trim(); // قراءة رقم الهاتف
-
-	Nullable<DateTime> birthDate = Nullable<DateTime>();
-	if (dateTimePicker1->Value.Date != DateTime::Now.Date)
+	private: System::Void AddCasesGenderLabel_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void AddCasesGenderMailRadioButton_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void AddCasesGenderFemailRadioButton_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void AddCasesFristNameLabel_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void AddCasesFrsitNameTextBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void AddCasesFatherStatuDeadRadioButton_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void AddCasesFatherStatusAliveRadioButton_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void AddCasesFatherStatusLabel_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void AddCaseSaveButton_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		birthDate = dateTimePicker1->Value;
+		Cases^ c;
+
+		// قراءة البيانات من الحقول
+		String^ firstName = AddCasesFrsitNameTextBox->Text->Trim();
+		String^ lastName = AddCasesLastNameTextBox->Text->Trim();
+		String^ nationalId = AddCasesNationalIdTextBox->Text->Trim();
+		String^ nickName = AddCasesNickNameTextBox->Text->Trim();
+		String^ phoneNumber = AddCasesPhoneNumberTextBox->Text->Trim(); // قراءة رقم الهاتف
+
+		Nullable<DateTime> birthDate = Nullable<DateTime>();
+		if (dateTimePicker1->Value.Date != DateTime::Now.Date)
+		{
+			birthDate = dateTimePicker1->Value;
+		}
+
+		String^ area = AddCasesAreaComboBox->SelectedItem != nullptr ? AddCasesAreaComboBox->SelectedItem->ToString() : nullptr;
+		String^ street = AddCasesStreetComboBox->SelectedItem != nullptr ? AddCasesStreetComboBox->SelectedItem->ToString() : nullptr;
+		String^ maritalStatus = AddCasesMaritalStatusComboBox->SelectedItem != nullptr ? AddCasesMaritalStatusComboBox->SelectedItem->ToString() : nullptr;
+
+		Nullable<Byte> maleChildren = (Byte)AddCasesMaleChildrenNumericUpDown->Value;
+		Nullable<Byte> femaleChildren = (Byte)AddCasesFemaleChildrenNumericUpDown->Value;
+
+		Nullable<bool> motherStatus = Nullable<bool>();
+		if (AddCasesMotherStatusAliveRadioButton->Checked)
+			motherStatus = true;
+		else if (AddCasesMotherStatuDeadRadioButton->Checked)
+			motherStatus = false;
+
+		Nullable<bool> fatherStatus = Nullable<bool>();
+		if (AddCasesFatherStatusAliveRadioButton->Checked)
+			fatherStatus = true;
+		else if (AddCasesFatherStatuDeadRadioButton->Checked)
+			fatherStatus = false;
+
+		Nullable<bool> gender = Nullable<bool>();
+		if (AddCasesGenderMailRadioButton->Checked)
+			gender = true;
+		else if (AddCasesGenderFemailRadioButton->Checked)
+			gender = false;
+
+		Nullable<bool> isActive = true; // بافتراض أن الحالة الجديدة مفعلة
+
+		DateTime now = DateTime::Now;
+		Nullable<DateTime> createdAt = now;
+		Nullable<DateTime> updatedAt = now;
+
+		// التحقق من الحقول الأساسية
+		if (firstName == "")
+		{
+			MessageBox::Show(L"لا يمكن ترك الاسم الاول فارغ", L"تنبيه", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			return;
+		}
+		else if (lastName == "") {
+			MessageBox::Show(L"لا يمكن ترك الاسم الاخر فارغ", L"تنبيه", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			return;
+		}
+
+		// التحقق من رقم الهاتف
+		if (phoneNumber == "") {
+			MessageBox::Show(L"لا يمكن ترك رقم الهاتف فارغًا", L"تنبيه", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			return;
+		}
+
+		// إنشاء الكائن
+		c = gcnew Cases(
+			nationalId,
+			firstName,
+			lastName,
+			nickName,
+			phoneNumber, // تمرير رقم الهاتف
+			gender,
+			birthDate,
+			area,
+			street,
+			maritalStatus,
+			fatherStatus,
+			motherStatus,
+			maleChildren,
+			femaleChildren,
+			isActive,
+			createdAt,
+			updatedAt
+		);
+
+		Connection::AddCase(c);
 	}
 
-	String^ area = AddCasesAreaComboBox->SelectedItem != nullptr ? AddCasesAreaComboBox->SelectedItem->ToString() : nullptr;
-	String^ street = AddCasesStreetComboBox->SelectedItem != nullptr ? AddCasesStreetComboBox->SelectedItem->ToString() : nullptr;
-	String^ maritalStatus = AddCasesMaritalStatusComboBox->SelectedItem != nullptr ? AddCasesMaritalStatusComboBox->SelectedItem->ToString() : nullptr;
 
-	Nullable<Byte> maleChildren = (Byte)AddCasesMaleChildrenNumericUpDown->Value;
-	Nullable<Byte> femaleChildren = (Byte)AddCasesFemaleChildrenNumericUpDown->Value;
 
-	Nullable<bool> motherStatus = Nullable<bool>();
-	if (AddCasesMotherStatusAliveRadioButton->Checked)
-		motherStatus = true;
-	else if (AddCasesMotherStatuDeadRadioButton->Checked)
-		motherStatus = false;
-
-	Nullable<bool> fatherStatus = Nullable<bool>();
-	if (AddCasesFatherStatusAliveRadioButton->Checked)
-		fatherStatus = true;
-	else if (AddCasesFatherStatuDeadRadioButton->Checked)
-		fatherStatus = false;
-
-	Nullable<bool> gender = Nullable<bool>();
-	if (AddCasesGenderMailRadioButton->Checked)
-		gender = true;
-	else if (AddCasesGenderFemailRadioButton->Checked)
-		gender = false;
-
-	Nullable<bool> isActive = true; // بافتراض أن الحالة الجديدة مفعلة
-
-	DateTime now = DateTime::Now;
-	Nullable<DateTime> createdAt = now;
-	Nullable<DateTime> updatedAt = now;
-
-	// التحقق من الحقول الأساسية
-	if (firstName == "")
-	{
-		MessageBox::Show(L"لا يمكن ترك الاسم الاول فارغ", L"تنبيه", MessageBoxButtons::OK, MessageBoxIcon::Warning);
-		return;
+	private: System::Void AddCasesCancelButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
 	}
-	else if (lastName == "") {
-		MessageBox::Show(L"لا يمكن ترك الاسم الاخر فارغ", L"تنبيه", MessageBoxButtons::OK, MessageBoxIcon::Warning);
-		return;
-	}
+	private: System::Void AddCasesCleanButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		// تفريغ حقول النصوص
+		AddCasesFrsitNameTextBox->Text = "";
+		AddCasesLastNameTextBox->Text = "";
+		AddCasesNationalIdTextBox->Text = "";
+		AddCasesNickNameTextBox->Text = "";
+		AddCasesPhoneNumberTextBox->Text = "";
 
-	// التحقق من رقم الهاتف
-	if (phoneNumber == "") {
-		MessageBox::Show(L"لا يمكن ترك رقم الهاتف فارغًا", L"تنبيه", MessageBoxButtons::OK, MessageBoxIcon::Warning);
-		return;
-	}
+		// إعادة تعيين تاريخ الميلاد إلى التاريخ الحالي
+		dateTimePicker1->Value = DateTime::Now;
 
-	// إنشاء الكائن
-	c = gcnew Cases(
-		nationalId,
-		firstName,
-		lastName,
-		nickName,
-		phoneNumber, // تمرير رقم الهاتف
-		gender,
-		birthDate,
-		area,
-		street,
-		maritalStatus,
-		fatherStatus,
-		motherStatus,
-		maleChildren,
-		femaleChildren,
-		isActive,
-		createdAt,
-		updatedAt
-	);
+		// إعادة تعيين ComboBoxes
+		AddCasesAreaComboBox->SelectedIndex = -1;
+		AddCasesStreetComboBox->SelectedIndex = -1;
+		AddCasesMaritalStatusComboBox->SelectedIndex = -1;
 
-	Connection::AddCase(c);
-}
-
-
-
-private: System::Void AddCasesCancelButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Close();
-}
-private: System::Void AddCasesCleanButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	// تفريغ حقول النصوص
-	AddCasesFrsitNameTextBox->Text = "";
-	AddCasesLastNameTextBox->Text = "";
-	AddCasesNationalIdTextBox->Text = "";
-	AddCasesNickNameTextBox->Text = "";
-	AddCasesPhoneNumberTextBox->Text = "";
-
-	// إعادة تعيين تاريخ الميلاد إلى التاريخ الحالي
-	dateTimePicker1->Value = DateTime::Now;
-
-	// إعادة تعيين ComboBoxes
-	AddCasesAreaComboBox->SelectedIndex = -1;
-	AddCasesStreetComboBox->SelectedIndex = -1;
-	AddCasesMaritalStatusComboBox->SelectedIndex = -1;
-
-	// إعادة تعيين NumericUpDowns إلى القيمة الافتراضية (0)
-	AddCasesMaleChildrenNumericUpDown->Value = 0;
-	AddCasesFemaleChildrenNumericUpDown->Value = 0;
-
-	// إعادة تعيين RadioButtons إلى الحالة الافتراضية
-	AddCasesMotherStatusAliveRadioButton->Checked = false;
-	AddCasesMotherStatuDeadRadioButton->Checked = true; // أو false حسب ما تريد
-
-	AddCasesFatherStatusAliveRadioButton->Checked = false;
-	AddCasesFatherStatuDeadRadioButton->Checked = true; // أو false حسب ما تريد
-
-	AddCasesGenderMailRadioButton->Checked = false;
-	AddCasesGenderFemailRadioButton->Checked = true; // أو العكس حسب ما تريد
-}
-private: System::Void Change_In_Marital_Status(System::Object^ sender, System::EventArgs^ e)
-{
-	// الحصول على الحالة الاجتماعية المختارة
-	String^ selectedStatus = AddCasesMaritalStatusComboBox->SelectedItem != nullptr ?
-		AddCasesMaritalStatusComboBox->SelectedItem->ToString() : "";
-
-	// التحقق إذا كانت تحتوي على "يعول" بأي صيغة باستخدام Regex
-	bool hasChildren = System::Text::RegularExpressions::Regex::IsMatch(selectedStatus, L"ويعول");
-
-
-	// إظهار أو إخفاء الحقول بناءً على وجود أطفال
-	AddCasesMaleChildrenLabel->Visible = hasChildren;
-	AddCasesMaleChildrenNumericUpDown->Visible = hasChildren;
-	AddCasesFemaleChildrenLabel->Visible = hasChildren;
-	AddCasesFemaleChildrenNumericUpDown->Visible = hasChildren;
-
-	// إذا لم يكن لديه أطفال، قم بتصفير القيم
-	if (!hasChildren)
-	{
+		// إعادة تعيين NumericUpDowns إلى القيمة الافتراضية (0)
 		AddCasesMaleChildrenNumericUpDown->Value = 0;
 		AddCasesFemaleChildrenNumericUpDown->Value = 0;
+
+		// إعادة تعيين RadioButtons إلى الحالة الافتراضية
+		AddCasesMotherStatusAliveRadioButton->Checked = false;
+		AddCasesMotherStatuDeadRadioButton->Checked = true; // أو false حسب ما تريد
+
+		AddCasesFatherStatusAliveRadioButton->Checked = false;
+		AddCasesFatherStatuDeadRadioButton->Checked = true; // أو false حسب ما تريد
+
+		AddCasesGenderMailRadioButton->Checked = false;
+		AddCasesGenderFemailRadioButton->Checked = true; // أو العكس حسب ما تريد
 	}
-}
+	private: System::Void Change_In_Marital_Status(System::Object^ sender, System::EventArgs^ e)
+	{
+		// الحصول على الحالة الاجتماعية المختارة
+		String^ selectedStatus = AddCasesMaritalStatusComboBox->SelectedItem != nullptr ?
+			AddCasesMaritalStatusComboBox->SelectedItem->ToString() : "";
+
+		// التحقق إذا كانت تحتوي على "يعول" بأي صيغة باستخدام Regex
+		bool hasChildren = System::Text::RegularExpressions::Regex::IsMatch(selectedStatus, L"ويعول");
 
 
-};
+		// إظهار أو إخفاء الحقول بناءً على وجود أطفال
+		AddCasesMaleChildrenLabel->Visible = hasChildren;
+		AddCasesMaleChildrenNumericUpDown->Visible = hasChildren;
+		AddCasesFemaleChildrenLabel->Visible = hasChildren;
+		AddCasesFemaleChildrenNumericUpDown->Visible = hasChildren;
+
+		// إذا لم يكن لديه أطفال، قم بتصفير القيم
+		if (!hasChildren)
+		{
+			AddCasesMaleChildrenNumericUpDown->Value = 0;
+			AddCasesFemaleChildrenNumericUpDown->Value = 0;
+		}
+	}
+
+
+	};
 }

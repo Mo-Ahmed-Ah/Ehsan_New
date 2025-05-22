@@ -2,7 +2,6 @@
 #include "Cases.h"
 #include "FinancialAid.h"
 #include "InKindAid.h"
-#include "Aid.h"
 
 using namespace System;
 using namespace System::Data;

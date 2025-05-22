@@ -1,11 +1,8 @@
-  Ehsan.AddCaseForm.resources - Embedded, ContainedInManifestFile, 
   Ehsan.AddNewAid.resources - Embedded, ContainedInManifestFile, 
   Ehsan.CaseProfile.resources - Embedded, ContainedInManifestFile, 
   Ehsan.MainForm.resources - Embedded, ContainedInManifestFile, 
-  Ehsan.SelectAidForm.resources - Embedded, ContainedInManifestFile, 
   Ehsan.ShowCases.resources - Embedded, ContainedInManifestFile, 
   Ehsan.ToDayShowAid.resources - Embedded, ContainedInManifestFile, 
-  Ehsan.TodayViewForm.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly Ehsan, Version=0.0.*, Culture=Invariant Language (Invariant Country): 
 	hash=SHA1, flags=PublicKey
@@ -21,79 +18,15 @@ Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=
 	hash=None, flags=None
 Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
-Class Aid: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-    Void .ctor(Int32, Int32, System.String, System.String, System.String, System.String, Boolean, System.Nullable`1[System.Decimal], Int32, System.String, System.DateTime, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime], System.String, Boolean, System.DateTime, System.Nullable`1[System.DateTime]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-    Void .ctor(Int32, Int32, System.String, System.String, System.String, System.String, Boolean, System.Nullable`1[System.Decimal], Int32, System.String, System.DateTime, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime], System.String, Boolean): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-    Void .ctor(Int32, System.String, System.String, System.String, System.String, Boolean, System.Nullable`1[System.Decimal], Int32, System.String, System.DateTime, System.Nullable`1[System.DateTime], System.Nullable`1[System.DateTime], System.String, Boolean): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Properties:
-    System.Nullable`1[System.DateTime] UpdatedAt 'get set' : 
-    System.DateTime CreatedAt 'get set' : 
-    Boolean IsActive 'get set' : 
-    System.String Notes 'get set' : 
-    System.Nullable`1[System.DateTime] NextDueDate 'get set' : 
-    System.Nullable`1[System.DateTime] ReceivedDate 'get set' : 
-    System.DateTime RegistrationDate 'get set' : 
-    System.String SeasonType 'get set' : 
-    Int32 ReceivedCount 'get set' : 
-    System.Nullable`1[System.Decimal] Amount 'get set' : 
-    Boolean IsRecurring 'get set' : 
-    System.String Frequency 'get set' : 
-    System.String AidContent 'get set' : 
-    System.String AidType 'get set' : 
-    System.String AidCategory 'get set' : 
-    Int32 CaseID 'get set' : 
-    Int32 ID   'get set' : 
-  Methods:
-    get_ID(): PrivateScope, Public, HideBySig, SpecialName
-    set_ID(Int32): PrivateScope, Public, HideBySig, SpecialName
-    get_CaseID(): PrivateScope, Public, HideBySig, SpecialName
-    set_CaseID(Int32): PrivateScope, Public, HideBySig, SpecialName
-    get_AidCategory(): PrivateScope, Public, HideBySig, SpecialName
-    set_AidCategory(String): PrivateScope, Public, HideBySig, SpecialName
-    get_AidType(): PrivateScope, Public, HideBySig, SpecialName
-    set_AidType(String): PrivateScope, Public, HideBySig, SpecialName
-    get_AidContent(): PrivateScope, Public, HideBySig, SpecialName
-    set_AidContent(String): PrivateScope, Public, HideBySig, SpecialName
-    get_Frequency(): PrivateScope, Public, HideBySig, SpecialName
-    set_Frequency(String): PrivateScope, Public, HideBySig, SpecialName
-    get_IsRecurring(): PrivateScope, Public, HideBySig, SpecialName
-    set_IsRecurring(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig, SpecialName
-    get_Amount(): PrivateScope, Public, HideBySig, SpecialName
-    set_Amount(Nullable`1): PrivateScope, Public, HideBySig, SpecialName
-    get_ReceivedCount(): PrivateScope, Public, HideBySig, SpecialName
-    set_ReceivedCount(Int32): PrivateScope, Public, HideBySig, SpecialName
-    get_SeasonType(): PrivateScope, Public, HideBySig, SpecialName
-    set_SeasonType(String): PrivateScope, Public, HideBySig, SpecialName
-    get_RegistrationDate(): PrivateScope, Public, HideBySig, SpecialName
-    set_RegistrationDate(DateTime): PrivateScope, Public, HideBySig, SpecialName
-    get_ReceivedDate(): PrivateScope, Public, HideBySig, SpecialName
-    set_ReceivedDate(Nullable`1): PrivateScope, Public, HideBySig, SpecialName
-    get_NextDueDate(): PrivateScope, Public, HideBySig, SpecialName
-    set_NextDueDate(Nullable`1): PrivateScope, Public, HideBySig, SpecialName
-    get_Notes(): PrivateScope, Public, HideBySig, SpecialName
-    set_Notes(String): PrivateScope, Public, HideBySig, SpecialName
-    get_IsActive(): PrivateScope, Public, HideBySig, SpecialName
-    set_IsActive(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig, SpecialName
-    get_CreatedAt(): PrivateScope, Public, HideBySig, SpecialName
-    set_CreatedAt(DateTime): PrivateScope, Public, HideBySig, SpecialName
-    get_UpdatedAt(): PrivateScope, Public, HideBySig, SpecialName
-    set_UpdatedAt(Nullable`1): PrivateScope, Public, HideBySig, SpecialName
 Class Ehsan.AddCaseForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Ehsan.AddNewAid: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class Ehsan.AssistanceTypeForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Ehsan.CaseProfile: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(Cases): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class Ehsan.EditAssistanceForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Ehsan.ToDayShowAid: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
@@ -102,17 +35,5 @@ Class Ehsan.ShowCases: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Ehsan.MainForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class Ehsan.ReportsForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class Ehsan.SearchCaseForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class Ehsan.SelectAidForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class Ehsan.TodayViewForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

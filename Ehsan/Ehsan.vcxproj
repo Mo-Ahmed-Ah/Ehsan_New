@@ -124,30 +124,14 @@
     <ClInclude Include="AddNewAid.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Aid.h" />
-    <ClInclude Include="AssistanceTypeForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="CaseProfile.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Cases.h" />
-    <ClInclude Include="EditAssistanceForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="Connection.h" />
     <ClInclude Include="FinancialAid.h" />
     <ClInclude Include="InKindAid.h" />
     <ClInclude Include="MainForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="ReportsForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="SearchCaseForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="SelectAidForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ShowCases.h">
@@ -156,33 +140,20 @@
     <ClInclude Include="ToDayShowAid.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="TodayViewForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AddCaseForm.cpp" />
     <ClCompile Include="AddNewAid.cpp" />
-    <ClCompile Include="Aid.cpp" />
-    <ClCompile Include="AssistanceTypeForm.cpp" />
     <ClCompile Include="CaseProfile.cpp" />
     <ClCompile Include="Cases.cpp" />
-    <ClCompile Include="EditAssistanceForm.cpp" />
     <ClCompile Include="FinancialAid.cpp" />
     <ClCompile Include="InKindAid.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainForm.cpp" />
-    <ClCompile Include="ReportsForm.cpp" />
-    <ClCompile Include="SearchCaseForm.cpp" />
-    <ClCompile Include="SelectAidForm.cpp" />
     <ClCompile Include="ShowCases.cpp" />
     <ClCompile Include="ToDayShowAid.cpp" />
-    <ClCompile Include="TodayViewForm.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AddCaseForm.resx">
-      <DependentUpon>AddCaseForm.h</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AddNewAid.resx">
       <DependentUpon>AddNewAid.h</DependentUpon>
     </EmbeddedResource>
@@ -192,17 +163,11 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SelectAidForm.resx">
-      <DependentUpon>SelectAidForm.h</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ShowCases.resx">
       <DependentUpon>ShowCases.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ToDayShowAid.resx">
       <DependentUpon>ToDayShowAid.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TodayViewForm.resx">
-      <DependentUpon>TodayViewForm.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

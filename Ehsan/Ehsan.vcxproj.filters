@@ -24,21 +24,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AssistanceTypeForm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TodayViewForm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EditAssistanceForm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SearchCaseForm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ReportsForm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Cases.h">
       <Filter>Header Files\Model</Filter>
     </ClInclude>
@@ -48,20 +33,11 @@
     <ClInclude Include="MainForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AddCaseForm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SelectAidForm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ShowCases.h">
       <Filter>Header Files\Pages</Filter>
     </ClInclude>
     <ClInclude Include="CaseProfile.h">
       <Filter>Header Files\Pages</Filter>
-    </ClInclude>
-    <ClInclude Include="Aid.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ToDayShowAid.h">
       <Filter>Header Files\Pages</Filter>
@@ -75,34 +51,16 @@
     <ClInclude Include="AddNewAid.h">
       <Filter>Header Files\Pages</Filter>
     </ClInclude>
+    <ClInclude Include="AddCaseForm.h">
+      <Filter>Header Files\Pages</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AssistanceTypeForm.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TodayViewForm.cpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
-    <ClCompile Include="EditAssistanceForm.cpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SearchCaseForm.cpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ReportsForm.cpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
     <ClCompile Include="Cases.cpp">
       <Filter>Header Files\Model</Filter>
-    </ClCompile>
-    <ClCompile Include="AddCaseForm.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SelectAidForm.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ShowCases.cpp">
       <Filter>Header Files\Pages</Filter>
@@ -112,9 +70,6 @@
     </ClCompile>
     <ClCompile Include="CaseProfile.cpp">
       <Filter>Header Files\Pages</Filter>
-    </ClCompile>
-    <ClCompile Include="Aid.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ToDayShowAid.cpp">
       <Filter>Header Files\Pages</Filter>
@@ -126,6 +81,9 @@
       <Filter>Header Files\Model</Filter>
     </ClCompile>
     <ClCompile Include="AddNewAid.cpp">
+      <Filter>Header Files\Pages</Filter>
+    </ClCompile>
+    <ClCompile Include="AddCaseForm.cpp">
       <Filter>Header Files\Pages</Filter>
     </ClCompile>
   </ItemGroup>
