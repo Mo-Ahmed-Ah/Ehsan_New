@@ -97,7 +97,7 @@ GO
 GO
 
 
-
+/*
 GO
 	INSERT INTO Cases (
 		NationalID, FName, LName, NickName, PhoneNumber,
@@ -137,3 +137,4 @@ Go
 	(3, N'ملابس عيد', N'ملابس جديدة للأطفال', N'موسمية', 0, GETDATE(), N'مساعدة موسمية بمناسبة العيد لحالة 3');
 GO
 
+*/
