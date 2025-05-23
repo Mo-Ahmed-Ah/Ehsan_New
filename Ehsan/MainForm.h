@@ -78,7 +78,7 @@
 
 
 
-		private: System::Windows::Forms::Button^ button4;
+
 		private: System::Windows::Forms::Button^ HomeBageAddCasesButton;
 
 		protected:
@@ -119,7 +119,6 @@
 				this->ShowCasesButton = (gcnew System::Windows::Forms::Button());
 				this->HomePageToDayButton = (gcnew System::Windows::Forms::Button());
 				this->AddingNewAidButton = (gcnew System::Windows::Forms::Button());
-				this->button4 = (gcnew System::Windows::Forms::Button());
 				this->HomeInfoPanal->SuspendLayout();
 				this->HomePageCasesPanel->SuspendLayout();
 				this->HomePageAssistancePanel->SuspendLayout();
@@ -365,7 +364,6 @@
 				this->flowLayoutPanel1->Controls->Add(this->ShowCasesButton);
 				this->flowLayoutPanel1->Controls->Add(this->HomePageToDayButton);
 				this->flowLayoutPanel1->Controls->Add(this->AddingNewAidButton);
-				this->flowLayoutPanel1->Controls->Add(this->button4);
 				this->flowLayoutPanel1->Location = System::Drawing::Point(399, 192);
 				this->flowLayoutPanel1->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 				this->flowLayoutPanel1->Name = L"flowLayoutPanel1";
@@ -451,25 +449,6 @@
 				this->AddingNewAidButton->Text = L"إضافة مساعدة";
 				this->AddingNewAidButton->UseVisualStyleBackColor = false;
 				this->AddingNewAidButton->Click += gcnew System::EventHandler(this, &MainForm::AddingNewAidButton_Click);
-				// 
-				// button4
-				// 
-				this->button4->BackColor = System::Drawing::SystemColors::HotTrack;
-				this->button4->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-				this->button4->Cursor = System::Windows::Forms::Cursors::Hand;
-				this->button4->FlatAppearance->BorderColor = System::Drawing::Color::Cyan;
-				this->button4->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Cyan;
-				this->button4->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Cyan;
-				this->button4->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-					static_cast<System::Byte>(0)));
-				this->button4->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-				this->button4->Location = System::Drawing::Point(4, 187);
-				this->button4->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
-				this->button4->Name = L"button4";
-				this->button4->Size = System::Drawing::Size(391, 40);
-				this->button4->TabIndex = 10;
-				this->button4->Text = L"عرض اليوم ";
-				this->button4->UseVisualStyleBackColor = false;
 				// 
 				// MainForm
 				// 

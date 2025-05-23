@@ -1,6 +1,8 @@
 ﻿#pragma once
 #include "Cases.h"
 #include "Connection.h"
+#include "FinancialAid.h"
+#include "InKindAid.h"
 
 namespace Ehsan {
 
@@ -36,6 +38,8 @@ namespace Ehsan {
             AddingNewAidPageAidTypeAidContentCheckedListBox->Visible = false;
             AddingNewAidPageSeasonTypeLabel->Visible = false;
             AddingNewAidPageSeasonTypeComboBox->Visible = false;
+			AddingNewAidPageAidTypeRepetitionLabel->Visible = false;
+			AddingNewAidPageAidTypeRepetitionComboBox->Visible = false;
         }
 	protected:
 		/// <summary>
@@ -79,31 +83,6 @@ namespace Ehsan {
 	private: System::Windows::Forms::RichTextBox^ AddingNewAidPageNotesRichTextBox;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	protected:
-
-	protected:
-
-
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -123,25 +102,25 @@ namespace Ehsan {
 			this->AddingNewAidPageSaveButton = (gcnew System::Windows::Forms::Button());
 			this->AddingNewAidPageCancelButton = (gcnew System::Windows::Forms::Button());
 			this->AddingNewAidPageContolPanel = (gcnew System::Windows::Forms::Panel());
+			this->AddingNewAidPageNotesLabel = (gcnew System::Windows::Forms::Label());
+			this->AddingNewAidPageNotesRichTextBox = (gcnew System::Windows::Forms::RichTextBox());
+			this->AddingNewAidPageDeliveryDateDateTimePicker = (gcnew System::Windows::Forms::DateTimePicker());
+			this->AddingNewAidPageDeliveryDateLabel = (gcnew System::Windows::Forms::Label());
+			this->AddingNewAidPageSeasonTypeComboBox = (gcnew System::Windows::Forms::ComboBox());
+			this->AddingNewAidPageSeasonTypeLabel = (gcnew System::Windows::Forms::Label());
+			this->AddingNewAidPageAidTypeRepetitionComboBox = (gcnew System::Windows::Forms::ComboBox());
+			this->AddingNewAidPageAidTypeRepetitionLabel = (gcnew System::Windows::Forms::Label());
+			this->AddingNewAidPageAidTypeAidContentCheckedListBox = (gcnew System::Windows::Forms::CheckedListBox());
+			this->AddingNewAidPageAidTypeAidContentLabel = (gcnew System::Windows::Forms::Label());
+			this->AddingNewAidPageAidTypeAmountNumericUpDown = (gcnew System::Windows::Forms::NumericUpDown());
+			this->AddingNewAidPageAidTypeAmountLabel = (gcnew System::Windows::Forms::Label());
+			this->AddingNewAidPageAidTypeComboBox = (gcnew System::Windows::Forms::ComboBox());
+			this->AddingNewAidPageAidTypeLabel = (gcnew System::Windows::Forms::Label());
+			this->AddingNewAidPageRepetitionCheckBox = (gcnew System::Windows::Forms::CheckBox());
 			this->AddingNewAidPageChoseAidCategoryComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->AddingNewAidPageChoseAidCategoryLabel = (gcnew System::Windows::Forms::Label());
 			this->AddingNewAidPageChoseCaseComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->AddingNewAidPageChoseCaseLabel = (gcnew System::Windows::Forms::Label());
-			this->AddingNewAidPageRepetitionCheckBox = (gcnew System::Windows::Forms::CheckBox());
-			this->AddingNewAidPageAidTypeComboBox = (gcnew System::Windows::Forms::ComboBox());
-			this->AddingNewAidPageAidTypeLabel = (gcnew System::Windows::Forms::Label());
-			this->AddingNewAidPageAidTypeAmountLabel = (gcnew System::Windows::Forms::Label());
-			this->AddingNewAidPageAidTypeAmountNumericUpDown = (gcnew System::Windows::Forms::NumericUpDown());
-			this->AddingNewAidPageAidTypeAidContentLabel = (gcnew System::Windows::Forms::Label());
-			this->AddingNewAidPageAidTypeAidContentCheckedListBox = (gcnew System::Windows::Forms::CheckedListBox());
-			this->AddingNewAidPageAidTypeRepetitionLabel = (gcnew System::Windows::Forms::Label());
-			this->AddingNewAidPageAidTypeRepetitionComboBox = (gcnew System::Windows::Forms::ComboBox());
-			this->AddingNewAidPageSeasonTypeComboBox = (gcnew System::Windows::Forms::ComboBox());
-			this->AddingNewAidPageSeasonTypeLabel = (gcnew System::Windows::Forms::Label());
-			this->AddingNewAidPageDeliveryDateLabel = (gcnew System::Windows::Forms::Label());
-			this->AddingNewAidPageDeliveryDateDateTimePicker = (gcnew System::Windows::Forms::DateTimePicker());
-			this->AddingNewAidPageNotesRichTextBox = (gcnew System::Windows::Forms::RichTextBox());
-			this->AddingNewAidPageNotesLabel = (gcnew System::Windows::Forms::Label());
 			this->AddingNewAidPageTitlePanal->SuspendLayout();
 			this->AddingNewAidPageContolPanel->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AddingNewAidPageAidTypeAmountNumericUpDown))->BeginInit();
@@ -239,6 +218,185 @@ namespace Ehsan {
 			this->AddingNewAidPageContolPanel->Size = System::Drawing::Size(722, 387);
 			this->AddingNewAidPageContolPanel->TabIndex = 7;
 			// 
+			// AddingNewAidPageNotesLabel
+			// 
+			this->AddingNewAidPageNotesLabel->AutoSize = true;
+			this->AddingNewAidPageNotesLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->AddingNewAidPageNotesLabel->Location = System::Drawing::Point(621, 196);
+			this->AddingNewAidPageNotesLabel->Name = L"AddingNewAidPageNotesLabel";
+			this->AddingNewAidPageNotesLabel->Size = System::Drawing::Size(82, 25);
+			this->AddingNewAidPageNotesLabel->TabIndex = 19;
+			this->AddingNewAidPageNotesLabel->Text = L"ملاحظات";
+			// 
+			// AddingNewAidPageNotesRichTextBox
+			// 
+			this->AddingNewAidPageNotesRichTextBox->Location = System::Drawing::Point(364, 160);
+			this->AddingNewAidPageNotesRichTextBox->Name = L"AddingNewAidPageNotesRichTextBox";
+			this->AddingNewAidPageNotesRichTextBox->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
+			this->AddingNewAidPageNotesRichTextBox->Size = System::Drawing::Size(201, 96);
+			this->AddingNewAidPageNotesRichTextBox->TabIndex = 18;
+			this->AddingNewAidPageNotesRichTextBox->Text = L"";
+			// 
+			// AddingNewAidPageDeliveryDateDateTimePicker
+			// 
+			this->AddingNewAidPageDeliveryDateDateTimePicker->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->AddingNewAidPageDeliveryDateDateTimePicker->Location = System::Drawing::Point(364, 123);
+			this->AddingNewAidPageDeliveryDateDateTimePicker->Name = L"AddingNewAidPageDeliveryDateDateTimePicker";
+			this->AddingNewAidPageDeliveryDateDateTimePicker->Size = System::Drawing::Size(196, 31);
+			this->AddingNewAidPageDeliveryDateDateTimePicker->TabIndex = 17;
+			// 
+			// AddingNewAidPageDeliveryDateLabel
+			// 
+			this->AddingNewAidPageDeliveryDateLabel->AutoSize = true;
+			this->AddingNewAidPageDeliveryDateLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->AddingNewAidPageDeliveryDateLabel->Location = System::Drawing::Point(597, 126);
+			this->AddingNewAidPageDeliveryDateLabel->Name = L"AddingNewAidPageDeliveryDateLabel";
+			this->AddingNewAidPageDeliveryDateLabel->Size = System::Drawing::Size(112, 25);
+			this->AddingNewAidPageDeliveryDateLabel->TabIndex = 16;
+			this->AddingNewAidPageDeliveryDateLabel->Text = L"تاريخ التسليم";
+			// 
+			// AddingNewAidPageSeasonTypeComboBox
+			// 
+			this->AddingNewAidPageSeasonTypeComboBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->AddingNewAidPageSeasonTypeComboBox->FormattingEnabled = true;
+			this->AddingNewAidPageSeasonTypeComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(4) {
+				L"رمضان", L"عيد الفطر",
+					L"عيد الاضحى", L"المولد النبوي"
+			});
+			this->AddingNewAidPageSeasonTypeComboBox->Location = System::Drawing::Point(14, 119);
+			this->AddingNewAidPageSeasonTypeComboBox->Name = L"AddingNewAidPageSeasonTypeComboBox";
+			this->AddingNewAidPageSeasonTypeComboBox->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
+			this->AddingNewAidPageSeasonTypeComboBox->Size = System::Drawing::Size(196, 33);
+			this->AddingNewAidPageSeasonTypeComboBox->TabIndex = 15;
+			this->AddingNewAidPageSeasonTypeComboBox->Text = L"نوع الموسم";
+			// 
+			// AddingNewAidPageSeasonTypeLabel
+			// 
+			this->AddingNewAidPageSeasonTypeLabel->AutoSize = true;
+			this->AddingNewAidPageSeasonTypeLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->AddingNewAidPageSeasonTypeLabel->Location = System::Drawing::Point(248, 123);
+			this->AddingNewAidPageSeasonTypeLabel->Name = L"AddingNewAidPageSeasonTypeLabel";
+			this->AddingNewAidPageSeasonTypeLabel->Size = System::Drawing::Size(100, 25);
+			this->AddingNewAidPageSeasonTypeLabel->TabIndex = 14;
+			this->AddingNewAidPageSeasonTypeLabel->Text = L"نوع الموسم";
+			// 
+			// AddingNewAidPageAidTypeRepetitionComboBox
+			// 
+			this->AddingNewAidPageAidTypeRepetitionComboBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->AddingNewAidPageAidTypeRepetitionComboBox->FormattingEnabled = true;
+			this->AddingNewAidPageAidTypeRepetitionComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(4) {
+				L"اسبوعي", L"شهري",
+					L"نصف سنوي", L"سنوي"
+			});
+			this->AddingNewAidPageAidTypeRepetitionComboBox->Location = System::Drawing::Point(364, 84);
+			this->AddingNewAidPageAidTypeRepetitionComboBox->Name = L"AddingNewAidPageAidTypeRepetitionComboBox";
+			this->AddingNewAidPageAidTypeRepetitionComboBox->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
+			this->AddingNewAidPageAidTypeRepetitionComboBox->Size = System::Drawing::Size(196, 33);
+			this->AddingNewAidPageAidTypeRepetitionComboBox->TabIndex = 13;
+			this->AddingNewAidPageAidTypeRepetitionComboBox->Text = L"نوع التكرار";
+			// 
+			// AddingNewAidPageAidTypeRepetitionLabel
+			// 
+			this->AddingNewAidPageAidTypeRepetitionLabel->AutoSize = true;
+			this->AddingNewAidPageAidTypeRepetitionLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->AddingNewAidPageAidTypeRepetitionLabel->Location = System::Drawing::Point(607, 88);
+			this->AddingNewAidPageAidTypeRepetitionLabel->Name = L"AddingNewAidPageAidTypeRepetitionLabel";
+			this->AddingNewAidPageAidTypeRepetitionLabel->Size = System::Drawing::Size(102, 25);
+			this->AddingNewAidPageAidTypeRepetitionLabel->TabIndex = 12;
+			this->AddingNewAidPageAidTypeRepetitionLabel->Text = L"نوع التكرار";
+			// 
+			// AddingNewAidPageAidTypeAidContentCheckedListBox
+			// 
+			this->AddingNewAidPageAidTypeAidContentCheckedListBox->BackColor = System::Drawing::SystemColors::Control;
+			this->AddingNewAidPageAidTypeAidContentCheckedListBox->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->AddingNewAidPageAidTypeAidContentCheckedListBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->AddingNewAidPageAidTypeAidContentCheckedListBox->FormattingEnabled = true;
+			this->AddingNewAidPageAidTypeAidContentCheckedListBox->Items->AddRange(gcnew cli::array< System::Object^  >(4) {
+				L"بطانية",
+					L"طعام ", L"دواء", L"ملابس"
+			});
+			this->AddingNewAidPageAidTypeAidContentCheckedListBox->Location = System::Drawing::Point(14, 162);
+			this->AddingNewAidPageAidTypeAidContentCheckedListBox->Name = L"AddingNewAidPageAidTypeAidContentCheckedListBox";
+			this->AddingNewAidPageAidTypeAidContentCheckedListBox->Size = System::Drawing::Size(196, 96);
+			this->AddingNewAidPageAidTypeAidContentCheckedListBox->TabIndex = 11;
+			// 
+			// AddingNewAidPageAidTypeAidContentLabel
+			// 
+			this->AddingNewAidPageAidTypeAidContentLabel->AutoSize = true;
+			this->AddingNewAidPageAidTypeAidContentLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->AddingNewAidPageAidTypeAidContentLabel->Location = System::Drawing::Point(214, 197);
+			this->AddingNewAidPageAidTypeAidContentLabel->Name = L"AddingNewAidPageAidTypeAidContentLabel";
+			this->AddingNewAidPageAidTypeAidContentLabel->Size = System::Drawing::Size(139, 25);
+			this->AddingNewAidPageAidTypeAidContentLabel->TabIndex = 10;
+			this->AddingNewAidPageAidTypeAidContentLabel->Text = L"محتوى السماعدة";
+			// 
+			// AddingNewAidPageAidTypeAmountNumericUpDown
+			// 
+			this->AddingNewAidPageAidTypeAmountNumericUpDown->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->AddingNewAidPageAidTypeAmountNumericUpDown->Location = System::Drawing::Point(14, 81);
+			this->AddingNewAidPageAidTypeAmountNumericUpDown->Name = L"AddingNewAidPageAidTypeAmountNumericUpDown";
+			this->AddingNewAidPageAidTypeAmountNumericUpDown->Size = System::Drawing::Size(196, 31);
+			this->AddingNewAidPageAidTypeAmountNumericUpDown->TabIndex = 8;
+			this->AddingNewAidPageAidTypeAmountNumericUpDown->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			// 
+			// AddingNewAidPageAidTypeAmountLabel
+			// 
+			this->AddingNewAidPageAidTypeAmountLabel->AutoSize = true;
+			this->AddingNewAidPageAidTypeAmountLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->AddingNewAidPageAidTypeAmountLabel->Location = System::Drawing::Point(229, 84);
+			this->AddingNewAidPageAidTypeAmountLabel->Name = L"AddingNewAidPageAidTypeAmountLabel";
+			this->AddingNewAidPageAidTypeAmountLabel->Size = System::Drawing::Size(119, 25);
+			this->AddingNewAidPageAidTypeAmountLabel->TabIndex = 7;
+			this->AddingNewAidPageAidTypeAmountLabel->Text = L"قيمة المساعدة";
+			// 
+			// AddingNewAidPageAidTypeComboBox
+			// 
+			this->AddingNewAidPageAidTypeComboBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->AddingNewAidPageAidTypeComboBox->FormattingEnabled = true;
+			this->AddingNewAidPageAidTypeComboBox->Location = System::Drawing::Point(14, 42);
+			this->AddingNewAidPageAidTypeComboBox->Name = L"AddingNewAidPageAidTypeComboBox";
+			this->AddingNewAidPageAidTypeComboBox->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
+			this->AddingNewAidPageAidTypeComboBox->Size = System::Drawing::Size(196, 33);
+			this->AddingNewAidPageAidTypeComboBox->TabIndex = 6;
+			this->AddingNewAidPageAidTypeComboBox->Text = L"أختار نوع المساعدة";
+			// 
+			// AddingNewAidPageAidTypeLabel
+			// 
+			this->AddingNewAidPageAidTypeLabel->AutoSize = true;
+			this->AddingNewAidPageAidTypeLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->AddingNewAidPageAidTypeLabel->Location = System::Drawing::Point(232, 46);
+			this->AddingNewAidPageAidTypeLabel->Name = L"AddingNewAidPageAidTypeLabel";
+			this->AddingNewAidPageAidTypeLabel->Size = System::Drawing::Size(116, 25);
+			this->AddingNewAidPageAidTypeLabel->TabIndex = 5;
+			this->AddingNewAidPageAidTypeLabel->Text = L"نوع المساعدة";
+			this->AddingNewAidPageAidTypeLabel->Click += gcnew System::EventHandler(this, &AddNewAid::AddingNewAidPageAidTypeLabel_Click);
+			// 
+			// AddingNewAidPageRepetitionCheckBox
+			// 
+			this->AddingNewAidPageRepetitionCheckBox->AutoSize = true;
+			this->AddingNewAidPageRepetitionCheckBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->AddingNewAidPageRepetitionCheckBox->Location = System::Drawing::Point(3, 351);
+			this->AddingNewAidPageRepetitionCheckBox->Name = L"AddingNewAidPageRepetitionCheckBox";
+			this->AddingNewAidPageRepetitionCheckBox->Size = System::Drawing::Size(74, 29);
+			this->AddingNewAidPageRepetitionCheckBox->TabIndex = 4;
+			this->AddingNewAidPageRepetitionCheckBox->Text = L"تكرار";
+			this->AddingNewAidPageRepetitionCheckBox->UseVisualStyleBackColor = true;
+			this->AddingNewAidPageRepetitionCheckBox->CheckedChanged += gcnew System::EventHandler(this, &AddNewAid::CheckedChanged);
+			// 
 			// AddingNewAidPageChoseAidCategoryComboBox
 			// 
 			this->AddingNewAidPageChoseAidCategoryComboBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
@@ -291,184 +449,6 @@ namespace Ehsan {
 			this->AddingNewAidPageChoseCaseLabel->TabIndex = 0;
 			this->AddingNewAidPageChoseCaseLabel->Text = L"اختيار الحالة ";
 			// 
-			// AddingNewAidPageRepetitionCheckBox
-			// 
-			this->AddingNewAidPageRepetitionCheckBox->AutoSize = true;
-			this->AddingNewAidPageRepetitionCheckBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->AddingNewAidPageRepetitionCheckBox->Location = System::Drawing::Point(3, 351);
-			this->AddingNewAidPageRepetitionCheckBox->Name = L"AddingNewAidPageRepetitionCheckBox";
-			this->AddingNewAidPageRepetitionCheckBox->Size = System::Drawing::Size(74, 29);
-			this->AddingNewAidPageRepetitionCheckBox->TabIndex = 4;
-			this->AddingNewAidPageRepetitionCheckBox->Text = L"تكرار";
-			this->AddingNewAidPageRepetitionCheckBox->UseVisualStyleBackColor = true;
-			// 
-			// AddingNewAidPageAidTypeComboBox
-			// 
-			this->AddingNewAidPageAidTypeComboBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->AddingNewAidPageAidTypeComboBox->FormattingEnabled = true;
-			this->AddingNewAidPageAidTypeComboBox->Location = System::Drawing::Point(14, 42);
-			this->AddingNewAidPageAidTypeComboBox->Name = L"AddingNewAidPageAidTypeComboBox";
-			this->AddingNewAidPageAidTypeComboBox->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
-			this->AddingNewAidPageAidTypeComboBox->Size = System::Drawing::Size(196, 33);
-			this->AddingNewAidPageAidTypeComboBox->TabIndex = 6;
-			this->AddingNewAidPageAidTypeComboBox->Text = L"أختار نوع المساعدة";
-			// 
-			// AddingNewAidPageAidTypeLabel
-			// 
-			this->AddingNewAidPageAidTypeLabel->AutoSize = true;
-			this->AddingNewAidPageAidTypeLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->AddingNewAidPageAidTypeLabel->Location = System::Drawing::Point(232, 46);
-			this->AddingNewAidPageAidTypeLabel->Name = L"AddingNewAidPageAidTypeLabel";
-			this->AddingNewAidPageAidTypeLabel->Size = System::Drawing::Size(116, 25);
-			this->AddingNewAidPageAidTypeLabel->TabIndex = 5;
-			this->AddingNewAidPageAidTypeLabel->Text = L"نوع المساعدة";
-			this->AddingNewAidPageAidTypeLabel->Click += gcnew System::EventHandler(this, &AddNewAid::AddingNewAidPageAidTypeLabel_Click);
-			// 
-			// AddingNewAidPageAidTypeAmountLabel
-			// 
-			this->AddingNewAidPageAidTypeAmountLabel->AutoSize = true;
-			this->AddingNewAidPageAidTypeAmountLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->AddingNewAidPageAidTypeAmountLabel->Location = System::Drawing::Point(229, 84);
-			this->AddingNewAidPageAidTypeAmountLabel->Name = L"AddingNewAidPageAidTypeAmountLabel";
-			this->AddingNewAidPageAidTypeAmountLabel->Size = System::Drawing::Size(119, 25);
-			this->AddingNewAidPageAidTypeAmountLabel->TabIndex = 7;
-			this->AddingNewAidPageAidTypeAmountLabel->Text = L"قيمة المساعدة";
-			// 
-			// AddingNewAidPageAidTypeAmountNumericUpDown
-			// 
-			this->AddingNewAidPageAidTypeAmountNumericUpDown->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->AddingNewAidPageAidTypeAmountNumericUpDown->Location = System::Drawing::Point(14, 81);
-			this->AddingNewAidPageAidTypeAmountNumericUpDown->Name = L"AddingNewAidPageAidTypeAmountNumericUpDown";
-			this->AddingNewAidPageAidTypeAmountNumericUpDown->Size = System::Drawing::Size(196, 31);
-			this->AddingNewAidPageAidTypeAmountNumericUpDown->TabIndex = 8;
-			this->AddingNewAidPageAidTypeAmountNumericUpDown->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			// 
-			// AddingNewAidPageAidTypeAidContentLabel
-			// 
-			this->AddingNewAidPageAidTypeAidContentLabel->AutoSize = true;
-			this->AddingNewAidPageAidTypeAidContentLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->AddingNewAidPageAidTypeAidContentLabel->Location = System::Drawing::Point(214, 197);
-			this->AddingNewAidPageAidTypeAidContentLabel->Name = L"AddingNewAidPageAidTypeAidContentLabel";
-			this->AddingNewAidPageAidTypeAidContentLabel->Size = System::Drawing::Size(139, 25);
-			this->AddingNewAidPageAidTypeAidContentLabel->TabIndex = 10;
-			this->AddingNewAidPageAidTypeAidContentLabel->Text = L"محتوى السماعدة";
-			// 
-			// AddingNewAidPageAidTypeAidContentCheckedListBox
-			// 
-			this->AddingNewAidPageAidTypeAidContentCheckedListBox->BackColor = System::Drawing::SystemColors::Control;
-			this->AddingNewAidPageAidTypeAidContentCheckedListBox->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->AddingNewAidPageAidTypeAidContentCheckedListBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->AddingNewAidPageAidTypeAidContentCheckedListBox->FormattingEnabled = true;
-			this->AddingNewAidPageAidTypeAidContentCheckedListBox->Items->AddRange(gcnew cli::array< System::Object^  >(4) {
-				L"بطانية",
-					L"طعام ", L"دواء", L"ملابس"
-			});
-			this->AddingNewAidPageAidTypeAidContentCheckedListBox->Location = System::Drawing::Point(14, 162);
-			this->AddingNewAidPageAidTypeAidContentCheckedListBox->Name = L"AddingNewAidPageAidTypeAidContentCheckedListBox";
-			this->AddingNewAidPageAidTypeAidContentCheckedListBox->Size = System::Drawing::Size(196, 96);
-			this->AddingNewAidPageAidTypeAidContentCheckedListBox->TabIndex = 11;
-			// 
-			// AddingNewAidPageAidTypeRepetitionLabel
-			// 
-			this->AddingNewAidPageAidTypeRepetitionLabel->AutoSize = true;
-			this->AddingNewAidPageAidTypeRepetitionLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->AddingNewAidPageAidTypeRepetitionLabel->Location = System::Drawing::Point(607, 88);
-			this->AddingNewAidPageAidTypeRepetitionLabel->Name = L"AddingNewAidPageAidTypeRepetitionLabel";
-			this->AddingNewAidPageAidTypeRepetitionLabel->Size = System::Drawing::Size(102, 25);
-			this->AddingNewAidPageAidTypeRepetitionLabel->TabIndex = 12;
-			this->AddingNewAidPageAidTypeRepetitionLabel->Text = L"نوع التكرار";
-			// 
-			// AddingNewAidPageAidTypeRepetitionComboBox
-			// 
-			this->AddingNewAidPageAidTypeRepetitionComboBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->AddingNewAidPageAidTypeRepetitionComboBox->FormattingEnabled = true;
-			this->AddingNewAidPageAidTypeRepetitionComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(4) {
-				L"اسبوعي", L"شهري",
-					L"نصف سنوي", L"سنوي"
-			});
-			this->AddingNewAidPageAidTypeRepetitionComboBox->Location = System::Drawing::Point(364, 84);
-			this->AddingNewAidPageAidTypeRepetitionComboBox->Name = L"AddingNewAidPageAidTypeRepetitionComboBox";
-			this->AddingNewAidPageAidTypeRepetitionComboBox->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
-			this->AddingNewAidPageAidTypeRepetitionComboBox->Size = System::Drawing::Size(196, 33);
-			this->AddingNewAidPageAidTypeRepetitionComboBox->TabIndex = 13;
-			this->AddingNewAidPageAidTypeRepetitionComboBox->Text = L"نوع التكرار";
-			// 
-			// AddingNewAidPageSeasonTypeComboBox
-			// 
-			this->AddingNewAidPageSeasonTypeComboBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->AddingNewAidPageSeasonTypeComboBox->FormattingEnabled = true;
-			this->AddingNewAidPageSeasonTypeComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(4) {
-				L"رمضان", L"عيد الفطر",
-					L"عيد الاضحى", L"المولد النبوي"
-			});
-			this->AddingNewAidPageSeasonTypeComboBox->Location = System::Drawing::Point(14, 119);
-			this->AddingNewAidPageSeasonTypeComboBox->Name = L"AddingNewAidPageSeasonTypeComboBox";
-			this->AddingNewAidPageSeasonTypeComboBox->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
-			this->AddingNewAidPageSeasonTypeComboBox->Size = System::Drawing::Size(196, 33);
-			this->AddingNewAidPageSeasonTypeComboBox->TabIndex = 15;
-			this->AddingNewAidPageSeasonTypeComboBox->Text = L"نوع الموسم";
-			// 
-			// AddingNewAidPageSeasonTypeLabel
-			// 
-			this->AddingNewAidPageSeasonTypeLabel->AutoSize = true;
-			this->AddingNewAidPageSeasonTypeLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->AddingNewAidPageSeasonTypeLabel->Location = System::Drawing::Point(248, 123);
-			this->AddingNewAidPageSeasonTypeLabel->Name = L"AddingNewAidPageSeasonTypeLabel";
-			this->AddingNewAidPageSeasonTypeLabel->Size = System::Drawing::Size(100, 25);
-			this->AddingNewAidPageSeasonTypeLabel->TabIndex = 14;
-			this->AddingNewAidPageSeasonTypeLabel->Text = L"نوع الموسم";
-			// 
-			// AddingNewAidPageDeliveryDateLabel
-			// 
-			this->AddingNewAidPageDeliveryDateLabel->AutoSize = true;
-			this->AddingNewAidPageDeliveryDateLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->AddingNewAidPageDeliveryDateLabel->Location = System::Drawing::Point(597, 126);
-			this->AddingNewAidPageDeliveryDateLabel->Name = L"AddingNewAidPageDeliveryDateLabel";
-			this->AddingNewAidPageDeliveryDateLabel->Size = System::Drawing::Size(112, 25);
-			this->AddingNewAidPageDeliveryDateLabel->TabIndex = 16;
-			this->AddingNewAidPageDeliveryDateLabel->Text = L"تاريخ التسليم";
-			// 
-			// AddingNewAidPageDeliveryDateDateTimePicker
-			// 
-			this->AddingNewAidPageDeliveryDateDateTimePicker->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->AddingNewAidPageDeliveryDateDateTimePicker->Location = System::Drawing::Point(364, 123);
-			this->AddingNewAidPageDeliveryDateDateTimePicker->Name = L"AddingNewAidPageDeliveryDateDateTimePicker";
-			this->AddingNewAidPageDeliveryDateDateTimePicker->Size = System::Drawing::Size(196, 31);
-			this->AddingNewAidPageDeliveryDateDateTimePicker->TabIndex = 17;
-			// 
-			// AddingNewAidPageNotesRichTextBox
-			// 
-			this->AddingNewAidPageNotesRichTextBox->Location = System::Drawing::Point(364, 160);
-			this->AddingNewAidPageNotesRichTextBox->Name = L"AddingNewAidPageNotesRichTextBox";
-			this->AddingNewAidPageNotesRichTextBox->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
-			this->AddingNewAidPageNotesRichTextBox->Size = System::Drawing::Size(201, 96);
-			this->AddingNewAidPageNotesRichTextBox->TabIndex = 18;
-			this->AddingNewAidPageNotesRichTextBox->Text = L"";
-			// 
-			// AddingNewAidPageNotesLabel
-			// 
-			this->AddingNewAidPageNotesLabel->AutoSize = true;
-			this->AddingNewAidPageNotesLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->AddingNewAidPageNotesLabel->Location = System::Drawing::Point(621, 196);
-			this->AddingNewAidPageNotesLabel->Name = L"AddingNewAidPageNotesLabel";
-			this->AddingNewAidPageNotesLabel->Size = System::Drawing::Size(82, 25);
-			this->AddingNewAidPageNotesLabel->TabIndex = 19;
-			this->AddingNewAidPageNotesLabel->Text = L"ملاحظات";
-			// 
 			// AddNewAid
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -509,8 +489,135 @@ private: System::Void AddingNewAidPageAidTypeLabel_Click(System::Object^ sender,
 }
 private: System::Void AddingNewAidPageCancelButton_Click(System::Object^ sender, System::EventArgs^ e) {
 }
-private: System::Void AddingNewAidPageSaveButton_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void AddingNewAidPageRepetitionCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	// إظهار أو إخفاء حقل نوع التكرار بناءً على حالة CheckBox
+	this->AddingNewAidPageAidTypeRepetitionLabel->Visible = this->AddingNewAidPageRepetitionCheckBox->Checked;
+	this->AddingNewAidPageAidTypeRepetitionComboBox->Visible = this->AddingNewAidPageRepetitionCheckBox->Checked;
 }
+
+private: System::Void AddingNewAidPageSaveButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	// 1. Validate category selection
+	String^ selectedCategory = this->AddingNewAidPageChoseAidCategoryComboBox->Text->Trim();
+	if (String::IsNullOrEmpty(selectedCategory)) {
+		MessageBox::Show(L"الرجاء اختيار تصنيف المساعدة أولاً.", L"خطأ", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		return;
+	}
+
+	// 2. Validate case selection
+	if (this->AddingNewAidPageChoseCaseComboBox->SelectedIndex < 0) {
+		MessageBox::Show(L"الرجاء اختيار الحالة أولاً.", L"خطأ", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		return;
+	}
+
+	// 3. Extract CaseID from the selected item
+	String^ selectedCaseText = this->AddingNewAidPageChoseCaseComboBox->SelectedItem->ToString();
+	array<String^>^ parts = selectedCaseText->Split('-');
+	if (parts->Length < 2) {
+		MessageBox::Show(L"تنسيق بيانات الحالة غير صحيح.", L"خطأ", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		return;
+	}
+
+	String^ nationalID = parts[1]->Trim();
+	Nullable<int> caseID = Connection::GetCaseIdByNationalID(nationalID);
+
+	if (!caseID.HasValue) {
+		MessageBox::Show(L"تعذر العثور على معرف الحالة.", L"خطأ", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		return;
+	}
+
+	// 4. Common fields
+	String^ aidType = this->AddingNewAidPageAidTypeComboBox->Text->Trim();
+	if (String::IsNullOrEmpty(aidType)) {
+		MessageBox::Show(L"الرجاء إدخال نوع المساعدة.", L"خطأ", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		return;
+	}
+
+	String^ notes = this->AddingNewAidPageNotesRichTextBox->Text->Trim();
+	bool isRecurring = this->AddingNewAidPageRepetitionCheckBox->Checked; // 0 أو 1
+	String^ frequencyLong = isRecurring ? this->AddingNewAidPageAidTypeRepetitionComboBox->Text->Trim() : "";
+	String^ seasonType = this->AddingNewAidPageSeasonTypeComboBox->Text->Trim();
+	DateTime now = DateTime::Now;
+	bool isActive = true;
+	bool isOneTimeConfirmed = false;
+	Nullable<int> receivedCount = isRecurring ? 0 : Nullable<int>(); // 0 إذا كان متكرراً، وإلا Null
+	Nullable<DateTime> receivedDate;
+	Nullable<DateTime> nextDueDate;
+	DateTime registrationDate = this->AddingNewAidPageDeliveryDateDateTimePicker->Value;
+
+	try {
+		if (selectedCategory->Contains(L"مالية")) {
+			// Financial Aid
+			Nullable<Decimal> amount = safe_cast<Decimal>(this->AddingNewAidPageAidTypeAmountNumericUpDown->Value);
+			if (!amount.HasValue || amount.Value <= 0) {
+				MessageBox::Show(L"الرجاء إدخال قيمة صحيحة للمساعدة المالية.", L"خطأ", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				return;
+			}
+
+			FinancialAid^ aid = gcnew FinancialAid(
+				caseID,
+				aidType,
+				amount,
+				frequencyLong,
+				isRecurring,
+				receivedCount,
+				seasonType,
+				isOneTimeConfirmed,
+				registrationDate,
+				receivedDate,
+				nextDueDate,
+				notes,
+				isActive,
+				now,
+				now
+			);
+
+			Connection::AddFinancialAid(aid);
+			MessageBox::Show(L"تمت إضافة المساعدة المالية بنجاح.", L"نجاح", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		}
+		else if (selectedCategory->Contains(L"عينية")) {
+			// In-Kind Aid
+			System::Collections::Generic::List<String^>^ contentList = gcnew System::Collections::Generic::List<String^>();
+			for each (Object ^ item in this->AddingNewAidPageAidTypeAidContentCheckedListBox->CheckedItems) {
+				contentList->Add(item->ToString());
+			}
+
+			if (contentList->Count == 0) {
+				MessageBox::Show(L"الرجاء اختيار محتوى المساعدة العينية.", L"خطأ", MessageBoxButtons::OK, MessageBoxIcon::Error);
+				return;
+			}
+
+			String^ aidContent = String::Join(L", ", contentList);
+
+			InKindAid^ aid = gcnew InKindAid(
+				caseID,
+				aidType,
+				aidContent,
+				frequencyLong,
+				isRecurring,
+				receivedCount,
+				seasonType,
+				isOneTimeConfirmed,
+				registrationDate,
+				receivedDate,
+				nextDueDate,
+				notes,
+				isActive,
+				now,
+				now
+			);
+
+			Connection::AddInKindAid(aid);
+			MessageBox::Show(L"تمت إضافة المساعدة العينية بنجاح.", L"نجاح", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		}
+		else {
+			MessageBox::Show(L"نوع المساعدة غير معروف.", L"خطأ", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show(L"حدث خطأ أثناء الحفظ: " + ex->Message, L"خطأ", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
+}
+
 private: System::Void AddingNewAidPageCleanButton_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void AddingNewAidPageChoseAidCategoryLabel_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -533,7 +640,7 @@ private: System::Void AddingNewAidPageChoseAidCategoryComboBox_SelectedIndexChan
 }
 
 	   ////Functions 
-	   void ShowFinancialAidFields()
+private: System::Void ShowFinancialAidFields()
 	   {
 		   HideAllFields();
 
@@ -550,7 +657,7 @@ private: System::Void AddingNewAidPageChoseAidCategoryComboBox_SelectedIndexChan
 	   }
 
 	   // دالة لعرض حقول المساعدة العينية
-	   void ShowInKindAidFields()
+private: System::Void ShowInKindAidFields()
 	   {
 		   HideAllFields();
 
@@ -567,5 +674,8 @@ private: System::Void AddingNewAidPageChoseAidCategoryComboBox_SelectedIndexChan
 			   L"سلة غذائية", L"ملابس", L"أثاث منزل"
 		   });
 	   }
+private: System::Void CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	this->AddingNewAidPageRepetitionCheckBox->CheckedChanged += gcnew System::EventHandler(this, &AddNewAid::AddingNewAidPageRepetitionCheckBox_CheckedChanged);
+}
 };
 }

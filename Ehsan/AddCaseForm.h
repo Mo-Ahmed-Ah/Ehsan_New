@@ -196,7 +196,7 @@ namespace Ehsan {
 			this->AddCasesFristNameLabel->AutoSize = true;
 			this->AddCasesFristNameLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->AddCasesFristNameLabel->Location = System::Drawing::Point(579, 74);
+			this->AddCasesFristNameLabel->Location = System::Drawing::Point(571, 60);
 			this->AddCasesFristNameLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->AddCasesFristNameLabel->Name = L"AddCasesFristNameLabel";
 			this->AddCasesFristNameLabel->Size = System::Drawing::Size(86, 24);
@@ -208,7 +208,7 @@ namespace Ehsan {
 			// 
 			this->AddCasesFrsitNameTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->AddCasesFrsitNameTextBox->Location = System::Drawing::Point(275, 69);
+			this->AddCasesFrsitNameTextBox->Location = System::Drawing::Point(276, 55);
 			this->AddCasesFrsitNameTextBox->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->AddCasesFrsitNameTextBox->Name = L"AddCasesFrsitNameTextBox";
 			this->AddCasesFrsitNameTextBox->Size = System::Drawing::Size(241, 29);
@@ -220,7 +220,7 @@ namespace Ehsan {
 			// 
 			this->AddCasesLastNameTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->AddCasesLastNameTextBox->Location = System::Drawing::Point(276, 102);
+			this->AddCasesLastNameTextBox->Location = System::Drawing::Point(274, 90);
 			this->AddCasesLastNameTextBox->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->AddCasesLastNameTextBox->Name = L"AddCasesLastNameTextBox";
 			this->AddCasesLastNameTextBox->Size = System::Drawing::Size(240, 29);
@@ -232,7 +232,7 @@ namespace Ehsan {
 			this->AddCasesLastLabel->AutoSize = true;
 			this->AddCasesLastLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->AddCasesLastLabel->Location = System::Drawing::Point(572, 107);
+			this->AddCasesLastLabel->Location = System::Drawing::Point(567, 95);
 			this->AddCasesLastLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->AddCasesLastLabel->Name = L"AddCasesLastLabel";
 			this->AddCasesLastLabel->Size = System::Drawing::Size(93, 24);
@@ -243,7 +243,7 @@ namespace Ehsan {
 			// 
 			this->AddCasesNationalIdTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->AddCasesNationalIdTextBox->Location = System::Drawing::Point(276, 166);
+			this->AddCasesNationalIdTextBox->Location = System::Drawing::Point(276, 160);
 			this->AddCasesNationalIdTextBox->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->AddCasesNationalIdTextBox->Name = L"AddCasesNationalIdTextBox";
 			this->AddCasesNationalIdTextBox->Size = System::Drawing::Size(240, 29);
@@ -255,7 +255,7 @@ namespace Ehsan {
 			this->AddCasesNationalIdLabel->AutoSize = true;
 			this->AddCasesNationalIdLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->AddCasesNationalIdLabel->Location = System::Drawing::Point(571, 175);
+			this->AddCasesNationalIdLabel->Location = System::Drawing::Point(570, 165);
 			this->AddCasesNationalIdLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->AddCasesNationalIdLabel->Name = L"AddCasesNationalIdLabel";
 			this->AddCasesNationalIdLabel->Size = System::Drawing::Size(94, 24);
@@ -266,7 +266,7 @@ namespace Ehsan {
 			// 
 			this->AddCasesNickNameTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->AddCasesNickNameTextBox->Location = System::Drawing::Point(276, 134);
+			this->AddCasesNickNameTextBox->Location = System::Drawing::Point(276, 125);
 			this->AddCasesNickNameTextBox->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->AddCasesNickNameTextBox->Name = L"AddCasesNickNameTextBox";
 			this->AddCasesNickNameTextBox->Size = System::Drawing::Size(240, 29);
@@ -278,7 +278,7 @@ namespace Ehsan {
 			this->AddCasesNickNameLabel->AutoSize = true;
 			this->AddCasesNickNameLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->AddCasesNickNameLabel->Location = System::Drawing::Point(619, 139);
+			this->AddCasesNickNameLabel->Location = System::Drawing::Point(618, 130);
 			this->AddCasesNickNameLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->AddCasesNickNameLabel->Name = L"AddCasesNickNameLabel";
 			this->AddCasesNickNameLabel->Size = System::Drawing::Size(46, 24);
@@ -291,7 +291,7 @@ namespace Ehsan {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->dateTimePicker1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->dateTimePicker1->Location = System::Drawing::Point(275, 307);
+			this->dateTimePicker1->Location = System::Drawing::Point(276, 308);
 			this->dateTimePicker1->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->dateTimePicker1->Name = L"dateTimePicker1";
 			this->dateTimePicker1->Size = System::Drawing::Size(240, 29);
@@ -314,18 +314,26 @@ namespace Ehsan {
 			this->AddCasesAreaComboBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->AddCasesAreaComboBox->FormattingEnabled = true;
-			this->AddCasesAreaComboBox->Location = System::Drawing::Point(275, 272);
+			this->AddCasesAreaComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(14) {
+				L"قسم باب شرق", L"قسم محرم بك", L"قسم كرموز",
+					L"قسم العطارين", L"قسم الرمل", L"قسم سيدي جابر", L"قسم مينا البصل", L"قسم اللبان", L"قسم المنشية", L"قسم المنتزة", L"قسم الجمرك",
+					L"قسم العامرية", L"قسم الدخيلة", L"قسم برج العرب"
+			});
+			this->AddCasesAreaComboBox->Location = System::Drawing::Point(274, 230);
 			this->AddCasesAreaComboBox->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->AddCasesAreaComboBox->Name = L"AddCasesAreaComboBox";
+			this->AddCasesAreaComboBox->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
 			this->AddCasesAreaComboBox->Size = System::Drawing::Size(240, 32);
 			this->AddCasesAreaComboBox->TabIndex = 17;
+			this->AddCasesAreaComboBox->Text = L"اختار القسم التابع له";
+			this->AddCasesAreaComboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &AddCaseForm::AddCasesAreaComboBox_SelectedIndexChanged);
 			// 
 			// AddCasesAreaLabel
 			// 
 			this->AddCasesAreaLabel->AutoSize = true;
 			this->AddCasesAreaLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->AddCasesAreaLabel->Location = System::Drawing::Point(604, 280);
+			this->AddCasesAreaLabel->Location = System::Drawing::Point(597, 238);
 			this->AddCasesAreaLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->AddCasesAreaLabel->Name = L"AddCasesAreaLabel";
 			this->AddCasesAreaLabel->Size = System::Drawing::Size(60, 24);
@@ -337,7 +345,7 @@ namespace Ehsan {
 			this->AddCasesStreetLabel->AutoSize = true;
 			this->AddCasesStreetLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->AddCasesStreetLabel->Location = System::Drawing::Point(607, 244);
+			this->AddCasesStreetLabel->Location = System::Drawing::Point(597, 276);
 			this->AddCasesStreetLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->AddCasesStreetLabel->Name = L"AddCasesStreetLabel";
 			this->AddCasesStreetLabel->Size = System::Drawing::Size(57, 24);
@@ -349,18 +357,20 @@ namespace Ehsan {
 			this->AddCasesStreetComboBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->AddCasesStreetComboBox->FormattingEnabled = true;
-			this->AddCasesStreetComboBox->Location = System::Drawing::Point(275, 236);
+			this->AddCasesStreetComboBox->Location = System::Drawing::Point(274, 268);
 			this->AddCasesStreetComboBox->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->AddCasesStreetComboBox->Name = L"AddCasesStreetComboBox";
+			this->AddCasesStreetComboBox->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
 			this->AddCasesStreetComboBox->Size = System::Drawing::Size(241, 32);
 			this->AddCasesStreetComboBox->TabIndex = 19;
+			this->AddCasesStreetComboBox->Text = L"اختار الشارع التابع له";
 			// 
 			// AddCasesMaritalStatusLabel
 			// 
 			this->AddCasesMaritalStatusLabel->AutoSize = true;
 			this->AddCasesMaritalStatusLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->AddCasesMaritalStatusLabel->Location = System::Drawing::Point(538, 347);
+			this->AddCasesMaritalStatusLabel->Location = System::Drawing::Point(539, 353);
 			this->AddCasesMaritalStatusLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->AddCasesMaritalStatusLabel->Name = L"AddCasesMaritalStatusLabel";
 			this->AddCasesMaritalStatusLabel->Size = System::Drawing::Size(126, 24);
@@ -377,7 +387,7 @@ namespace Ehsan {
 				L"أرمل / أرملة", L"أرمل / أرملة ويعول",
 					L"أعزب / عزباء", L"متزوج / متزوجة", L"متزوج / متزوجة ويعول", L"مطلق / مطلقة", L"مطلق / مطلقة ويعول"
 			});
-			this->AddCasesMaritalStatusComboBox->Location = System::Drawing::Point(275, 339);
+			this->AddCasesMaritalStatusComboBox->Location = System::Drawing::Point(274, 345);
 			this->AddCasesMaritalStatusComboBox->Margin = System::Windows::Forms::Padding(6, 5, 6, 5);
 			this->AddCasesMaritalStatusComboBox->Name = L"AddCasesMaritalStatusComboBox";
 			this->AddCasesMaritalStatusComboBox->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
@@ -390,7 +400,7 @@ namespace Ehsan {
 			this->AddCasesMaleChildrenLabel->AutoSize = true;
 			this->AddCasesMaleChildrenLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->AddCasesMaleChildrenLabel->Location = System::Drawing::Point(523, 415);
+			this->AddCasesMaleChildrenLabel->Location = System::Drawing::Point(523, 429);
 			this->AddCasesMaleChildrenLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->AddCasesMaleChildrenLabel->Name = L"AddCasesMaleChildrenLabel";
 			this->AddCasesMaleChildrenLabel->Size = System::Drawing::Size(141, 24);
@@ -401,7 +411,7 @@ namespace Ehsan {
 			// 
 			this->AddCasesMaleChildrenNumericUpDown->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->AddCasesMaleChildrenNumericUpDown->Location = System::Drawing::Point(275, 408);
+			this->AddCasesMaleChildrenNumericUpDown->Location = System::Drawing::Point(275, 422);
 			this->AddCasesMaleChildrenNumericUpDown->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->AddCasesMaleChildrenNumericUpDown->Name = L"AddCasesMaleChildrenNumericUpDown";
 			this->AddCasesMaleChildrenNumericUpDown->Size = System::Drawing::Size(241, 31);
@@ -412,7 +422,7 @@ namespace Ehsan {
 			// 
 			this->AddCasesFemaleChildrenNumericUpDown->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->AddCasesFemaleChildrenNumericUpDown->Location = System::Drawing::Point(275, 374);
+			this->AddCasesFemaleChildrenNumericUpDown->Location = System::Drawing::Point(274, 385);
 			this->AddCasesFemaleChildrenNumericUpDown->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->AddCasesFemaleChildrenNumericUpDown->Name = L"AddCasesFemaleChildrenNumericUpDown";
 			this->AddCasesFemaleChildrenNumericUpDown->Size = System::Drawing::Size(240, 31);
@@ -424,7 +434,7 @@ namespace Ehsan {
 			this->AddCasesFemaleChildrenLabel->AutoSize = true;
 			this->AddCasesFemaleChildrenLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->AddCasesFemaleChildrenLabel->Location = System::Drawing::Point(525, 377);
+			this->AddCasesFemaleChildrenLabel->Location = System::Drawing::Point(526, 392);
 			this->AddCasesFemaleChildrenLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->AddCasesFemaleChildrenLabel->Name = L"AddCasesFemaleChildrenLabel";
 			this->AddCasesFemaleChildrenLabel->Size = System::Drawing::Size(139, 24);
@@ -635,7 +645,7 @@ namespace Ehsan {
 			// 
 			this->AddCasesPhoneNumberTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->AddCasesPhoneNumberTextBox->Location = System::Drawing::Point(278, 201);
+			this->AddCasesPhoneNumberTextBox->Location = System::Drawing::Point(276, 195);
 			this->AddCasesPhoneNumberTextBox->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->AddCasesPhoneNumberTextBox->Name = L"AddCasesPhoneNumberTextBox";
 			this->AddCasesPhoneNumberTextBox->Size = System::Drawing::Size(238, 29);
@@ -647,7 +657,7 @@ namespace Ehsan {
 			this->AddCasesPhoneNumberLabel->AutoSize = true;
 			this->AddCasesPhoneNumberLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->AddCasesPhoneNumberLabel->Location = System::Drawing::Point(573, 210);
+			this->AddCasesPhoneNumberLabel->Location = System::Drawing::Point(571, 200);
 			this->AddCasesPhoneNumberLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->AddCasesPhoneNumberLabel->Name = L"AddCasesPhoneNumberLabel";
 			this->AddCasesPhoneNumberLabel->Size = System::Drawing::Size(84, 24);
@@ -693,6 +703,7 @@ namespace Ehsan {
 			this->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->Name = L"AddCaseForm";
 			this->Text = L"صفحة إضافة حالة ";
+			this->Load += gcnew System::EventHandler(this, &AddCaseForm::AddCaseForm_Load);
 			this->AddCasesTitlePanal->ResumeLayout(false);
 			this->AddCasesTitlePanal->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AddCasesMaleChildrenNumericUpDown))->EndInit();
@@ -875,5 +886,185 @@ namespace Ehsan {
 	}
 
 
-	};
+	private: System::Void AddCasesAreaComboBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+		String^ selectedStatus = AddCasesAreaComboBox->SelectedItem != nullptr ?
+			AddCasesAreaComboBox->SelectedItem->ToString() : "";
+		this->AddCasesStreetComboBox->Items->Clear();
+
+		if (selectedStatus->Contains(L"باب شرق")) {
+			this->AddCasesStreetComboBox->Items->AddRange(gcnew cli::array<System::Object^>(5) {
+				L"حي الابراهيمية(بحري-قبلي) - الحضرة(بحري-قبلي)",
+					L"حى الأزاريطه - الشاطبى",
+					L"حى سموحه",
+					L"حي باب شرق - وابور المياه",
+					L"حي عزبة الجامع والنزهة"
+			});
+		}
+		else if (selectedStatus->Contains(L"محرم بك")) {
+			this->AddCasesStreetComboBox->Items->AddRange(gcnew cli::array<System::Object^>(7) {
+				L"حي الباب الجديد شرق",
+					L"حي الباب الجديد غرب ومنشا",
+					L"حي راغب باشا",
+					L"حي عزبة الصبحية وعزبة شركس وعزبة رأفت",
+					L"حي بوالينو والإسكندراني",
+					L"حي أمبروزو ومحرم بك",
+					L"حي أبيس"
+			});
+		}
+		else if (selectedStatus->Contains(L"كرموز")) {
+			this->AddCasesStreetComboBox->Items->AddRange(gcnew cli::array<System::Object^>(10) {
+				L"حي الكارة والطوبجية وكفر الغاطس",
+					L"حي باب سدرة البراني شرق",
+					L"حي باب سدرة البراني غرب",
+					L"حي باب سدرة بحري وسوق الغنم",
+					L"حي جامع سلطان",
+					L"حي غيط العنب شرق",
+					L"حي كرموز شرق",
+					L"حي كرموز غرب",
+					L"حي نوبار باشا",
+					L"حي غيط العنب غرب"
+			});
+		}
+		else if (selectedStatus->Contains(L"العطارين")) {
+			this->AddCasesStreetComboBox->Items->AddRange(gcnew cli::array<System::Object^>(8) {
+				L"حي الصوري",
+					L"حي العطارين شرق",
+					L"حي العطارين غرب",
+					L"حي المرغني",
+					L"حي المسلة شرق",
+					L"حي المسلة غرب وشريف باشا",
+					L"حي كوم الدكة شرق",
+					L"حي ابو سعيد الكبرى"
+			});
+		}
+		else if (selectedStatus->Contains(L"الرمل")) {
+			this->AddCasesStreetComboBox->Items->AddRange(gcnew cli::array<System::Object^>(15) {
+				L"حي العاقصة وباكوس",
+					L"حي زعربانة والحمام",
+					L"حي سان ستيفانو",
+					L"حى جاناكليس",
+					L"حى لوران",
+					L"حي فلمنج",
+					L"حي السيوف بحري",
+					L"حي القصعى بحري",
+					L"حى عزبة سكينة",
+					L"حي الظاهرية وعزبة الصفيح",
+					L"حي المحروسة الجديدة",
+					L"حي ابو سليمان",
+					L"حي حجر النواتية",
+					L"حي خورشيد القبلية",
+					L"حي دنا الجديدة وعزبة الوسطانية"
+			});
+		}
+		else if (selectedStatus->Contains(L"سيدي جابر")) {
+			this->AddCasesStreetComboBox->Items->AddRange(gcnew cli::array<System::Object^>(7) {
+				L"حي عزبة سعد",
+					L"حي ابو النوانير",
+					L"حي الرياضة",
+					L"حي محمد سعيد",
+					L"حي عزبة النزهة",
+					L"حي مصطفى كامل",
+					L"حي بلوكلي(ستانلي)"
+			});
+		}
+		else if (selectedStatus->Contains(L"مينا البصل")) {
+			this->AddCasesStreetComboBox->Items->AddRange(gcnew cli::array<System::Object^>(10) {
+				L"حي طابية صالح",
+					L"حي عامود السواري",
+					L"حي البورصة وكفر عشري",
+					L"حي المفروزة شرق",
+					L"حي المفروزة غرب",
+					L"حي كوم الشقافة",
+					L"حي القباري",
+					L"حي الورديان شرق",
+					L"حي الورديان غرب",
+					L"حي الورديان قبلي"
+			});
+		}
+		else if (selectedStatus->Contains(L"اللبان")) {
+			this->AddCasesStreetComboBox->Items->AddRange(gcnew cli::array<System::Object^>(10) {
+				L"حي الجدد واللبان (الورشة)",
+					L"حي الجنينة الصغرى وكوم بكير",
+					L"حي الجنينة الكبرى وسوق المعيز",
+					L"حي الحارة الواسعة والتخشيبة",
+					L"حي السكة الجديدة والطرطوشي",
+					L"حي الصابورة",
+					L"حي النجع الجديد",
+					L"حي النجع القديم",
+					L"حي باب سدرة الجواني",
+					L"حي حارة الفراهدة"
+			});
+		}
+		else if (selectedStatus->Contains(L"المنشية")) {
+			this->AddCasesStreetComboBox->Items->AddRange(gcnew cli::array<System::Object^>(4) {
+				L"حي المنشية الكبرى",
+					L"حي الهماميل",
+					L"حي سوق البرسيم",
+					L"حي سوق الترك"
+			});
+		}
+		else if (selectedStatus->Contains(L"المنتزة")) {
+			this->AddCasesStreetComboBox->Items->AddRange(gcnew cli::array<System::Object^>(10) {
+				L"حي التوفيقية",
+					L"حي المعمورة",
+					L"حي طوسون",
+					L"حي ابو قير (غرب وشرق)",
+					L"حي خورشيد (بحري)",
+					L"حي المنشية (بحري)",
+					L"حي الناصرية",
+					L"حي السيوف بحري",
+					L"حي السيوف قبلي",
+					L"ميدان الساعه"
+			});
+		}
+		else if (selectedStatus->Contains(L"الجمرك")) {
+			this->AddCasesStreetComboBox->Items->AddRange(gcnew cli::array<System::Object^>(10) {
+				L"حي ابو شوشة",
+					L"شارع ابو بكر",
+					L"حي البلقطرية",
+					L"حي التمرازية",
+					L"حي الحجاري",
+					L"حي الحلوجي",
+					L"حي السيالة شرق",
+					L"حي السيالة غرب",
+					L"حي الشمرلي وزاوية الأعرج",
+					L"حي الصيادين"
+			});
+		}
+		else if (selectedStatus->Contains(L"العامرية")) {
+			this->AddCasesStreetComboBox->Items->AddRange(gcnew cli::array<System::Object^>(5) {
+				L"حي العامرية (شرق-غرب)",
+					L"حي الزيرة البحري",
+					L"حي العجمي القبلية (ام زغيو)",
+					L"حي الحرية",
+					L"حي كينج مريوط (شرق-غرب)"
+			});
+		}
+		else if (selectedStatus->Contains(L"الدخيلة")) {
+			this->AddCasesStreetComboBox->Items->AddRange(gcnew cli::array<System::Object^>(5) {
+				L"حي الدخيلة",
+					L"حي المكس",
+					L"حي البيطاش شرق",
+					L"حي البيطاش غرب",
+					L"حي العجمي البحرية"
+			});
+		}
+		else if (selectedStatus->Contains(L"برج العرب")) {
+			this->AddCasesStreetComboBox->Items->AddRange(gcnew cli::array<System::Object^>(7) {
+				L"حي مدينة برج العرب",
+					L"حي ابو صير",
+					L"حي الجويرة",
+					L"حي الزيرة البحرية",
+					L"حي السنافرة",
+					L"حي الغربانيات",
+					L"حي بهيج"
+			});
+		}
+	}
+
+
+private: System::Void AddCaseForm_Load(System::Object^ sender, System::EventArgs^ e) {
+	this->dateTimePicker1->Value = System::DateTime::Now.AddYears(-10);
+}
+};
 }

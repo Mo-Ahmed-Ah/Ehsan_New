@@ -15,3 +15,4 @@ C:\Users\ahmoh\OneDrive - Egyptian Ministry of Education\الكلية\3\2\task\C
 C:\Users\ahmoh\OneDrive - Egyptian Ministry of Education\الكلية\3\2\task\C++\Final Project\Ehsan_New\Ehsan\x64\Debug\Ehsan.ToDayShowAid.resources
 C:\Users\ahmoh\OneDrive - Egyptian Ministry of Education\الكلية\3\2\task\C++\Final Project\Ehsan_New\Ehsan\x64\Debug\Ehsan.vcxproj.GenerateResource.cache
 C:\Users\ahmoh\OneDrive - Egyptian Ministry of Education\الكلية\3\2\task\C++\Final Project\Ehsan_New\Ehsan\x64\Debug\Ehsan.AddNewAid.resources
+C:\Users\ahmoh\OneDrive - Egyptian Ministry of Education\الكلية\3\2\task\C++\Final Project\Ehsan_New\Ehsan\x64\Debug\Ehsan.AddCaseForm.resources

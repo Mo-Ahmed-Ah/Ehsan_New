@@ -209,7 +209,7 @@ public:
 
             if (totalAidCount > 0)
             {
-                MessageBox::Show(L"لا يمكن حذف الحالة لأنها مرتبطة بمساعدات مسجلة.", L"تنبيه", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+                 MessageBox::Show(L"لا يمكن حذف الحالة لأنها مرتبطة بمساعدات مسجلة.", L"تنبيه", MessageBoxButtons::OK, MessageBoxIcon::Warning);
             }
             else
             {
@@ -233,6 +233,7 @@ public:
         catch (Exception^ ex)
         {
             MessageBox::Show(L"حدث خطأ أثناء عملية الحذف: " + ex->Message, L"خطأ", MessageBoxButtons::OK, MessageBoxIcon::Error);
+            
         }
 
         Disconnect();
@@ -380,7 +381,7 @@ public:
         }
         catch (Exception^ ex)
         {
-            MessageBox::Show("حدث خطأ أثناء جلب المساعدات المالية: " + ex->Message, "خطأ", MessageBoxButtons::OK, MessageBoxIcon::Error);
+            MessageBox::Show(L"حدث خطأ أثناء جلب المساعدات المالية: " + ex->Message, L"خطأ", MessageBoxButtons::OK, MessageBoxIcon::Error);
         }
 
         Disconnect();
@@ -404,9 +405,10 @@ public:
             SqlDataReader^ reader = cmd->ExecuteReader();
             while (reader->Read())
             {
+
                 int id = reader->GetInt32(reader->GetOrdinal("ID"));
                 int caseID = reader->GetInt32(reader->GetOrdinal("CaseID"));
-                String^ aidType = reader["AidType"]->ToString();
+                String^ aidType = reader->IsDBNull(reader->GetOrdinal("AidType")) ? "" : reader["AidType"]->ToString();
                 String^ aidContent = reader->IsDBNull(reader->GetOrdinal("AidContent")) ? "" : reader["AidContent"]->ToString();
                 String^ frequency = reader["Frequency"]->ToString();
                 bool isRecurring = reader->GetBoolean(reader->GetOrdinal("IsRecurring"));
@@ -445,7 +447,7 @@ public:
         }
         catch (Exception^ ex)
         {
-            MessageBox::Show("حدث خطأ أثناء جلب المساعدات العينية: " + ex->Message, "خطأ", MessageBoxButtons::OK, MessageBoxIcon::Error);
+            MessageBox::Show(L"حدث خطأ أثناء جلب المساعدات العينية: " + ex->Message, L"خطأ", MessageBoxButtons::OK, MessageBoxIcon::Error);
         }
 
         Disconnect();
@@ -468,13 +470,13 @@ public:
             DateTime today = DateTime::Now;
             DateTime nextDueDate;
 
-            if (frequency == "شهرياً")
+            if (frequency == L"شهرياً")
                 nextDueDate = today.AddMonths(1);
-            else if (frequency == "أسبوعياً")
+            else if (frequency == L"أسبوعياً")
                 nextDueDate = today.AddDays(7);
-            else if (frequency == "سنوياً")
+            else if (frequency == L"سنوياً")
                 nextDueDate = today.AddYears(1);
-            else if (frequency == "يومياً")
+            else if (frequency == L"يومياً")
                 nextDueDate = today.AddDays(1);
             else
                 nextDueDate = today;
@@ -487,7 +489,7 @@ public:
             cmd->Parameters->AddWithValue("@AidID", aidID);
 
             try { cmd->ExecuteNonQuery(); }
-            catch (Exception^ ex) { MessageBox::Show("خطأ: " + ex->Message); }
+            catch (Exception^ ex) { MessageBox::Show(L"خطأ: " + ex->Message); }
 
             Disconnect();
             return;
@@ -497,7 +499,7 @@ public:
         cmdSimple->Parameters->AddWithValue("@AidID", aidID);
 
         try { cmdSimple->ExecuteNonQuery(); }
-        catch (Exception^ ex) { MessageBox::Show("خطأ: " + ex->Message); }
+        catch (Exception^ ex) { MessageBox::Show(L"خطأ: " + ex->Message); }
         Disconnect();
     }
 
@@ -519,13 +521,13 @@ public:
             DateTime today = DateTime::Now;
             DateTime nextDueDate;
 
-            if (frequency == "شهرياً")
+            if (frequency == L"شهرياً")
                 nextDueDate = today.AddMonths(1);
-            else if (frequency == "أسبوعياً")
+            else if (frequency == L"أسبوعياً")
                 nextDueDate = today.AddDays(7);
-            else if (frequency == "سنوياً")
+            else if (frequency == L"سنوياً")
                 nextDueDate = today.AddYears(1);
-            else if (frequency == "يومياً")
+            else if (frequency == L"يومياً")
                 nextDueDate = today.AddDays(1);
             else
                 nextDueDate = today;
@@ -538,7 +540,7 @@ public:
             cmd->Parameters->AddWithValue("@AidID", aidID);
 
             try { cmd->ExecuteNonQuery(); }
-            catch (Exception^ ex) { MessageBox::Show("خطأ: " + ex->Message); }
+            catch (Exception^ ex) { MessageBox::Show(L"خطأ: " + ex->Message); }
 
             Disconnect();
             return;
@@ -548,73 +550,128 @@ public:
         cmdSimple->Parameters->AddWithValue("@AidID", aidID);
 
         try { cmdSimple->ExecuteNonQuery(); }
-        catch (Exception^ ex) { MessageBox::Show("خطأ: " + ex->Message); }
+        catch (Exception^ ex) { MessageBox::Show(L"خطأ: " + ex->Message); }
 
         Disconnect();
     }
 
     static void AddFinancialAid(FinancialAid^ aid)
     {
-        Connect(); // فتح الاتصال بقاعدة البيانات
-        String^ query = "INSERT INTO FinancialAid (CaseID, AidType, Amount, Frequency, IsRecurring, ReceivedCount, SeasonType, IsOneTimeConfirmed, RegistrationDate, Notes, IsActive, CreatedAt, UpdatedAt) " +
-            "VALUES (@CaseID, @AidType, @Amount, @Frequency, @IsRecurring, @ReceivedCount, @SeasonType, @IsOneTimeConfirmed, @RegistrationDate, @Notes, @IsActive, @CreatedAt, @UpdatedAt)";
-        SqlCommand^ cmd = gcnew SqlCommand(query, sqlConn);
-        // تعبئة المعاملات بالقيم من الكائن aid
-        cmd->Parameters->AddWithValue("@CaseID", aid->CaseID);
-        cmd->Parameters->AddWithValue("@AidType", aid->AidType);
-        cmd->Parameters->AddWithValue("@Amount", aid->Amount);
-        cmd->Parameters->AddWithValue("@Frequency", aid->FrequencyLong);
-        cmd->Parameters->AddWithValue("@IsRecurring", aid->IsRecurring);
-        cmd->Parameters->AddWithValue("@ReceivedCount", aid->ReceivedCount);
-        cmd->Parameters->AddWithValue("@SeasonType", aid->SeasonType);
-        cmd->Parameters->AddWithValue("@IsOneTimeConfirmed", aid->IsOneTimeConfirmed);
-        cmd->Parameters->AddWithValue("@RegistrationDate", aid->RegistrationDate);
-        cmd->Parameters->AddWithValue("@Notes", String::IsNullOrEmpty(aid->Notes) ? (Object^)DBNull::Value : aid->Notes);
-        cmd->Parameters->AddWithValue("@IsActive", aid->IsActive);
-        cmd->Parameters->AddWithValue("@CreatedAt", aid->CreatedAt);
-        cmd->Parameters->AddWithValue("@UpdatedAt", aid->UpdatedAt);
+        if (aid == nullptr)
+        {
+            MessageBox::Show(L"المساعدة المالية غير صالحة (null).", L"خطأ", MessageBoxButtons::OK, MessageBoxIcon::Error);
+            return;
+        }
+
         try
         {
-            cmd->ExecuteNonQuery();
-            MessageBox::Show(L"تمت إضافة المساعدة المالية بنجاح.", L"نجاح", MessageBoxButtons::OK, MessageBoxIcon::Information);
+            Connect();
+
+            String^ query = "INSERT INTO FinancialAid (CaseID, AidType, Amount, Frequency, IsRecurring, ReceivedCount, SeasonType, IsOneTimeConfirmed, RegistrationDate, Notes, IsActive) "
+                "VALUES (@CaseID, @AidType, @Amount, @Frequency, @IsRecurring, @ReceivedCount, @SeasonType, @IsOneTimeConfirmed, @RegistrationDate, @Notes, @IsActive)";
+
+            SqlCommand^ cmd = gcnew SqlCommand(query, sqlConn);
+
+            cmd->Parameters->AddWithValue("@CaseID", aid->CaseID);
+            cmd->Parameters->AddWithValue("@AidType", aid->AidType);
+            cmd->Parameters->AddWithValue("@Amount", aid->Amount);
+            cmd->Parameters->AddWithValue("@Frequency", aid->FrequencyLong);
+            cmd->Parameters->AddWithValue("@IsRecurring", aid->IsRecurring);
+            cmd->Parameters->AddWithValue("@ReceivedCount", aid->ReceivedCount.HasValue ? aid->ReceivedCount.Value : 0);
+            cmd->Parameters->AddWithValue("@SeasonType", aid->SeasonType);
+            cmd->Parameters->AddWithValue("@IsOneTimeConfirmed", aid->IsOneTimeConfirmed);
+            cmd->Parameters->AddWithValue("@RegistrationDate", aid->RegistrationDate);
+            cmd->Parameters->AddWithValue("@Notes", String::IsNullOrEmpty(aid->Notes) ? "" : aid->Notes);
+            cmd->Parameters->AddWithValue("@IsActive", aid->IsActive);
+
+            int rowsAffected = cmd->ExecuteNonQuery();
+
+            if (rowsAffected > 0)
+                MessageBox::Show(L"✅ تمت إضافة المساعدة المالية بنجاح.", L"نجاح", MessageBoxButtons::OK, MessageBoxIcon::Information);
+            else
+                MessageBox::Show(L"⚠️ لم تتم إضافة أي سجل. تحقق من صحة البيانات.", L"تنبيه", MessageBoxButtons::OK, MessageBoxIcon::Warning);
         }
         catch (Exception^ ex)
         {
-            MessageBox::Show(L"حدث خطأ أثناء إضافة المساعدة المالية: " + ex->Message, L"خطأ", MessageBoxButtons::OK, MessageBoxIcon::Error);
+            MessageBox::Show(L"❌ خطأ أثناء إضافة المساعدة المالية:\n" + ex->Message, L"خطأ", MessageBoxButtons::OK, MessageBoxIcon::Error);
         }
-        Disconnect(); // إغلاق الاتصال بقاعدة البيانات
+        Disconnect();
     }
 
     static void AddInKindAid(InKindAid^ aid)
     {
-        Connect(); // فتح الاتصال بقاعدة البيانات
-        String^ query = "INSERT INTO InKindAid (CaseID, AidType, AidContent, Frequency, IsRecurring, ReceivedCount, SeasonType, IsOneTimeConfirmed, RegistrationDate, Notes, IsActive, CreatedAt, UpdatedAt) " +
-            "VALUES (@CaseID, @AidType, @AidContent, @Frequency, @IsRecurring, @ReceivedCount, @SeasonType, @IsOneTimeConfirmed, @RegistrationDate, @Notes, @IsActive, @CreatedAt, @UpdatedAt)";
-        SqlCommand^ cmd = gcnew SqlCommand(query, sqlConn);
-        // تعبئة المعاملات بالقيم من الكائن aid
-        cmd->Parameters->AddWithValue("@CaseID", aid->CaseID);
-        cmd->Parameters->AddWithValue("@AidType", aid->AidType);
-        cmd->Parameters->AddWithValue("@AidContent", aid->AidContent);
-        cmd->Parameters->AddWithValue("@Frequency", aid->FrequencyLong);
-        cmd->Parameters->AddWithValue("@IsRecurring", aid->IsRecurring);
-        cmd->Parameters->AddWithValue("@ReceivedCount", aid->ReceivedCount);
-        cmd->Parameters->AddWithValue("@SeasonType", aid->SeasonType);
-        cmd->Parameters->AddWithValue("@IsOneTimeConfirmed", aid->IsOneTimeConfirmed);
-        cmd->Parameters->AddWithValue("@RegistrationDate", aid->RegistrationDate);
-        cmd->Parameters->AddWithValue("@Notes", String::IsNullOrEmpty(aid->Notes) ? (Object^)DBNull::Value : aid->Notes);
-        cmd->Parameters->AddWithValue("@IsActive", aid->IsActive);
-        cmd->Parameters->AddWithValue("@CreatedAt", aid->CreatedAt);
-        cmd->Parameters->AddWithValue("@UpdatedAt", aid->UpdatedAt);
+        if (aid == nullptr)
+        {
+            MessageBox::Show(L"المساعدة العينية غير صالحة (null).", L"خطأ", MessageBoxButtons::OK, MessageBoxIcon::Error);
+            return;
+        }
+
         try
         {
-            cmd->ExecuteNonQuery();
-            MessageBox::Show(L"تمت إضافة المساعدة العينية بنجاح.", L"نجاح", MessageBoxButtons::OK, MessageBoxIcon::Information);
+            Connect();
+
+            String^ query = "INSERT INTO InKindAid (CaseID, AidType, AidContent, Frequency, IsRecurring, ReceivedCount, SeasonType, IsOneTimeConfirmed, RegistrationDate, Notes, IsActive) "
+                "VALUES (@CaseID, @AidType, @AidContent, @Frequency, @IsRecurring, @ReceivedCount, @SeasonType, @IsOneTimeConfirmed, @RegistrationDate, @Notes, @IsActive)";
+
+            SqlCommand^ cmd = gcnew SqlCommand(query, sqlConn);
+
+            cmd->Parameters->AddWithValue("@CaseID", aid->CaseID);
+            cmd->Parameters->AddWithValue("@AidType", aid->AidType);
+            cmd->Parameters->AddWithValue("@AidContent", aid->AidContent);
+            cmd->Parameters->AddWithValue("@Frequency", aid->FrequencyLong);
+            cmd->Parameters->AddWithValue("@IsRecurring", aid->IsRecurring);
+            cmd->Parameters->AddWithValue("@ReceivedCount", aid->ReceivedCount.HasValue ? aid->ReceivedCount.Value : 0);
+            cmd->Parameters->AddWithValue("@SeasonType", aid->SeasonType);
+            cmd->Parameters->AddWithValue("@IsOneTimeConfirmed", aid->IsOneTimeConfirmed);
+            cmd->Parameters->AddWithValue("@RegistrationDate", aid->RegistrationDate);
+            cmd->Parameters->AddWithValue("@Notes", String::IsNullOrEmpty(aid->Notes) ? "" : aid->Notes);
+            cmd->Parameters->AddWithValue("@IsActive", aid->IsActive);
+
+            int rowsAffected = cmd->ExecuteNonQuery();
+
+            if (rowsAffected > 0)
+                MessageBox::Show(L"✅ تمت إضافة المساعدة العينية بنجاح.", L"نجاح", MessageBoxButtons::OK, MessageBoxIcon::Information);
+            else
+                MessageBox::Show(L"⚠️ لم تتم إضافة أي سجل. تحقق من صحة البيانات.", L"تنبيه", MessageBoxButtons::OK, MessageBoxIcon::Warning);
         }
         catch (Exception^ ex)
         {
-            MessageBox::Show(L"حدث خطأ أثناء إضافة المساعدة العينية: " + ex->Message, L"خطأ", MessageBoxButtons::OK, MessageBoxIcon::Error);
+            MessageBox::Show(L"❌ خطأ أثناء إضافة المساعدة العينية:\n" + ex->Message, L"خطأ", MessageBoxButtons::OK, MessageBoxIcon::Error);
         }
-        Disconnect(); // إغلاق الاتصال بقاعدة البيانات
+        Disconnect();
+    }
+
+    static int GetCaseIdByNationalID(String^ nationalID)
+    {
+        Connect(); // فتح الاتصال بقاعدة البيانات
+
+        String^ query = "SELECT ID FROM Cases WHERE NationalID = @NationalID";
+        SqlCommand^ cmd = gcnew SqlCommand(query, sqlConn);
+        cmd->Parameters->AddWithValue("@NationalID", nationalID);
+
+        try
+        {
+            Object^ result = cmd->ExecuteScalar();
+
+            if (result != nullptr && result != DBNull::Value)
+            {
+                return Convert::ToInt32(result);
+            }
+            else
+            {
+                MessageBox::Show(L"لم يتم العثور على رقم قومي مطابق.", L"تنبيه", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+                return -1; // لم يتم العثور
+            }
+        }
+        catch (Exception^ ex)
+        {
+            MessageBox::Show(L"حدث خطأ أثناء البحث عن الحالة: " + ex->Message, L"خطأ", MessageBoxButtons::OK, MessageBoxIcon::Error);
+            return -1;
+        }
+        finally
+        {
+            Disconnect(); // إغلاق الاتصال بقاعدة البيانات
+        }
     }
 
 
